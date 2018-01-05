@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.eq62roket.mtracpro.DeathActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:id="@+id/death_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_ma_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/death_ma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Malaria (Total diagonised"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="48dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_dy_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_dy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Dysentery"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="124dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_sa_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_sa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Severe Acute Respiratory Infection (SARI)"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_af_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_af"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Acute Flaccid Paralysis"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_ae_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_ae"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Adverse EVents Following Immunization (AEFI)"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="48dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_ab_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_ab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Animal Bites (suspected rabies)"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="124dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_mg_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_mg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Bacterial Meningitis"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_ch_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/death_ch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Cholera"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_gw_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_gw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Guinea Worm"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_me_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_me"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Measles"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_nt_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_nt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Neonatal tetanus"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_vf_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/death_vf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Other Viral Hemorrhagic Fevers"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_pl_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_pl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Plague"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_tf_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_tf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Typhoid Fever"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_yf_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_yf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Yellow Fever"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/death_tb_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/death_tb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Presumptive Multi Drug Resistance (MDR) TB"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/deathButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="25dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</ScrollView>

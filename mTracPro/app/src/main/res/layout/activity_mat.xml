@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.eq62roket.mtracpro.MatActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:id="@+id/mat_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_suspected_malaria_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/mat_suspected_malaria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Suspected malaria (fever)"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="48dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_rdt_tested_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/mat_rdt_tested"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="RDT tested"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="124dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_rdt_positive_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/mat_rdt_positive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="RDT Positive"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_microscopy_tested_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/mat_microscopy_tested"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Microscopy tested"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_microscopy_positive_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/mat_microscopy_positive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Microscopy Positive"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="48dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_not_tested_treated_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/mat_not_tested_treated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Not tested cases treated"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="124dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_rdt_neg_treated_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/mat_rdt_neg_treated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="RDT Negative treated"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_rdt_pos_treated_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/mat_rdt_pos_treated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="RDT Positive treated"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_microscopy_neg_treated_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/mat_microscopy_neg_treated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Microscopy Negative Treated"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mat_microscopy_pos_treated_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/mat_microscopy_pos_treated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Microscopy Positive Treated"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/matButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="25dp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</ScrollView>

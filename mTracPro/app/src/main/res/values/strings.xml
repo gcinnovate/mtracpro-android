@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">mTracPro</string>
+    <string name="err_msg_apt_opd_new_label">Please enter OPD New Attendees</string>
+    <string name="err_msg_apt_opd_total_label">Please enter OPD Total Attendance</string>
+    <string name="err_msg_apt_emtct_expected_label">Please enter Expected eMTCT Mothers on appt</string>
+    <string name="err_msg_apt_emtct_missed_label">Please enter eMTCT Missed appointments</string>
+    <string name="err_msg_arv_nevirapine_label">Please enter Nevirapine Therapy</string>
+    <string name="err_msg_arv_emtct_label">Please enter ARVs (Fixed - DC eMTCT)</string>
+    <string name="err_msg_arv_hiv_screening_test_kits_label">Please enter HIV Screening Test Kits</string>
+
+    <string name="err_msg_tra_measles_vaccine_label">Please enter Measles Vaccine</string>
+    <string name="err_msg_tra_amoxcilline_label">Please enter Amoxcilline</string>
+    <string name="err_msg_tra_depo_provera_label">Please enter Depo- Provera</string>
+    <string name="err_msg_tra_iv_artesunate_label">Please enter IV artesunate</string>
+    <string name="err_msg_tra_fansidar_label">Please enter Fansidar</string>
+    <string name="err_msg_tra_ors_sackets_label">Please enter ORS (Sackets)</string>
+    <string name="err_msg_tra_act_tablets_label">Please enter ACT (Tablets)</string>
+    <string name="err_msg_tra_rdt_malaria_label">Please enter RDT (Malaria)</string>
+
+
+    <string name="err_msg_mat_suspected_malaria_label">Please enter Suspected Malaria (Fever)</string>
+    <string name="err_msg_mat_rdt_tested_label">Please enter RDT tested</string>
+    <string name="err_msg_mat_rdt_positive_label">Please enter RDT Positive</string>
+    <string name="err_msg_mat_microscopy_tested_label">Please enter Microscopy tested</string>
+    <string name="err_msg_mat_microscopy_positive_label">Please enter Microscopy Positive</string>
+    <string name="err_msg_mat_not_tested_treated_label">Please enter Not tested cases treated</string>
+    <string name="err_msg_mat_rdt_neg_treated_label">Please enter RDT Negative Treated</string>
+    <string name="err_msg_mat_rdt_pos_treated_label">Please enter RDT Positive Treated</string>
+    <string name="err_msg_mat_microscopy_neg_treated_label">Please enter Microscopy negative treated</string>
+    <string name="err_msg_mat_microscopy_pos_treated_label">Please enter Microscopy positive treated </string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+</resources>

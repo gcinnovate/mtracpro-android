@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.eq62roket.mtracpro.ArvActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:id="@+id/arv_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/arv_hiv_screening_test_kits_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/arv_hiv_screening_test_kits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="HIV Screening Test Kits"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="48dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/arv_emtct_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/arv_emtct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="ARVs (Fixed - DC eMTCT)"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="124dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/arv_nevirapine_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/arv_nevirapine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nevirapine Therapy"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/arvButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Submit" />
+        </LinearLayout>
+    </ScrollView>
+</ScrollView>
