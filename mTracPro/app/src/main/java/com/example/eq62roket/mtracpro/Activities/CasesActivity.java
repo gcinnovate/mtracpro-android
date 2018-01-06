@@ -17,9 +17,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.eq62roket.mtracpro.Helpers.VollerHelper;
 import com.example.eq62roket.mtracpro.R;
 
 public class CasesActivity extends AppCompatActivity {
+
+    VollerHelper mVollerHelper;
+
     Button casesButton;
     EditText cases_ma, cases_dy, cases_sa, cases_af, cases_ae, cases_ab, cases_mg, cases_ch, cases_gw, cases_me,
             cases_nt, cases_vf, cases_pl, cases_tf, cases_yf, cases_tb;
@@ -35,6 +39,9 @@ public class CasesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cases);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // setting up VolleyHelper
+        mVollerHelper = new VollerHelper(this);
 
         cases_ma_label = (TextInputLayout) findViewById(R.id.cases_ma_label);
         cases_dy_label = (TextInputLayout) findViewById(R.id.cases_dy_label);
@@ -52,6 +59,7 @@ public class CasesActivity extends AppCompatActivity {
         cases_pl_label = (TextInputLayout) findViewById(R.id.cases_pl_label);
         cases_tf_label = (TextInputLayout) findViewById(R.id.cases_tf_label);
         cases_tb_label = (TextInputLayout) findViewById(R.id.cases_tb_label);
+        cases_linearLayout = (LinearLayout) findViewById(R.id.cases_linearLayout);
 
         casesButton = (Button) findViewById(R.id.casesButton);
         casesButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
@@ -88,6 +96,9 @@ public class CasesActivity extends AppCompatActivity {
                         || !cases_nt.getText().toString().equals("") || !cases_tf.getText().toString().equals("")
                         || !cases_vf.getText().toString().equals("") || !cases_pl.getText().toString().equals("")
                         || !cases_tb.getText().toString().equals("")) {
+
+                    mVollerHelper.sendData(cases_linearLayout);
+
                     Intent casesIntent = new Intent(CasesActivity.this, MainActivity.class);
                     startActivity(casesIntent);
                     finish();
@@ -113,4 +124,5 @@ public class CasesActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         return true;
     }
+
 }

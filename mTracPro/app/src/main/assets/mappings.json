@@ -1,0 +1,317 @@
+{
+    "apt_emtct_expected": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "xVpHSWaIBEX",
+        "descr": "Expected eMTCT Mothers on Appointment"
+    },
+    "apt_emtct_missed": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "LYT11E96lC5",
+        "descr": "eMTCT Missed Appointments"
+    },
+    "apt_opd_new": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "xqSBj2KUlas",
+        "descr": "OPD New Attendees"
+    },
+    "apt_opd_total": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "xb4g6Zf7fAT",
+        "descr": "OPT Total Attendence"
+    },
+    "arv_emtct": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "xgSJLvdm2cQ",
+        "descr": "ARVs (Fixed - DC eMTCT)"
+    },
+    "arv_hiv_screening_test_kits": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "kteQimFQJom",
+        "descr": "HIV screening test kits"
+    },
+    "arv_nevirapine": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "JPVp2yLEimL",
+        "descr": "Nevirapine Therapy"
+    },
+    "cases_ab": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "mdIPCPfqXaJ",
+        "descr": "Cases of Animal Bites"
+    },
+    "cases_ae": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "fTwT8uX9Uto",
+        "descr": "Cases of Adverse Events Following Immunization"
+    },
+    "cases_af": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "U7cokRIptxu",
+        "descr": "Cases of Acute Flacid Paralysis"
+    },
+    "cases_ch": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "FPsN2bDpRru",
+        "descr": "Cases of Cholera"
+    },
+    "cases_dy": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "NoJfAIcxjSY",
+        "descr": "Cases of Dysentery"
+    },
+    "cases_gw": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "hzGgkiOjfRs",
+        "descr": "Cases of Guinea Worm"
+    },
+    "cases_id": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "ZZrhG7CYNjy",
+        "descr": "Cases of Other Emerging Infectious Diseases"
+    },
+    "cases_ma": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "fclvwNhzu7d",
+        "descr": "Cases of Malaria"
+    },
+    "cases_me": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "v8HuPNb03yq",
+        "descr": "Cases of Measles"
+    },
+    "cases_mg": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "JxUexqKeXtZ",
+        "descr": "Cases of Bacterial Meningitis"
+    },
+    "cases_nt": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "euf2TqlswFp",
+        "descr": "Cases of Neonatal Tetanus"
+    },
+    "cases_pl": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "peyFcHisgZB",
+        "descr": "Cases of Plague"
+    },
+    "cases_rb": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "tTGAElxDIWg",
+        "descr": "Cases of Rabies"
+    },
+    "cases_sa": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "MHtpmIQEnyc",
+        "descr": "Cases of Severe Acute Respiratory Infection"
+    },
+    "cases_tb": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "yzdPKhvgeXq",
+        "descr": "Presumptive Multi Drug Resistance (MDR) TB"
+    },
+    "cases_tf": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "IkI01xB7RIi",
+        "descr": "Cases of Typhoid Fever"
+    },
+    "cases_vf": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "BMJMdxh1Loy",
+        "descr": "Cases of Other Viral Hemorrhagic Fevers"
+    },
+    "cases_yf": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "OE8baEzA2Cq",
+        "descr": "Cases of Yellow Fever"
+    },
+    "death_ab": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "UKYPpKnSBK4",
+        "descr": "Deaths from Animal Bites"
+    },
+    "death_ae": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "k2dUb4N7D0D",
+        "descr": "Deaths from Adverse Events Following Immunization"
+    },
+    "death_af": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "XzYd9m4XaKS",
+        "descr": "Deaths from Acute Flacid Paralysis"
+    },
+    "death_ch": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "QP9yftzrkne",
+        "descr": "Deaths from Cholera"
+    },
+    "death_dy": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "JTc25LIvtQb",
+        "descr": "Deaths from Dysentery"
+    },
+    "death_gw": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "yvbPC5zDb3c",
+        "descr": "Deaths from Guinea Worm"
+    },
+    "death_id": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "qHSErXOlcf3",
+        "descr": "Deaths from Other Emerging Infectious Diseases"
+    },
+    "death_ma": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "YXIu5CW9LPR",
+        "descr": "Deaths from Malaria"
+    },
+    "death_md": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "ck3jFjr8fOT",
+        "descr": "Maternal deaths"
+    },
+    "death_me": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "tjTnFJ1QdVz",
+        "descr": "Deaths from Measles"
+    },
+    "death_mg": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "r3xIBQaeLsT",
+        "descr": "Deaths from Bacterial Meningitis"
+    },
+    "death_nt": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "tIh9TQxGOJU",
+        "descr": "Deaths from Neonatal Tetanus"
+    },
+    "death_pd": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "nG5hrCX3vyP",
+        "descr": "Perinatal deaths"
+    },
+    "death_pl": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "hBcX7S7xBcu",
+        "descr": "Deaths from Plague"
+    },
+    "death_rb": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "Dy90lwS6c6x",
+        "descr": "Deaths from Rabies"
+    },
+    "death_sa": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "qdZbdsCpIr7",
+        "descr": "Deaths from Severe Acute Respiratory Infection"
+    },
+    "death_tb": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "eEruojUV6Jh",
+        "descr": "Presumptive Multi Drug Resistance (MDR) TB"
+    },
+    "death_tf": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "OMxmmYvvLai",
+        "descr": "Deaths from Typhoid Fever"
+    },
+    "death_vf": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "BX2PYPKm8F9",
+        "descr": "Deaths from Other Viral Hemorrhagic Fevers"
+    },
+    "death_yf": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "w3mO7SZdbb8",
+        "descr": "Deaths from Yellow Fever"
+    },
+    "mat_microscopy_neg_treated": {
+        "categoryOptionCombo": "TTwU8Bv4fKm",
+        "dataElement": "ZgPtploqq0L",
+        "descr": "Microscopy negative cases treated"
+    },
+    "mat_microscopy_pos_treated": {
+        "categoryOptionCombo": "vp37EZVg3xG",
+        "dataElement": "ZgPtploqq0L",
+        "descr": "Microscopy positive cases treated"
+    },
+    "mat_microscopy_positive": {
+        "categoryOptionCombo": "3rYpFjLrrYa",
+        "dataElement": "KPmTI3TGwZw",
+        "descr": "Microscopy positive cases"
+    },
+    "mat_microscopy_tested": {
+        "categoryOptionCombo": "t8Jv78lnSbU",
+        "dataElement": "KPmTI3TGwZw",
+        "descr": "Microscopy tested cases"
+    },
+    "mat_not_tested_treated": {
+        "categoryOptionCombo": "w16OBdsg4b7",
+        "dataElement": "ZgPtploqq0L",
+        "descr": "Not tested cases treated"
+    },
+    "mat_rdt_neg_treated": {
+        "categoryOptionCombo": "NfJyyb1eBaw",
+        "dataElement": "ZgPtploqq0L",
+        "descr": "RDT negative cases treated"
+    },
+    "mat_rdt_pos_treated": {
+        "categoryOptionCombo": "QOWAmZ7jBno",
+        "dataElement": "ZgPtploqq0L",
+        "descr": "RDT positive cases treated"
+    },
+    "mat_rdt_positive": {
+        "categoryOptionCombo": "PfdPCxOoiBj",
+        "dataElement": "KPmTI3TGwZw",
+        "descr": "RDT positive cases"
+    },
+    "mat_rdt_tested": {
+        "categoryOptionCombo": "kcXY5cWAOsB",
+        "dataElement": "KPmTI3TGwZw",
+        "descr": "RDT tested cases"
+    },
+    "mat_suspected_malaria": {
+        "categoryOptionCombo": "3W3d2AqT4Aq",
+        "dataElement": "KPmTI3TGwZw",
+        "descr": "Suspected Malaria (fever)"
+    },
+    "tra_act_tablets": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "Ju0Cann41Ul",
+        "descr": "ACT (Tablets)"
+    },
+    "tra_amoxcilline": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "tFrWdigZ4oo",
+        "descr": "Amoxcilline"
+    },
+    "tra_depo_provera": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "v6ACxYNPIvm",
+        "descr": "Depo - Provera"
+    },
+    "tra_fansidar": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "fX6A6NO18pY",
+        "descr": "Fansidar"
+    },
+    "tra_iv_artesunate": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "O2OrXuZo4hB",
+        "descr": "IV artesunate"
+    },
+    "tra_measles_vaccine": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "DgeykDdSLzI",
+        "descr": "Measles Vaccine"
+    },
+    "tra_ors_sackets": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "zmimiDOJwaf",
+        "descr": "ORS (Sackets)"
+    },
+    "tra_rdt_malaria": {
+        "categoryOptionCombo": "gGhClrV5odI",
+        "dataElement": "CzsKMvQDwMV",
+        "descr": "Malaria RDTs"
+    }
+}

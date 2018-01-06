@@ -52,38 +52,51 @@ public class ProfileActivity extends AppCompatActivity {
         mOurSharedPreferences = new OurSharedPreferences(this);
         queue = Volley.newRequestQueue(this);
 
+        setUserProfile();
 
+    }
+
+    private void setValuesToTextViews(){
+        // set text views with values from shared preferences
+        tvName.setText(mOurSharedPreferences.getSharedPreference("name"));
+        tvHealthF.setText(mOurSharedPreferences.getSharedPreference("facility"));
+        tvDistrict.setText(mOurSharedPreferences.getSharedPreference("district"));
+        tvTotalReports.setText(mOurSharedPreferences.getSharedPreference("totalReports"));
+        tvLastReportDate.setText(mOurSharedPreferences.getSharedPreference("lastReportDate"));
+    }
+
+    public void setUserProfile(){
         // get profile info
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    // Grab values from json
-                    name = response.get("name").toString();
-                    facility = response.get("facility").toString();
-                    facilityId = response.get("facilityId").toString();
-                    district = response.get("district").toString();
-                    lastReportingDate = response.get("lastReportingDate").toString();
-                    totalReports = response.get("totalReports").toString();
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            // Grab values from json
+                            name = response.get("name").toString();
+                            facility = response.get("facility").toString();
+                            facilityId = response.get("facilityId").toString();
+                            district = response.get("district").toString();
+                            lastReportingDate = response.get("lastReportingDate").toString();
+                            totalReports = response.get("totalReports").toString();
 
-                    // add json values to shared preference
-                    mOurSharedPreferences.writeSharedPreference("name", name);
-                    mOurSharedPreferences.writeSharedPreference("facility", facility);
-                    mOurSharedPreferences.writeSharedPreference("facilityId", facilityId);
-                    mOurSharedPreferences.writeSharedPreference("district", district);
-                    mOurSharedPreferences.writeSharedPreference("lastReportDate", lastReportingDate);
-                    mOurSharedPreferences.writeSharedPreference("totalReports", totalReports);
+                            // add json values to shared preference
+                            mOurSharedPreferences.writeSharedPreference("name", name);
+                            mOurSharedPreferences.writeSharedPreference("facility", facility);
+                            mOurSharedPreferences.writeSharedPreference("facilityId", facilityId);
+                            mOurSharedPreferences.writeSharedPreference("district", district);
+                            mOurSharedPreferences.writeSharedPreference("lastReportDate", lastReportingDate);
+                            mOurSharedPreferences.writeSharedPreference("totalReports", totalReports);
 
-                    setValuesToTextViews();
+                            setValuesToTextViews();
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                Log.d(TAG, "Response: " + response.toString());
-            }
-        }, new Response.ErrorListener() {
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        Log.d(TAG, "Response: " + response.toString());
+                    }
+                }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d(TAG, "onErrorResponse: ",  error);
@@ -101,15 +114,6 @@ public class ProfileActivity extends AppCompatActivity {
         // add queue to request
         queue.add(getRequest);
 
-    }
-
-    private void setValuesToTextViews(){
-        // set text views with values from shared preferences
-        tvName.setText(mOurSharedPreferences.getSharedPreference("name"));
-        tvHealthF.setText(mOurSharedPreferences.getSharedPreference("facility"));
-        tvDistrict.setText(mOurSharedPreferences.getSharedPreference("district"));
-        tvTotalReports.setText(mOurSharedPreferences.getSharedPreference("totalReports"));
-        tvLastReportDate.setText(mOurSharedPreferences.getSharedPreference("lastReportDate"));
     }
 
 
