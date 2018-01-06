@@ -1,4 +1,4 @@
-package com.example.eq62roket.mtracpro;
+package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.eq62roket.mtracpro.R;
 
 
 public class AptActivity extends AppCompatActivity {

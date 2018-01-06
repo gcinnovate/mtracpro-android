@@ -1,4 +1,4 @@
-package com.example.eq62roket.mtracpro;
+package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.example.eq62roket.mtracpro.R;
 
 public class CasesActivity extends AppCompatActivity {
     Button casesButton;

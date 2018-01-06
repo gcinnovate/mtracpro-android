@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,24 +21,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AptActivity"
+        <activity android:name=".Activities.AptActivity"
             android:label="APT."
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".MatActivity"
+            android:parentActivityName=".Activities.MainActivity"/>
+        <activity android:name=".Activities.MatActivity"
             android:label="MAT."
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".ArvActivity"
+            android:parentActivityName=".Activities.MainActivity"/>
+        <activity android:name=".Activities.ArvActivity"
             android:label="ARV."
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".TraActivity"
+            android:parentActivityName=".Activities.MainActivity"/>
+        <activity android:name=".Activities.TraActivity"
             android:label="TRA."
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".DeathActivity"
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity android:name=".Activities.DeathActivity"
             android:label="DEATH."
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".CasesActivity"
+            android:parentActivityName=".Activities.MainActivity"/>
+        <activity android:name=".Activities.CasesActivity"
             android:label="CASES."
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".Activities.MainActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.eq62roket.mtracpro;
+package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.eq62roket.mtracpro.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
