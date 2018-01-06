@@ -12,16 +12,23 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.eq62roket.mtracpro.Helpers.VollerHelper;
 import com.example.eq62roket.mtracpro.R;
 
 public class ArvActivity extends AppCompatActivity {
+
+    private VollerHelper mVollerHelper;
+
     Animation animShake;
     public Vibrator vib;
     Button arvButton;
     EditText arv_hiv_screening_test_kits, arv_emtct, arv_nevirapine;
     TextInputLayout arv_hiv_screening_test_kits_label, arv_emtct_label, arv_nevirapine_label;
+
+    private LinearLayout arv_linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +36,14 @@ public class ArvActivity extends AppCompatActivity {
         setContentView(R.layout.activity_arv);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // setting up VolleyHelper
+        mVollerHelper = new VollerHelper(this);
+
         arv_hiv_screening_test_kits_label = (TextInputLayout) findViewById(R.id.arv_hiv_screening_test_kits_label);
         arv_emtct_label = (TextInputLayout) findViewById(R.id.arv_emtct_label);
         arv_nevirapine_label = (TextInputLayout) findViewById(R.id.arv_nevirapine_label);
+
+        arv_linearLayout = (LinearLayout) findViewById(R.id.arv_linearLayout);
 
         arvButton = (Button) findViewById(R.id.arvButton);
         arvButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
@@ -77,6 +89,8 @@ public class ArvActivity extends AppCompatActivity {
         arv_hiv_screening_test_kits_label.setErrorEnabled(false);
         arv_emtct_label.setErrorEnabled(false);
         arv_nevirapine_label.setErrorEnabled(false);
+
+        mVollerHelper.sendData(arv_linearLayout);
 
         Intent aptIntent = new Intent(ArvActivity.this, MainActivity.class);
         startActivity(aptIntent);

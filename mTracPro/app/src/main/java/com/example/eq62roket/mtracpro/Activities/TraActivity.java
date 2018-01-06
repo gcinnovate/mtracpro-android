@@ -12,11 +12,16 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.eq62roket.mtracpro.Helpers.VollerHelper;
 import com.example.eq62roket.mtracpro.R;
 
 public class TraActivity extends AppCompatActivity {
+
+    private VollerHelper mVollerHelper;
+
     Button traButton;
     EditText tra_act_tablets, tra_ors_sackets, tra_measles_vaccine, tra_amoxcilline, tra_depo_provera, tra_iv_artesunate,
             tra_fansidar, tra_rdt_malaria;
@@ -24,11 +29,17 @@ public class TraActivity extends AppCompatActivity {
     public Vibrator vib;
     TextInputLayout tra_rdt_malaria_label, tra_fansidar_label, tra_iv_artesunate_label, tra_depo_provera_label,
             tra_amoxcilline_label, tra_measles_vaccine_label, tra_ors_sackets_label, tra_act_tablets_label;
+
+    private LinearLayout tra_linearLinear;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tra);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // setting up VolleyHelper
+        mVollerHelper = new VollerHelper(this);
 
         tra_rdt_malaria_label = (TextInputLayout) findViewById(R.id.tra_rdt_malaria_label);
         tra_fansidar_label = (TextInputLayout) findViewById(R.id.tra_fansidar_label);
@@ -38,6 +49,8 @@ public class TraActivity extends AppCompatActivity {
         tra_measles_vaccine_label = (TextInputLayout) findViewById(R.id.tra_measles_vaccine_label);
         tra_ors_sackets_label = (TextInputLayout) findViewById(R.id.tra_ors_sackets_label);
         tra_act_tablets_label = (TextInputLayout) findViewById(R.id.tra_act_tablets_label);
+
+        tra_linearLinear = (LinearLayout) findViewById(R.id.tra_linearLinear);
 
         traButton = (Button) findViewById(R.id.traButton);
         traButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
@@ -125,6 +138,7 @@ public class TraActivity extends AppCompatActivity {
         tra_fansidar_label.setErrorEnabled(false);
         tra_iv_artesunate_label.setErrorEnabled(false);
 
+        mVollerHelper.sendData(tra_linearLinear);
 
         Intent aptIntent = new Intent(TraActivity.this, MainActivity.class);
         startActivity(aptIntent);
