@@ -3,6 +3,7 @@
     package="com.example.eq62roket.mtracpro">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -38,6 +39,9 @@
             android:parentActivityName=".Activities.MainActivity"/>
         <activity android:name=".Activities.CasesActivity"
             android:label="CASES."
+            android:parentActivityName=".Activities.MainActivity"></activity>
+        <activity android:name=".Activities.ProfileActivity"
+            android:label="Profile"
             android:parentActivityName=".Activities.MainActivity"></activity>
     </application>
 
