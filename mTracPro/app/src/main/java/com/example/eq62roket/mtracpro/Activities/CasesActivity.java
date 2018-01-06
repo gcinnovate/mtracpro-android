@@ -22,7 +22,7 @@ import com.example.eq62roket.mtracpro.R;
 
 public class CasesActivity extends AppCompatActivity {
 
-    VollerHelper mVollerHelper;
+    private VollerHelper mVollerHelper;
 
     Button casesButton;
     EditText cases_ma, cases_dy, cases_sa, cases_af, cases_ae, cases_ab, cases_mg, cases_ch, cases_gw, cases_me,
@@ -59,6 +59,7 @@ public class CasesActivity extends AppCompatActivity {
         cases_pl_label = (TextInputLayout) findViewById(R.id.cases_pl_label);
         cases_tf_label = (TextInputLayout) findViewById(R.id.cases_tf_label);
         cases_tb_label = (TextInputLayout) findViewById(R.id.cases_tb_label);
+
         cases_linearLayout = (LinearLayout) findViewById(R.id.cases_linearLayout);
 
         casesButton = (Button) findViewById(R.id.casesButton);
@@ -101,6 +102,7 @@ public class CasesActivity extends AppCompatActivity {
 
                     Intent casesIntent = new Intent(CasesActivity.this, MainActivity.class);
                     startActivity(casesIntent);
+                    Toast.makeText(CasesActivity.this, "Cases Form submitted successfully", Toast.LENGTH_LONG).show();
                     finish();
                 }
                 else {

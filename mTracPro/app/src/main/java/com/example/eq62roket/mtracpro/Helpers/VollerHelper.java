@@ -46,7 +46,6 @@ public class VollerHelper {
     private Calendar calendar;
     private String formattedDate;
 
-    private String name, totalReports, facility, district, lastReportingDate, facilityId;
 
     public VollerHelper(Context context){
         mContext = context;
@@ -63,48 +62,8 @@ public class VollerHelper {
 
 
     public void sendData(LinearLayout linearLayout){
-        final ArrayList<JSONObject> collection = new ArrayList<>();
-        final JSONObject mJSONObject = new JSONObject();
-        JSONArray mJSONArray = new JSONArray();
-        String dataSet = "V1kJRs8CtW4";
-        try {
-            mJSONObject.put("dataSet", dataSet);
-            mJSONObject.put("completeDate", formattedDate);
-            mJSONObject.put("period", getCurrentReportingWeek());
-            mJSONObject.put("attributeOptionCombo", "");
-            mJSONObject.put("organUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        for (int i = 0; i < linearLayout.getChildCount(); i++){
-            View view = linearLayout.getChildAt(i);
-            if (view instanceof TextInputLayout){
-                EditText et = ((TextInputLayout) view).getEditText();
-                String id = mContext.getApplicationContext().getResources().getResourceEntryName(et.getId());
-                JSONObject body = new JSONObject();
-                if (et.getText().toString().isEmpty()){
-                    continue;
-                }
-
-                try {
-                    body.put("categoryOptionCombo", mJsonHelper.getJsonValue(id, "categoryOptionCombo"));
-                    body.put("dataElement", mJsonHelper.getJsonValue(id, "dataElement"));
-                    body.put("Value", et.getText().toString());
-                    mJSONArray.put(body);
-                    collection.add(mJSONObject);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        try {
-            mJSONObject.put("dataValues", mJSONArray);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        JSONObject mJSONObject = generateJson(linearLayout);
 
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mJSONObject,
                 new Response.Listener<JSONObject>() {
@@ -134,11 +93,7 @@ public class VollerHelper {
 
         queue.add(postRequest);
 
-        Log.d(TAG, "Collection: " + mJSONObject.toString());
-//        Intent intent = new Intent(mContext, MainActivity.class);
-//        Toast.makeText(mContext, "Cases Report Submitted", Toast.LENGTH_SHORT).show();
-//        mContext.startActivity(intent);
-        //finish();
+        Log.d(TAG, "Collection: " + generateJson(linearLayout).toString());
     }
 
     private String getCurrentReportingWeek(){
@@ -147,5 +102,52 @@ public class VollerHelper {
         String week = String.valueOf(calendar.get(Calendar.WEEK_OF_YEAR));
 
         return year + "W" + week;
+    }
+
+    private JSONObject generateJson(LinearLayout linearLayout){
+        final ArrayList<JSONObject> collection = new ArrayList<>();
+        final JSONObject mJSONObject = new JSONObject();
+        JSONArray mJSONArray = new JSONArray();
+        String dataSet = "V1kJRs8CtW4";
+        try {
+            mJSONObject.put("dataSet", dataSet);
+            mJSONObject.put("completeDate", formattedDate);
+            mJSONObject.put("period", getCurrentReportingWeek());
+            mJSONObject.put("attributeOptionCombo", "");
+            mJSONObject.put("organUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i < linearLayout.getChildCount(); i++){
+            View view = linearLayout.getChildAt(i);
+            if (view instanceof TextInputLayout){
+                EditText et = ((TextInputLayout) view).getEditText();
+                String id = mContext.getApplicationContext().getResources().getResourceEntryName(et.getId());
+                JSONObject body = new JSONObject();
+                if (et.getText().toString().isEmpty()){
+                    continue;
+                }
+                try {
+                    body.put("categoryOptionCombo", mJsonHelper.getJsonValue(id, "categoryOptionCombo"));
+                    body.put("dataElement", mJsonHelper.getJsonValue(id, "dataElement"));
+                    body.put("Value", et.getText().toString());
+                    mJSONArray.put(body);
+                    collection.add(mJSONObject);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        try {
+            mJSONObject.put("dataValues", mJSONArray);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        return mJSONObject;
     }
 }

@@ -12,17 +12,24 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.eq62roket.mtracpro.Helpers.VollerHelper;
 import com.example.eq62roket.mtracpro.R;
 
 
 public class AptActivity extends AppCompatActivity {
+
+    private VollerHelper mVollerHelper;
+
     Animation animShake;
     public Vibrator vib;
     Button aptButton;
     EditText apt_opd_new, apt_opd_total, apt_emtct_expected, apt_emtct_missed;
     TextInputLayout apt_opd_new_label, apt_opd_total_label, apt_emtct_expected_label, apt_emtct_missed_label;
+
+    private LinearLayout apt_linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +37,15 @@ public class AptActivity extends AppCompatActivity {
         setContentView(R.layout.activity_apt);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // setting up VolleyHelper
+        mVollerHelper = new VollerHelper(this);
+
         apt_opd_new_label = (TextInputLayout) findViewById(R.id.apt_opd_new_label);
         apt_opd_total_label = (TextInputLayout) findViewById(R.id.apt_opd_total_label);
         apt_emtct_expected_label = (TextInputLayout) findViewById(R.id.apt_emtct_expected_label);
         apt_emtct_missed_label = (TextInputLayout) findViewById(R.id.apt_emtct_missed_label);
+
+        apt_linearLayout = (LinearLayout) findViewById(R.id.apt_linearLayout);
 
         aptButton = (Button) findViewById(R.id.aptButton);
         aptButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
@@ -84,6 +96,9 @@ public class AptActivity extends AppCompatActivity {
         apt_opd_total_label.setErrorEnabled(false);
         apt_emtct_expected_label.setErrorEnabled(false);
         apt_emtct_missed_label.setErrorEnabled(false);
+
+        mVollerHelper.sendData(apt_linearLayout);
+
         Intent aptIntent = new Intent(AptActivity.this, MainActivity.class);
         startActivity(aptIntent);
         finish();

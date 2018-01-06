@@ -15,9 +15,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.eq62roket.mtracpro.Helpers.VollerHelper;
 import com.example.eq62roket.mtracpro.R;
 
 public class DeathActivity extends AppCompatActivity {
+
+    private VollerHelper mVollerHelper;
+
     Button deathButton;
     EditText death_ma, death_dy, death_sa, death_af, death_ae, death_ab, death_mg, death_ch, death_gw, death_me,
             death_nt, death_vf, death_pl, death_tf, death_yf, death_tb;
@@ -33,6 +37,9 @@ public class DeathActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_death);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // setting up VolleyHelper
+        mVollerHelper = new VollerHelper(this);
 
         death_ma_label = (TextInputLayout) findViewById(R.id.death_ma_label);
         death_dy_label = (TextInputLayout) findViewById(R.id.death_dy_label);
@@ -50,6 +57,8 @@ public class DeathActivity extends AppCompatActivity {
         death_pl_label = (TextInputLayout) findViewById(R.id.death_pl_label);
         death_tf_label = (TextInputLayout) findViewById(R.id.death_tf_label);
         death_tb_label = (TextInputLayout) findViewById(R.id.death_tb_label);
+
+        death_linearLayout = (LinearLayout) findViewById(R.id.death_linearLayout);
 
         deathButton = (Button) findViewById(R.id.deathButton);
         deathButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
@@ -86,9 +95,13 @@ public class DeathActivity extends AppCompatActivity {
                         || !death_nt.getText().toString().equals("") || !death_tf.getText().toString().equals("")
                         || !death_vf.getText().toString().equals("") || !death_pl.getText().toString().equals("")
                         || !death_tb.getText().toString().equals("")) {
+
+                    mVollerHelper.sendData(death_linearLayout);
+
                     Intent deathIntent = new Intent(DeathActivity.this, MainActivity.class);
                     startActivity(deathIntent);
                     finish();
+                    Toast.makeText(DeathActivity.this, "Cases Form submitted successfully", Toast.LENGTH_LONG).show();
                 }
                 else {
                     Toast.makeText(DeathActivity.this, "Please input amount before submitting", Toast.LENGTH_LONG).show();
