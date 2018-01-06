@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (error != null){
                         edPhoneNumber.setText("");
 
-                        Toast.makeText(LoginActivity.this, "An error occured, Try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Network error occured, Try again", Toast.LENGTH_SHORT).show();
                     }
                 }
             }){
@@ -123,6 +123,7 @@ public class LoginActivity extends AppCompatActivity {
             queue.add(getRequest);
 
         }else {
+            edPhoneNumber.setText("");
             Toast.makeText(LoginActivity.this, "Number not valid, Try again", Toast.LENGTH_SHORT).show();
         }
     }
