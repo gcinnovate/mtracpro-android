@@ -77,6 +77,8 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
                 android:id="@+id/arvButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
