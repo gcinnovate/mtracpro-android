@@ -21,24 +21,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AptActivity"
+        <activity
+            android:name=".AptActivity"
             android:label="APT."
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".MatActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MatActivity"
             android:label="MAT."
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".ArvActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ArvActivity"
             android:label="ARV."
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".TraActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TraActivity"
             android:label="TRA."
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".DeathActivity"
+        <activity
+            android:name=".DeathActivity"
             android:label="DEATH."
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".CasesActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CasesActivity"
             android:label="CASES."
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ProfileActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="PROFILE"></activity>
     </application>
 
 </manifest>
