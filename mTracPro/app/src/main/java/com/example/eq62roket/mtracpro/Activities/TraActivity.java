@@ -2,7 +2,6 @@ package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Vibrator;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +14,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.eq62roket.mtracpro.Helpers.VollerHelper;
+import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
 import com.example.eq62roket.mtracpro.R;
 
 public class TraActivity extends AppCompatActivity {
 
-    private VollerHelper mVollerHelper;
+    private VolleyHelper mVolleyHelper;
 
     Button traButton;
     EditText tra_act_tablets, tra_ors_sackets, tra_measles_vaccine, tra_amoxcilline, tra_depo_provera, tra_iv_artesunate,
@@ -39,7 +38,7 @@ public class TraActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // setting up VolleyHelper
-        mVollerHelper = new VollerHelper(this);
+        mVolleyHelper = new VolleyHelper(this);
 
         tra_rdt_malaria_label = (TextInputLayout) findViewById(R.id.tra_rdt_malaria_label);
         tra_fansidar_label = (TextInputLayout) findViewById(R.id.tra_fansidar_label);
@@ -137,7 +136,7 @@ public class TraActivity extends AppCompatActivity {
         tra_fansidar_label.setErrorEnabled(false);
         tra_iv_artesunate_label.setErrorEnabled(false);
 
-        mVollerHelper.sendData(tra_linearLinear);
+        mVolleyHelper.sendData(tra_linearLinear);
 
         Intent aptIntent = new Intent(TraActivity.this, MainActivity.class);
         startActivity(aptIntent);
