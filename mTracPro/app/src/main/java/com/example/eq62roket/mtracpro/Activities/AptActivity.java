@@ -2,7 +2,6 @@ package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Vibrator;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -15,13 +14,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.eq62roket.mtracpro.Helpers.VollerHelper;
+import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
 import com.example.eq62roket.mtracpro.R;
 
 
 public class AptActivity extends AppCompatActivity {
 
-    private VollerHelper mVollerHelper;
+    private VolleyHelper mVolleyHelper;
 
     Animation animShake;
     public Vibrator vib;
@@ -38,7 +37,7 @@ public class AptActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // setting up VolleyHelper
-        mVollerHelper = new VollerHelper(this);
+        mVolleyHelper = new VolleyHelper(this);
 
         apt_opd_new_label = (TextInputLayout) findViewById(R.id.apt_opd_new_label);
         apt_opd_total_label = (TextInputLayout) findViewById(R.id.apt_opd_total_label);
@@ -96,7 +95,7 @@ public class AptActivity extends AppCompatActivity {
         apt_emtct_expected_label.setErrorEnabled(false);
         apt_emtct_missed_label.setErrorEnabled(false);
 
-        mVollerHelper.sendData(apt_linearLayout);
+        mVolleyHelper.sendData(apt_linearLayout);
 
         Intent aptIntent = new Intent(AptActivity.this, MainActivity.class);
         startActivity(aptIntent);
