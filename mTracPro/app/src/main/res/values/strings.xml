@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">mTracPro</string>
+    <string name="app_name">mTracApp</string>
     <string name="err_msg_apt_opd_new_label">Please enter OPD New Attendees</string>
     <string name="err_msg_apt_opd_total_label">Please enter OPD Total Attendance</string>
     <string name="err_msg_apt_emtct_expected_label">Please enter Expected eMTCT Mothers on appt</string>

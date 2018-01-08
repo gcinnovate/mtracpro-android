@@ -1,4 +1,4 @@
-package com.example.eq62roket.mtracpro;
+package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+
+import com.example.eq62roket.mtracpro.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -113,20 +115,6 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -134,12 +122,17 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.logout) {
-            // Handle the camera action
-        }  else if (id == R.id.nav_profile) {
-            Intent profileIntent = new Intent(MainActivity.this, ProfileActivity.class);
-            startActivity(profileIntent);
 
+        if (id == R.id.nav_profile) {
+            // start ProfileActivity
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(intent);
+            finish();
+        } else if (id == R.id.nav_logout) {
+            // start LogoutActivity
+            Intent intent = new Intent(MainActivity.this, LogoutActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

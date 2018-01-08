@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.eq62roket.mtracpro.DeathActivity">
+    tools:context="com.example.eq62roket.mtracpro.Activities.DeathActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,7 +35,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Malaria (Total diagonised"
+                    android:hint="Malaria (Total diagonised)"
+                    android:textSize="22sp"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -54,6 +55,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Dysentery"
+                    android:textSize="22sp"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -72,6 +74,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Severe Acute Respiratory Infection (SARI)"
+                    android:textSize="22sp"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
