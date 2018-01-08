@@ -32,7 +32,7 @@ import java.util.Map;
  * Created by probuse on 1/6/18.
  */
 
-public class VollerHelper {
+public class VolleyHelper {
 
     private static final String TAG = "VolleyHelper";
 
@@ -49,7 +49,7 @@ public class VollerHelper {
     private String formattedDate;
 
 
-    public VollerHelper(Context context){
+    public VolleyHelper(Context context){
         mContext = context;
         mOurSharedPreferences = new OurSharedPreferences(context);
         mJsonHelper = new JsonHelper(context);
