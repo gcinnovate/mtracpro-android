@@ -2,7 +2,6 @@ package com.example.eq62roket.mtracpro;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Vibrator;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -42,7 +41,6 @@ public class MatActivity extends AppCompatActivity {
         mat_suspected_malaria_label = (TextInputLayout) findViewById(R.id.mat_suspected_malaria_label);
 
         matButton = (Button) findViewById(R.id.matButton);
-        matButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
 
         mat_suspected_malaria = (EditText)findViewById(R.id.mat_suspected_malaria);
         mat_rdt_tested = (EditText)findViewById(R.id.mat_rdt_tested);
