@@ -38,7 +38,6 @@ public class TraActivity extends AppCompatActivity {
         tra_act_tablets_label = (TextInputLayout) findViewById(R.id.tra_act_tablets_label);
 
         traButton = (Button) findViewById(R.id.traButton);
-        traButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
 
         tra_act_tablets = (EditText)findViewById(R.id.tra_act_tablets);
         tra_ors_sackets = (EditText)findViewById(R.id.tra_ors_sackets);
