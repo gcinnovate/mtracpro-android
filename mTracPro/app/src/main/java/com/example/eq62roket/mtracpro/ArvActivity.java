@@ -32,7 +32,6 @@ public class ArvActivity extends AppCompatActivity {
         arv_nevirapine_label = (TextInputLayout) findViewById(R.id.arv_nevirapine_label);
 
         arvButton = (Button) findViewById(R.id.arvButton);
-        arvButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
 
         arv_hiv_screening_test_kits = (EditText)findViewById(R.id.arv_hiv_screening_test_kits);
         arv_emtct = (EditText)findViewById(R.id.arv_emtct);
