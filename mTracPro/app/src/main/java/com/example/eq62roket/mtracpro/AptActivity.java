@@ -34,7 +34,6 @@ public class AptActivity extends AppCompatActivity {
         apt_emtct_missed_label = (TextInputLayout) findViewById(R.id.apt_emtct_missed_label);
 
         aptButton = (Button) findViewById(R.id.aptButton);
-        aptButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
         apt_opd_new = (EditText)findViewById(R.id.apt_opd_new);
         apt_opd_total = (EditText)findViewById(R.id.apt_opd_total);
         apt_emtct_expected = (EditText)findViewById(R.id.apt_emtct_expected);
