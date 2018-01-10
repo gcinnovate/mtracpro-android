@@ -136,7 +136,7 @@ public class TraActivity extends AppCompatActivity {
         tra_fansidar_label.setErrorEnabled(false);
         tra_iv_artesunate_label.setErrorEnabled(false);
 
-        mVolleyHelper.sendData(tra_linearLinear);
+        mVolleyHelper.sendData(tra_linearLinear, "tra");
 
         Intent aptIntent = new Intent(TraActivity.this, MainActivity.class);
         startActivity(aptIntent);

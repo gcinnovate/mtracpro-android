@@ -37,8 +37,8 @@ public class VolleyHelper {
     private static final String TAG = "VolleyHelper";
 
     // TODO: 1/5/18 - > add week and year to url
-    private static final String url = "http://dispatcher2d.gcinnovate.com/queue?username=admin&password=admin&source=mTracPro_android&destination=dhis2&report_type=cases";
-
+    private static final String url = "http://dispatcher2d.gcinnovate.com/queue?username=admin&password=admin&source=mTracPro_android&destination=dhis2";
+    private static final String REPORTING_WEEK_URI = "http://mtracpro.gcinnovate.com/api/v1/reportingweek";
 
     private Context mContext;
     private OurSharedPreferences mOurSharedPreferences;
@@ -63,7 +63,7 @@ public class VolleyHelper {
     }
 
 
-    public int sendData(LinearLayout linearLayout){
+    public int sendData(LinearLayout linearLayout, final String form){
 
         JSONObject mJSONObject = generateJson(linearLayout);
         try {
@@ -75,8 +75,14 @@ public class VolleyHelper {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        final String facility = mOurSharedPreferences.getSharedPreference("facilityId");
+        final String district = mOurSharedPreferences.getSharedPreference("district");
+        final String msisdn = mOurSharedPreferences.getSharedPreference("phoneNumber");
+        String extra_params = "&report_type=" + form + "&district=" + district
+                + "&facility=" + facility + "&msisdn=" + msisdn;
 
-        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mJSONObject,
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST,
+                url + extra_params, mJSONObject,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -116,7 +122,44 @@ public class VolleyHelper {
         return year + "W" + week;
     }
 
+    private void setCurrentReportingWeek(){
+        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET,
+                REPORTING_WEEK_URI, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            mOurSharedPreferences.writeSharedPreference(
+                                    "period", response.get("period").toString());
+                            Log.i("ZZZZZZZZZZ", mOurSharedPreferences.getSharedPreference("period"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        mOurSharedPreferences.writeSharedPreference(
+                                "period", getCurrentReportingWeek()); /* fix getCurrentReportingWeek*/
+                        Log.i("ZZZZZZZZZZ", ""+ error.toString());
+                    }
+                }) {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Content-Type", "application/json; charset=utf-8");
+                    return headers;
+                }
+        };
+        queue.add(getRequest);
+    }
+
+
+
     private JSONObject generateJson(LinearLayout linearLayout){
+        setCurrentReportingWeek();
         final ArrayList<JSONObject> collection = new ArrayList<>();
         final JSONObject mJSONObject = new JSONObject();
         JSONArray mJSONArray = new JSONArray();
@@ -124,9 +167,10 @@ public class VolleyHelper {
         try {
             mJSONObject.put("dataSet", dataSet);
             mJSONObject.put("completeDate", formattedDate);
-            mJSONObject.put("period", getCurrentReportingWeek());
+            mJSONObject.put("period", mOurSharedPreferences.getSharedPreference("period"));
+            Log.i("XXXXXXXXXX", "period=" + mJSONObject.getString("period"));
             mJSONObject.put("attributeOptionCombo", "");
-            mJSONObject.put("organUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
+            mJSONObject.put("orgUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -144,7 +188,7 @@ public class VolleyHelper {
                 try {
                     body.put("categoryOptionCombo", mJsonHelper.getJsonValue(id, "categoryOptionCombo"));
                     body.put("dataElement", mJsonHelper.getJsonValue(id, "dataElement"));
-                    body.put("Value", et.getText().toString());
+                    body.put("value", et.getText().toString());
                     mJSONArray.put(body);
                     collection.add(mJSONObject);
 

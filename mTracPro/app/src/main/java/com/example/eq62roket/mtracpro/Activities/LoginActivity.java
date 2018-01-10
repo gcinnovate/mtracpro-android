@@ -26,10 +26,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class LoginActivity extends AppCompatActivity {
 
     private final static String TAG = "LoginActivity";
-    private final String url = "http://10.150.222.117:8080/api/v1/reporter";
+    // private final String url = "http://10.150.222.117:8080/api/v1/reporter";
+    private final String url = "http://mtracpro.gcinnovate.com/api/v1/reporter/";
 
     private RequestQueue queue;
     private OurSharedPreferences mOurSharedPreferences;
@@ -69,10 +71,11 @@ public class LoginActivity extends AppCompatActivity {
     private void login(){
 
         if ( !edPhoneNumber.getText().toString().equals("") &&
-                edPhoneNumber.getText().length() == 10 &&
-                edPhoneNumber.getText().toString().startsWith("07")){
+                edPhoneNumber.getText().length() == 12 &&
+                edPhoneNumber.getText().toString().startsWith("256")){
 
-            JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+            JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET,
+                    url + edPhoneNumber.getText().toString(), null,
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {

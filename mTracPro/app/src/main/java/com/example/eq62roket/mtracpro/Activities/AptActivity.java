@@ -95,7 +95,7 @@ public class AptActivity extends AppCompatActivity {
         apt_emtct_expected_label.setErrorEnabled(false);
         apt_emtct_missed_label.setErrorEnabled(false);
 
-        mVolleyHelper.sendData(apt_linearLayout);
+        mVolleyHelper.sendData(apt_linearLayout, "apt");
 
         Intent aptIntent = new Intent(AptActivity.this, MainActivity.class);
         startActivity(aptIntent);

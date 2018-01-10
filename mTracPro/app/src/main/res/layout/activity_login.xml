@@ -31,7 +31,7 @@
                 android:inputType="phone"
                 android:gravity="center_horizontal"
                 android:hint="Enter Number Here"
-                android:maxLength="10"
+                android:maxLength="12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

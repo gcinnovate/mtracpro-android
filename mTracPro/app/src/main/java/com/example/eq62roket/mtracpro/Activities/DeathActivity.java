@@ -33,7 +33,7 @@ public class DeathActivity extends AppCompatActivity {
         deathButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int ret = mVolleyHelper.sendData(death_linearLayout);
+                int ret = mVolleyHelper.sendData(death_linearLayout, "death");
                 if (ret == 0){
                     Intent deathIntent = new Intent(DeathActivity.this, MainActivity.class);
                     startActivity(deathIntent);
