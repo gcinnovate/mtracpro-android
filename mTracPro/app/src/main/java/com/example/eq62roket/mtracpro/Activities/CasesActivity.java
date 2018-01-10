@@ -34,7 +34,7 @@ public class CasesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-            int ret = mVolleyHelper.sendData(cases_linearLayout);
+            int ret = mVolleyHelper.sendData(cases_linearLayout, "cases");
             if (ret == 0){
                 Intent deathIntent = new Intent(CasesActivity.this, MainActivity.class);
                 startActivity(deathIntent);
