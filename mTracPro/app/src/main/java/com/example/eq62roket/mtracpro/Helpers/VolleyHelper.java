@@ -1,7 +1,6 @@
 package com.example.eq62roket.mtracpro.Helpers;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.util.Log;
 import android.view.View;
@@ -126,7 +125,7 @@ public class VolleyHelper {
             mJSONObject.put("completeDate", formattedDate);
             mJSONObject.put("period", getCurrentReportingWeek());
             mJSONObject.put("attributeOptionCombo", "");
-            mJSONObject.put("organUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
+            mJSONObject.put("orgUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -144,7 +143,7 @@ public class VolleyHelper {
                 try {
                     body.put("categoryOptionCombo", mJsonHelper.getJsonValue(id, "categoryOptionCombo"));
                     body.put("dataElement", mJsonHelper.getJsonValue(id, "dataElement"));
-                    body.put("Value", et.getText().toString());
+                    body.put("value", et.getText().toString());
                     mJSONArray.put(body);
                     collection.add(mJSONObject);
 
@@ -159,7 +158,7 @@ public class VolleyHelper {
             e.printStackTrace();
         }
 
-
+        Log.d(TAG, "mJSONObject:======> " + mJSONObject);
         return mJSONObject;
     }
 }
