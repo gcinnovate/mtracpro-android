@@ -2,6 +2,7 @@ package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -10,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.example.eq62roket.mtracpro.R;
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent aptIntent = new Intent(MainActivity.this, AptActivity.class);
                 startActivity(aptIntent);
-                finish();
 
             }
         });
@@ -48,7 +47,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent arvIntent = new Intent(MainActivity.this, ArvActivity.class);
                 startActivity(arvIntent);
-                finish();
 
             }
         });
@@ -58,7 +56,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent matIntent = new Intent(MainActivity.this, MatActivity.class);
                 startActivity(matIntent);
-                finish();
 
             }
         });
@@ -68,7 +65,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent casesIntent = new Intent(MainActivity.this, CasesActivity.class);
                 startActivity(casesIntent);
-                finish();
 
             }
         });
@@ -78,7 +74,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent deathIntent = new Intent(MainActivity.this, DeathActivity.class);
                 startActivity(deathIntent);
-                finish();
 
             }
         });
@@ -88,7 +83,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent traIntent = new Intent(MainActivity.this, TraActivity.class);
                 startActivity(traIntent);
-                finish();
 
             }
         });
@@ -128,16 +122,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+
         if (id == R.id.nav_profile) {
             // start ProfileActivity
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
             startActivity(intent);
-            finish();
         } else if (id == R.id.nav_logout) {
             // start LogoutActivity
             Intent intent = new Intent(MainActivity.this, LogoutActivity.class);
             startActivity(intent);
-            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

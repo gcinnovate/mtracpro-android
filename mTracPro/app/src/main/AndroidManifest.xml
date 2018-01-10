@@ -17,6 +17,35 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+<!--<<<<<<< HEAD-->
+            <!--android:name=".AptActivity"-->
+            <!--android:label="APT."-->
+            <!--android:parentActivityName=".MainActivity" />-->
+        <!--<activity-->
+            <!--android:name=".MatActivity"-->
+            <!--android:label="MAT."-->
+            <!--android:parentActivityName=".MainActivity" />-->
+        <!--<activity-->
+            <!--android:name=".ArvActivity"-->
+            <!--android:label="ARV."-->
+            <!--android:parentActivityName=".MainActivity" />-->
+        <!--<activity-->
+            <!--android:name=".TraActivity"-->
+            <!--android:label="TRA."-->
+            <!--android:parentActivityName=".MainActivity" />-->
+        <!--<activity-->
+            <!--android:name=".DeathActivity"-->
+            <!--android:label="DEATH."-->
+            <!--android:parentActivityName=".MainActivity" />-->
+        <!--<activity-->
+            <!--android:name=".CasesActivity"-->
+            <!--android:label="CASES."-->
+            <!--android:parentActivityName=".MainActivity" />-->
+        <!--<activity android:name=".ProfileActivity"-->
+            <!--android:parentActivityName=".MainActivity"-->
+            <!--android:label="PROFILE"></activity>-->
+<!--=======-->
         <activity
             android:name=".Activities.AptActivity"
             android:label="APT."
@@ -57,6 +86,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+>>>>>>> origin/master
     </application>
 
 </manifest>

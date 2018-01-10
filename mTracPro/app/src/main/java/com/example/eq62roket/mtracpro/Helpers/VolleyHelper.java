@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -30,7 +31,7 @@ import java.util.Map;
  * Created by probuse on 1/6/18.
  */
 
-public class VollerHelper {
+public class VolleyHelper {
 
     private static final String TAG = "VolleyHelper";
 
@@ -47,7 +48,7 @@ public class VollerHelper {
     private String formattedDate;
 
 
-    public VollerHelper(Context context){
+    public VolleyHelper(Context context){
         mContext = context;
         mOurSharedPreferences = new OurSharedPreferences(context);
         mJsonHelper = new JsonHelper(context);
@@ -61,21 +62,31 @@ public class VollerHelper {
     }
 
 
-    public void sendData(LinearLayout linearLayout){
+    public int sendData(LinearLayout linearLayout){
 
         JSONObject mJSONObject = generateJson(linearLayout);
+        try {
+            Log.i("Info===>", mJSONObject.get("dataValues").toString());
+            if (mJSONObject.get("dataValues").toString().equals("[]")) {
+                Toast.makeText(mContext, "Please enter at least one value", Toast.LENGTH_SHORT).show();
+                return -1;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mJSONObject,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
 
+                        Toast.makeText(mContext, "Report submitted successfully.", Toast.LENGTH_LONG).show();
                         Log.d(TAG, "onResponse: " + response);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(mContext, "Failed to submit data", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "onErrorResponse: " + error.toString());
             }
         }){
@@ -93,7 +104,7 @@ public class VollerHelper {
 
         queue.add(postRequest);
 
-        Log.d(TAG, "Collection: " + generateJson(linearLayout).toString());
+        return 0;
     }
 
     private String getCurrentReportingWeek(){
@@ -114,7 +125,7 @@ public class VollerHelper {
             mJSONObject.put("completeDate", formattedDate);
             mJSONObject.put("period", getCurrentReportingWeek());
             mJSONObject.put("attributeOptionCombo", "");
-            mJSONObject.put("organUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
+            mJSONObject.put("orgUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -132,7 +143,7 @@ public class VollerHelper {
                 try {
                     body.put("categoryOptionCombo", mJsonHelper.getJsonValue(id, "categoryOptionCombo"));
                     body.put("dataElement", mJsonHelper.getJsonValue(id, "dataElement"));
-                    body.put("Value", et.getText().toString());
+                    body.put("value", et.getText().toString());
                     mJSONArray.put(body);
                     collection.add(mJSONObject);
 
@@ -147,7 +158,7 @@ public class VollerHelper {
             e.printStackTrace();
         }
 
-
+        Log.d(TAG, "mJSONObject:======> " + mJSONObject);
         return mJSONObject;
     }
 }

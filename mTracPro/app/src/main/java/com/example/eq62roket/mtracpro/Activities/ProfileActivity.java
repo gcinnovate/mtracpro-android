@@ -25,7 +25,7 @@ import java.util.Map;
 public class ProfileActivity extends AppCompatActivity {
 
     private final static String TAG = "HomeActivity";
-    private final String url = "http://192.168.0.101:8080/api/v1/reporter";
+    private final String url = "http://192.168.0.100:8080/api/v1/reporter";
     // dispatcher2d.gcinnovate.com/queue?username=admin&password=admin  expects our json
 
     private RelativeLayout cases_relative_layout;

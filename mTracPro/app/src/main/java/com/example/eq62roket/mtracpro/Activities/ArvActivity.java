@@ -2,7 +2,6 @@ package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Vibrator;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +14,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.eq62roket.mtracpro.Helpers.VollerHelper;
+import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
 import com.example.eq62roket.mtracpro.R;
 
 public class ArvActivity extends AppCompatActivity {
 
-    private VollerHelper mVollerHelper;
+    private VolleyHelper mVolleyHelper;
 
     Animation animShake;
     public Vibrator vib;
@@ -37,7 +36,7 @@ public class ArvActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // setting up VolleyHelper
-        mVollerHelper = new VollerHelper(this);
+        mVolleyHelper = new VolleyHelper(this);
 
         arv_hiv_screening_test_kits_label = (TextInputLayout) findViewById(R.id.arv_hiv_screening_test_kits_label);
         arv_emtct_label = (TextInputLayout) findViewById(R.id.arv_emtct_label);
@@ -46,7 +45,6 @@ public class ArvActivity extends AppCompatActivity {
         arv_linearLayout = (LinearLayout) findViewById(R.id.arv_linearLayout);
 
         arvButton = (Button) findViewById(R.id.arvButton);
-        arvButton.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
 
         arv_hiv_screening_test_kits = (EditText)findViewById(R.id.arv_hiv_screening_test_kits);
         arv_emtct = (EditText)findViewById(R.id.arv_emtct);
@@ -90,7 +88,7 @@ public class ArvActivity extends AppCompatActivity {
         arv_emtct_label.setErrorEnabled(false);
         arv_nevirapine_label.setErrorEnabled(false);
 
-        mVollerHelper.sendData(arv_linearLayout);
+        mVolleyHelper.sendData(arv_linearLayout);
 
         Intent aptIntent = new Intent(ArvActivity.this, MainActivity.class);
         startActivity(aptIntent);

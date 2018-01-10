@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,64 +8,199 @@
     tools:context="com.example.eq62roket.mtracpro.Activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <ImageView
-        android:id="@+id/imageCases"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="44dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="31dp"
-        app:srcCompat="@drawable/cases"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <LinearLayout
+        android:layout_margin="50dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageDeath"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="23dp"
-        android:layout_marginStart="23dp"
-        app:srcCompat="@drawable/death"
-        android:layout_alignTop="@+id/imageCases"
-        android:layout_toRightOf="@+id/imageCases"
-        android:layout_toEndOf="@+id/imageCases" />
 
-    <ImageView
-        android:id="@+id/imageApt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        app:srcCompat="@drawable/apt"
-        android:layout_below="@+id/imageCases"
-        android:layout_alignLeft="@+id/imageCases"
-        android:layout_alignStart="@+id/imageCases" />
+        <LinearLayout
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-    <ImageView
-        android:id="@+id/imageMat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/mat"
-        android:layout_alignTop="@+id/imageApt"
-        android:layout_alignLeft="@+id/imageDeath"
-        android:layout_alignStart="@+id/imageDeath" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageTra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/tra"
-        android:layout_below="@+id/imageApt"
-        android:layout_alignLeft="@+id/imageApt"
-        android:layout_alignStart="@+id/imageApt"
-        android:layout_marginTop="31dp" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="10dip"
+                    android:layout_height="fill_parent">
 
-    <ImageView
-        android:id="@+id/imageArv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageMat"
-        android:layout_alignStart="@+id/imageMat"
-        android:layout_alignTop="@+id/imageTra"
-        app:srcCompat="@drawable/arv" />
-</RelativeLayout>
+                    <ImageView
+                        android:id="@+id/imageCases"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/cases"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center"
+                        android:text="CASES."
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="10dip"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/imageDeath"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/death"
+                        android:layout_width="fill_parent"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center"
+                        android:text="DEATH."
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="10dip"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/imageApt"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/apt"
+                        android:layout_width="fill_parent"
+                        android:layout_gravity="center" />
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center"
+                        android:text="APT."
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="10dip"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/imageMat"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/mat"
+                        android:layout_width="fill_parent"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center"
+                        android:text="MAT."
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="10dip"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/imageTra"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tra"
+                        android:layout_width="fill_parent"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center"
+                        android:text="TRA."
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="10dip"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/imageArv"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/arv"
+                        android:layout_width="fill_parent"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center"
+                        android:text="ARV."
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

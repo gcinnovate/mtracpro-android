@@ -209,6 +209,8 @@
 
 
             <Button
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
                 android:id="@+id/matButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
