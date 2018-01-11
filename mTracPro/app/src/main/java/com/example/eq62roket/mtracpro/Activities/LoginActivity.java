@@ -39,7 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edPhoneNumber;
     private Button btnLogin;
 
-    private String phoneNumber;
+    private String phoneNumber, name, totalReports, facility, district, lastReportingDate, facilityId;
+    ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,12 +82,28 @@ public class LoginActivity extends AppCompatActivity {
                         public void onResponse(JSONObject response) {
                             try {
                                 // Grab Phone number from json
-                                 phoneNumber = response.get("phoneNumber").toString();
+                                phoneNumber = response.get("phoneNumber").toString();
+                                name = response.get("name").toString();
+                                facility = response.get("facility").toString();
+                                facilityId = response.get("facilityId").toString();
+                                district = response.get("district").toString();
+                                lastReportingDate = response.get("lastReportingDate").toString();
+                                totalReports = response.get("totalReports").toString();
 
                                 if (edPhoneNumber.getText().toString().equals(phoneNumber)){
-                                    // add phone number to shared preference and set user as loggedIn
+                                    Log.d(TAG, "We are breathing ");
+
+                                    /**
+                                     * add values to shared preference and set user as loggedIn
+                                     * */
                                     mOurSharedPreferences.writeSharedPreference("phoneNumber", phoneNumber);
                                     mOurSharedPreferences.writeSharedPreference("loggedIn", "loggedIn");
+                                    mOurSharedPreferences.writeSharedPreference("name", name);
+                                    mOurSharedPreferences.writeSharedPreference("facility", facility);
+                                    mOurSharedPreferences.writeSharedPreference("facilityId", facilityId);
+                                    mOurSharedPreferences.writeSharedPreference("district", district);
+                                    mOurSharedPreferences.writeSharedPreference("lastReportDate", lastReportingDate);
+                                    mOurSharedPreferences.writeSharedPreference("totalReports", totalReports);
 
                                     //start Main Activity
                                     startMainActivity();
