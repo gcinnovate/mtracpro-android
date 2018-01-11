@@ -1,7 +1,6 @@
 package com.example.eq62roket.mtracpro.Helpers;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.util.Log;
 import android.view.View;
@@ -37,8 +36,8 @@ public class VolleyHelper {
     private static final String TAG = "VolleyHelper";
 
     // TODO: 1/5/18 - > add week and year to url
-    private static final String url = "http://dispatcher2d.gcinnovate.com/queue?username=admin&password=admin&source=mTracPro_android&destination=dhis2&report_type=cases";
-
+    private static final String url = "http://dispatcher2d.gcinnovate.com/queue?username=admin&password=admin&source=mTracPro_android&destination=dhis2";
+    private static final String REPORTING_WEEK_URI = "http://mtracpro.gcinnovate.com/api/v1/reportingweek";
 
     private Context mContext;
     private OurSharedPreferences mOurSharedPreferences;
@@ -63,20 +62,29 @@ public class VolleyHelper {
     }
 
 
-    public int sendData(LinearLayout linearLayout){
+    public int sendData(LinearLayout linearLayout, final String form){
 
-        JSONObject mJSONObject = generateJson(linearLayout);
+        JSONObject [] mJSONObject = generateJson(linearLayout);
+        String msg = "";
         try {
-            Log.i("Info===>", mJSONObject.get("dataValues").toString());
-            if (mJSONObject.get("dataValues").toString().equals("[]")) {
+            Log.i("Info===>", mJSONObject[0].get("dataValues").toString());
+            msg = mJSONObject[1].getString("rawMsg");
+
+            if (mJSONObject[0].get("dataValues").toString().equals("[]")) {
                 Toast.makeText(mContext, "Please enter at least one value", Toast.LENGTH_SHORT).show();
                 return -1;
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        final String facility = mOurSharedPreferences.getSharedPreference("facilityId");
+        final String district = mOurSharedPreferences.getSharedPreference("district");
+        final String msisdn = mOurSharedPreferences.getSharedPreference("phoneNumber");
+        String extra_params = "&report_type=" + form + "&district=" + district
+                + "&facility=" + facility + "&msisdn=" + msisdn + "&raw_msg=" + msg;
 
-        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mJSONObject,
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST,
+                url + extra_params, mJSONObject[0],
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -116,35 +124,100 @@ public class VolleyHelper {
         return year + "W" + week;
     }
 
-    private JSONObject generateJson(LinearLayout linearLayout){
+    private void setCurrentReportingWeek(){
+        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET,
+                REPORTING_WEEK_URI, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            mOurSharedPreferences.writeSharedPreference(
+                                    "period", response.get("period").toString());
+                            Log.i("Reporting Week", mOurSharedPreferences.getSharedPreference("period"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        mOurSharedPreferences.writeSharedPreference(
+                                "period", getCurrentReportingWeek()); /* fix getCurrentReportingWeek*/
+                        Log.i("Error getting Period", ""+ error.toString());
+                    }
+                }) {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Content-Type", "application/json; charset=utf-8");
+                    return headers;
+                }
+        };
+        queue.add(getRequest);
+    }
+
+
+
+    private JSONObject [] generateJson(LinearLayout linearLayout){
+        JSONObject [] ret = new JSONObject[2];
+        setCurrentReportingWeek();
         final ArrayList<JSONObject> collection = new ArrayList<>();
         final JSONObject mJSONObject = new JSONObject();
+        final JSONObject rawMsgObj = new JSONObject();
         JSONArray mJSONArray = new JSONArray();
         String dataSet = "V1kJRs8CtW4";
         try {
             mJSONObject.put("dataSet", dataSet);
             mJSONObject.put("completeDate", formattedDate);
-            mJSONObject.put("period", getCurrentReportingWeek());
+            mJSONObject.put("period", mOurSharedPreferences.getSharedPreference("period"));
+            Log.i("Reporting Week", "period=" + mJSONObject.getString("period"));
             mJSONObject.put("attributeOptionCombo", "");
-            mJSONObject.put("organUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
+            mJSONObject.put("orgUnit", mOurSharedPreferences.getSharedPreference("facilityId"));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+        String rawMsg = "";
         for (int i = 0; i < linearLayout.getChildCount(); i++){
             View view = linearLayout.getChildAt(i);
             if (view instanceof TextInputLayout){
                 EditText et = ((TextInputLayout) view).getEditText();
                 String id = mContext.getApplicationContext().getResources().getResourceEntryName(et.getId());
+                String [] kwAndCommand = id.split("_", 2);
+                String keyword = kwAndCommand[0];
+                String command = kwAndCommand[1];
+
+
                 JSONObject body = new JSONObject();
                 if (et.getText().toString().isEmpty()){
                     continue;
                 }
+
+                /* Try and build raw message*/
+                if (keyword.equals("cases") || keyword.equals("death")){
+                    if (rawMsg.isEmpty()){
+                        rawMsg += keyword + "." + command + "." + et.getText().toString();
+                    } else {
+                        rawMsg += "." + command + "." + et.getText().toString();
+                    }
+
+                } else {
+                    if (rawMsg.isEmpty()){
+                        rawMsg += keyword + "." + et.getText().toString();
+                    }
+                    else {
+                        rawMsg += "." + et.getText().toString();
+
+                    }
+
+                }
+                /* End build raw message */
                 try {
                     body.put("categoryOptionCombo", mJsonHelper.getJsonValue(id, "categoryOptionCombo"));
                     body.put("dataElement", mJsonHelper.getJsonValue(id, "dataElement"));
-                    body.put("Value", et.getText().toString());
+                    body.put("value", et.getText().toString());
                     mJSONArray.put(body);
                     collection.add(mJSONObject);
 
@@ -153,13 +226,17 @@ public class VolleyHelper {
                 }
             }
         }
+        Log.i("RAW MESSAGE:", rawMsg);
+
         try {
+            rawMsgObj.put("rawMsg", rawMsg); /* Lets put in the rawMsg here*/
+            ret[1] = rawMsgObj;
             mJSONObject.put("dataValues", mJSONArray);
+            ret[0] = mJSONObject;
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-
-        return mJSONObject;
+        return ret;
     }
 }

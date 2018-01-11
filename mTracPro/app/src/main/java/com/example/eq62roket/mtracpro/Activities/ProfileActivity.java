@@ -26,6 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private final static String TAG = "HomeActivity";
     private final String url = "http://192.168.0.101:8080/api/v1/reporter";
+    private final String REPORTER_API_URI = "http://mtracpro.gcinnovate.com/api/v1/reporter/";
     // dispatcher2d.gcinnovate.com/queue?username=admin&password=admin  expects our json
 
     private RelativeLayout cases_relative_layout;
@@ -66,8 +67,10 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void setUserProfile(){
+        final String reporterUri = REPORTER_API_URI + mOurSharedPreferences.getSharedPreference("phoneNumber");
         // get profile info
-        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET,
+                reporterUri, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {

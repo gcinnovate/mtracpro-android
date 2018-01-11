@@ -154,7 +154,7 @@ public class MatActivity extends AppCompatActivity {
         mat_microscopy_pos_treated_label.setErrorEnabled(false);
         mat_rdt_neg_treated_label.setErrorEnabled(false);
 
-        mVolleyHelper.sendData(mat_linearLayout);
+        mVolleyHelper.sendData(mat_linearLayout, "mat");
 
         Intent aptIntent = new Intent(MatActivity.this, MainActivity.class);
         startActivity(aptIntent);

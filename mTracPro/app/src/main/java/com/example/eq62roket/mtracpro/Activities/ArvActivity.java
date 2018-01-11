@@ -88,7 +88,7 @@ public class ArvActivity extends AppCompatActivity {
         arv_emtct_label.setErrorEnabled(false);
         arv_nevirapine_label.setErrorEnabled(false);
 
-        mVolleyHelper.sendData(arv_linearLayout);
+        mVolleyHelper.sendData(arv_linearLayout, "arv");
 
         Intent aptIntent = new Intent(ArvActivity.this, MainActivity.class);
         startActivity(aptIntent);
