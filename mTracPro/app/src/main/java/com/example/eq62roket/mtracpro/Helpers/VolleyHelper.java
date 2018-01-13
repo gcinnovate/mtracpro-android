@@ -1,7 +1,6 @@
 package com.example.eq62roket.mtracpro.Helpers;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.util.Log;
 import android.view.View;
