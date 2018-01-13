@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class BackgroundTask {
     Context context;
     ArrayList<History> arrayList = new ArrayList<>();
-    String json_url = "http://192.168.42.7/history.php";
+    String json_url = "http://192.168.1.147/history.php";
 
     public BackgroundTask(Context context){
         this.context = context;
