@@ -93,4 +93,11 @@
     <string name="Fansidar">Fansidar</string>
     <string name="RDT">RDT (Malaria)</string>
 
+    <string name="EnterNumberHere">Enter Number Here</string>
+
+    <string name="mTracApp">mTracApp</string>
+    <string name="slogan">Information For Better Health</string>
+    <string name="log">mTracApp Logo</string>
+
+
 </resources>
