@@ -6,7 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.eq62roket.mtracpro.Activities.History;
+import com.example.eq62roket.mtracpro.Activities.HistoryActivity;
+import com.example.eq62roket.mtracpro.Helpers.History;
 import com.example.eq62roket.mtracpro.R;
 
 import java.util.ArrayList;
@@ -15,26 +16,28 @@ import java.util.ArrayList;
  * Created by eq62roket on 1/11/18.
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.HistoryViewHolder>{
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+    private ArrayList<History> arrayList;
 
-    ArrayList<History> arrayList = new ArrayList<>();
-
-    public RecyclerAdapter(ArrayList<History> arrayList){
+    public RecyclerAdapter(ArrayList<History> arrayList, HistoryActivity historyActivity) {
         this.arrayList = arrayList;
     }
+
     @Override
-    public HistoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item,parent,false);
-        HistoryViewHolder historyViewHolder = new HistoryViewHolder(view);
-        return historyViewHolder;
+    public RecyclerAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.row_item, parent, false);
+
+        return new RecyclerAdapter.MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(HistoryViewHolder holder, int position) {
-        holder.Id.setText(arrayList.get(position).getId());
-        holder.RawMsg.setText(arrayList.get(position).getRawMsg());
-        holder.Detail.setText(arrayList.get(position).getDetail());
-        holder.Date.setText(arrayList.get(position).getDate());
+    public void onBindViewHolder(RecyclerAdapter.MyViewHolder holder, int position) {
+        History history = arrayList.get(position);
+        holder.Id.setText(history.getId());
+        holder.RawMsg.setText(history.getRawMsg());
+        holder.Detail.setText(history.getDetail());
+        holder.Date.setText(history.getDate());
     }
 
     @Override
@@ -42,14 +45,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Histor
         return arrayList.size();
     }
 
-    public static class HistoryViewHolder extends RecyclerView.ViewHolder{
-        TextView Id, RawMsg, Detail, Date;
-        public HistoryViewHolder(View itemView) {
-            super(itemView);
-//            Id = (TextView)itemView.findViewById(R.id.id);
-//            RawMsg = (TextView)itemView.findViewById(R.id.rawMsg);
-//            Detail = (TextView)itemView.findViewById(R.id.details);
-//            Date = (TextView)itemView.findViewById(R.id.date);
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView Id, RawMsg, Detail, Date;
+
+        public MyViewHolder(View view) {
+            super(view);
+            Id = (TextView) view.findViewById(R.id.id);
+            RawMsg = (TextView) view.findViewById(R.id.rawMsg);
+            Detail = (TextView) view.findViewById(R.id.detail);
+            Date = (TextView) view.findViewById(R.id.date);
         }
     }
 }
