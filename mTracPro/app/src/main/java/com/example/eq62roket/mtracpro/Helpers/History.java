@@ -1,18 +1,27 @@
-package com.example.eq62roket.mtracpro.Activities;
+package com.example.eq62roket.mtracpro.Helpers;
 
 /**
  * Created by eq62roket on 1/11/18.
  */
 
 public class History {
-    private String RawMsg, Detail, Date;
+    private String Id, RawMsg, Detail, Date;
 
-    public History( String RawMsg, String Detail, String Date){
+    public History( String Id, String RawMsg, String Detail, String Date){
+        this.setId(Id);
         this.setRawMsg(RawMsg);
         this.setDetail(Detail);
         this.setDate(Date);
     }
 
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
 
     public String getRawMsg() {
         return RawMsg;
