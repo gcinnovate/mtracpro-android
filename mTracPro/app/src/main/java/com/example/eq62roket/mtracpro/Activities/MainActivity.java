@@ -108,12 +108,12 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -127,7 +127,13 @@ public class MainActivity extends AppCompatActivity
             // start ProfileActivity
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_logout) {
+
+        }else if (id == R.id.nav_history){
+            Intent HistoryIntent = new Intent(MainActivity.this, HistoryActivity.class);
+            startActivity(HistoryIntent);
+
+        }
+        else if (id == R.id.nav_logout) {
             // start LogoutActivity
             Intent intent = new Intent(MainActivity.this, LogoutActivity.class);
             startActivity(intent);

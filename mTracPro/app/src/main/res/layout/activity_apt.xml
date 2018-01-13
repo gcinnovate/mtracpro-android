@@ -9,9 +9,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="16dp"
         android:id="@+id/scrollView2">
 
@@ -28,7 +25,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/apt_opd_new_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:paddingTop="8dp"
@@ -37,7 +33,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="OPD New Attendees"
+                    android:textSize="22sp"
+                    android:hint="@string/OPDNewAttendees"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -48,14 +45,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/apt_opd_total_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:id="@+id/apt_opd_total"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="OPD Total Attendance"
+                    android:textSize="22sp"
+                    android:hint="@string/OPDTotalAttendance"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -65,14 +62,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/apt_emtct_expected_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:id="@+id/apt_emtct_expected"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Expected eMTCT Mothers on appt"
+                    android:textSize="22sp"
+                    android:hint="@string/ExpectedeMTCTMothersOnAppt"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -82,7 +79,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/apt_emtct_missed_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -90,7 +86,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="eMTCT Missed appointments"
+                    android:textSize="22sp"
+                    android:hint="@string/eMTCTMissedAppointments"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -103,8 +100,7 @@
                 android:id="@+id/aptButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Submit" />
+                android:text="@string/submit" />
         </LinearLayout>
     </ScrollView>
 

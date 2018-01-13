@@ -9,9 +9,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:id="@+id/scrollView2">
 
@@ -28,14 +25,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/arv_hiv_screening_test_kits_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:id="@+id/arv_hiv_screening_test_kits"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="HIV Screening Test Kits"
+                    android:textSize="22sp"
+                    android:hint="@string/HIVScreeningTestKits"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -46,14 +43,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/arv_emtct_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:id="@+id/arv_emtct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="ARVs (Fixed - DC eMTCT)"
+                    android:textSize="22sp"
+                    android:hint="@string/ARVs"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -63,7 +60,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/arv_nevirapine_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -71,7 +67,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Nevirapine Therapy"
+                    android:textSize="22sp"
+                    android:hint="@string/NevirapineTherapy"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -83,8 +80,7 @@
                 android:id="@+id/arvButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Submit" />
+                android:text="@string/submit" />
         </LinearLayout>
     </ScrollView>
 </ScrollView>
