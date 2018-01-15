@@ -67,7 +67,6 @@ public class VolleyHelper {
         JSONObject [] mJSONObject = generateJson(linearLayout);
         String msg = "";
         try {
-            Log.i("Info===>", mJSONObject[0].get("dataValues").toString());
             msg = mJSONObject[1].getString("rawMsg");
 
             if (mJSONObject[0].get("dataValues").toString().equals("[]")) {
@@ -77,11 +76,18 @@ public class VolleyHelper {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        /*addGetParamsToUrl */
         final String facility = mOurSharedPreferences.getSharedPreference("facilityId");
         final String district = mOurSharedPreferences.getSharedPreference("district");
         final String msisdn = mOurSharedPreferences.getSharedPreference("phoneNumber");
+
+        String [] yearAndWeek = mOurSharedPreferences.getSharedPreference("period").split("W");
+
         String extra_params = "&report_type=" + form + "&district=" + district
-                + "&facility=" + facility + "&msisdn=" + msisdn + "&raw_msg=" + msg;
+                + "&facility=" + facility + "&msisdn=" + msisdn
+                + "&raw_msg=" + msg + "&year=" + yearAndWeek[0] +"&week=" + yearAndWeek[1];
+
 
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST,
                 url + extra_params, mJSONObject[0],

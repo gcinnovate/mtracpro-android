@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.eq62roket.mtracpro.Helpers.OurSharedPreferences;
 import com.example.eq62roket.mtracpro.R;
@@ -35,6 +36,7 @@ public class LogoutActivity extends AppCompatActivity {
         Intent intent = new Intent(LogoutActivity.this, LoginActivity.class);
         mOurSharedPreferences.clearSharedPreference();
         startActivity(intent);
+        Toast.makeText(LogoutActivity.this, "You are now Logged out", Toast.LENGTH_SHORT).show();
         finish();
     }
 }
