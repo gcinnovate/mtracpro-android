@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,9 +8,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:id="@+id/scrollView2">
 
@@ -28,14 +24,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_ma_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:id="@+id/cases_ma"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Malaria (Total diagonised"
+                    android:textSize="22sp"
+                    android:hint="@string/Malaria"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -45,7 +41,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_dy_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -53,7 +48,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Dysentery"
+                    android:textSize="22sp"
+                    android:hint="@string/Dysentery"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -63,7 +59,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_sa_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -71,7 +66,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Severe Acute Respiratory Infection (SARI)"
+                    android:textSize="22sp"
+                    android:hint="@string/SevereAcuteRespiratoryInfection"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -82,7 +78,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_af_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -90,7 +85,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Acute Flaccid Paralysis"
+                    android:textSize="22sp"
+                    android:hint="@string/AcuteFlaccidParalysis"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -101,7 +97,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_ae_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -109,7 +104,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Adverse EVents Following Immunization (AEFI)"
+                    android:textSize="22sp"
+                    android:hint="@string/AdverseEventsFollowingImmunization"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -120,7 +116,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_ab_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -128,7 +123,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Animal Bites (suspected rabies)"
+                    android:textSize="22sp"
+                    android:hint="@string/AnimalBites"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -139,7 +135,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_mg_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -147,7 +142,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Bacterial Meningitis"
+                    android:textSize="22sp"
+                    android:hint="@string/BacterialMeningitis"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -158,14 +154,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_ch_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:id="@+id/cases_ch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Cholera"
+                    android:textSize="22sp"
+                    android:hint="@string/Cholera"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -175,7 +171,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_gw_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -183,7 +178,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Guinea Worm"
+                    android:textSize="22sp"
+                    android:hint="@string/GuineaWorm"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -193,7 +189,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_me_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -201,7 +196,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Measles"
+                    android:textSize="22sp"
+                    android:hint="@string/Measles"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -211,7 +207,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_nt_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -219,7 +214,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Neonatal tetanus"
+                    android:textSize="22sp"
+                    android:hint="@string/NeonatalTetanus"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -230,14 +226,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_vf_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:id="@+id/cases_vf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Other Viral Hemorrhagic Fevers"
+                    android:textSize="22sp"
+                    android:hint="@string/OtherViralHemorrhagicFevers"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -247,7 +243,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_pl_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -255,7 +250,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Plague"
+                    android:textSize="22sp"
+                    android:hint="@string/Plague"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -265,7 +261,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_tf_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -273,7 +268,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Typhoid Fever"
+                    android:textSize="22sp"
+                    android:hint="@string/TyphoidFever"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -283,7 +279,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_yf_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -291,7 +286,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Yellow Fever"
+                    android:textSize="22sp"
+                    android:hint="@string/YellowFever"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -301,7 +297,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cases_tb_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -309,7 +304,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Presumptive Multi Drug Resistance (MDR) TB"
+                    android:textSize="22sp"
+                    android:hint="@string/PresumptiveMultiDrugResistanceTB"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -322,8 +318,7 @@
                 android:id="@+id/casesButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Submit"
-                android:layout_alignParentBottom="true"
+                android:text="@string/submit"
                 android:layout_marginBottom="25dp" />
         </LinearLayout>
     </ScrollView>

@@ -21,6 +21,7 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="20dp"
+            android:layout_gravity="center"
             android:layout_margin="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -53,6 +54,7 @@
                     android:textStyle="bold"
                     />
                 <TextView
+                    android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
@@ -81,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:text="Lacor Referral Hospital"
                     android:textSize="18dp"
+                    android:id="@+id/tvHealthF"
                     android:textColor="@color/colorAccent"
                     />
 
@@ -104,6 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Gulu"
+                    android:id="@+id/tvDistrict"
                     android:textSize="18dp"
                     android:textColor="@color/colorAccent"
                     />
@@ -128,6 +132,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6"
+                    android:id="@+id/tvTotalReports"
                     android:textSize="18dp"
                     android:textColor="@color/colorAccent"
                     />

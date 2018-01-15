@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,9 +8,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:id="@+id/scrollView2">
 
@@ -28,14 +24,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_suspected_malaria_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:id="@+id/mat_suspected_malaria"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Suspected malaria (fever)"
+                    android:textSize="22sp"
+                    android:hint="@string/SuspectedMalaria"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -45,7 +41,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_rdt_tested_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -53,7 +48,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="RDT tested"
+                    android:textSize="22sp"
+                    android:hint="@string/RDTTested"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -63,7 +59,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_rdt_positive_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -71,7 +66,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="RDT Positive"
+                    android:textSize="22sp"
+                    android:hint="@string/RDTPositive"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -82,7 +78,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_microscopy_tested_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -90,7 +85,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Microscopy tested"
+                    android:textSize="22sp"
+                    android:hint="@string/MicroscopyTested"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -101,7 +97,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_microscopy_positive_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -109,7 +104,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Microscopy Positive"
+                    android:textSize="22sp"
+                    android:hint="@string/MicroscopyPositive"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -120,7 +116,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_not_tested_treated_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -128,7 +123,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Not tested cases treated"
+                    android:textSize="22sp"
+                    android:hint="@string/NotTestedCasesTreated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -139,7 +135,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_rdt_neg_treated_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -147,7 +142,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="RDT Negative treated"
+                    android:textSize="22sp"
+                    android:hint="@string/RDTNegativeTreated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -158,14 +154,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_rdt_pos_treated_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
                 <EditText
                     android:id="@+id/mat_rdt_pos_treated"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="RDT Positive treated"
+                    android:textSize="22sp"
+                    android:hint="@string/RDTPositiveTreated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -175,7 +171,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_microscopy_neg_treated_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -183,7 +178,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Microscopy Negative Treated"
+                    android:textSize="22sp"
+                    android:hint="@string/MicroscopyNegativeTreated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -193,7 +189,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/mat_microscopy_pos_treated_label"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
                 <EditText
@@ -201,7 +196,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Microscopy Positive Treated"
+                    android:textSize="22sp"
+                    android:hint="@string/MicroscopyPositiveTreated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -214,8 +210,7 @@
                 android:id="@+id/matButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Submit"
-                android:layout_alignParentBottom="true"
+                android:text="@string/submit"
                 android:layout_marginBottom="25dp" />
         </LinearLayout>
     </ScrollView>

@@ -48,7 +48,7 @@
             android:parentActivityName=".Activities.MainActivity" />
         <activity
             android:name=".Activities.LogoutActivity"
-            android:label="Logout"/>
+            android:label="Logout" />
         <activity
             android:name=".Activities.LoginActivity"
             android:label="mTracApp">
@@ -58,7 +58,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
->>>>>>> origin/master
+        <activity android:name=".Activities.HistoryActivity"
+            android:label="History"
+            android:parentActivityName=".Activities.MainActivity"></activity>
     </application>
 
 </manifest>

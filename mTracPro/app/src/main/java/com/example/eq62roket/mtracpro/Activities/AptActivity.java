@@ -3,16 +3,15 @@ package com.example.eq62roket.mtracpro.Activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Vibrator;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
 import com.example.eq62roket.mtracpro.R;
@@ -26,7 +25,6 @@ public class AptActivity extends AppCompatActivity {
     public Vibrator vib;
     Button aptButton;
     EditText apt_opd_new, apt_opd_total, apt_emtct_expected, apt_emtct_missed;
-    TextInputLayout apt_opd_new_label, apt_opd_total_label, apt_emtct_expected_label, apt_emtct_missed_label;
 
     private LinearLayout apt_linearLayout;
 
@@ -38,11 +36,6 @@ public class AptActivity extends AppCompatActivity {
 
         // setting up VolleyHelper
         mVolleyHelper = new VolleyHelper(this);
-
-        apt_opd_new_label = (TextInputLayout) findViewById(R.id.apt_opd_new_label);
-        apt_opd_total_label = (TextInputLayout) findViewById(R.id.apt_opd_total_label);
-        apt_emtct_expected_label = (TextInputLayout) findViewById(R.id.apt_emtct_expected_label);
-        apt_emtct_missed_label = (TextInputLayout) findViewById(R.id.apt_emtct_missed_label);
 
         apt_linearLayout = (LinearLayout) findViewById(R.id.apt_linearLayout);
 
@@ -65,88 +58,53 @@ public class AptActivity extends AppCompatActivity {
 
     }
     private void submitForm() {
+        final String opd_total = apt_opd_total.getText().toString().trim();
+        final String opd_new = apt_opd_new.getText().toString().trim();
+        final String emtct_expected = apt_emtct_expected.getText().toString().trim();
+        final String emtct_missed = apt_emtct_missed.getText().toString().trim();
 
-        if (!checkOPDNewAttendees()) {
-            apt_opd_new.setAnimation(animShake);
-            apt_opd_new.startAnimation(animShake);
-            vib.vibrate(120);
-            return;
-        }
-        if (!checkOPDTotalAttendance()) {
+
+        if (TextUtils.isEmpty(opd_total)){
+            apt_opd_total.setError(getString(R.string.err_msg_apt_opd_total_label));
+            apt_opd_total.requestFocus();
             apt_opd_total.setAnimation(animShake);
             apt_opd_total.startAnimation(animShake);
             vib.vibrate(120);
             return;
         }
-        if (!checkExpectedeMTCTMothersOnAppt()) {
+
+        if (TextUtils.isEmpty(opd_new)){
+            apt_opd_new.setError(getString(R.string.err_msg_apt_opd_new_label));
+            apt_opd_new.requestFocus();
+            apt_opd_new.setAnimation(animShake);
+            apt_opd_new.startAnimation(animShake);
+            vib.vibrate(120);
+            return;
+        }
+
+        if (TextUtils.isEmpty(emtct_expected)){
+            apt_emtct_expected.setError(getString(R.string.err_msg_apt_emtct_expected_label));
+            apt_emtct_expected.requestFocus();
             apt_emtct_expected.setAnimation(animShake);
             apt_emtct_expected.startAnimation(animShake);
             vib.vibrate(120);
             return;
         }
-        if (!checkeMTCTMissedAppointments()) {
+
+        if (TextUtils.isEmpty(emtct_missed)){
+            apt_emtct_missed.setError(getString(R.string.err_msg_apt_emtct_missed_label));
+            apt_emtct_missed.requestFocus();
             apt_emtct_missed.setAnimation(animShake);
             apt_emtct_missed.startAnimation(animShake);
             vib.vibrate(120);
             return;
         }
-        apt_opd_new_label.setErrorEnabled(false);
-        apt_opd_total_label.setErrorEnabled(false);
-        apt_emtct_expected_label.setErrorEnabled(false);
-        apt_emtct_missed_label.setErrorEnabled(false);
 
-        mVolleyHelper.sendData(apt_linearLayout, "apt");
-
-        Intent aptIntent = new Intent(AptActivity.this, MainActivity.class);
-        startActivity(aptIntent);
-        finish();
-        Toast.makeText(getApplicationContext(), "Information has been submitted", Toast.LENGTH_SHORT).show();
-    }
-
-    private boolean checkOPDNewAttendees() {
-        if (apt_opd_new.getText().toString().trim().isEmpty()) {
-
-            apt_opd_new_label.setErrorEnabled(true);
-            apt_opd_new_label.setError(getString(R.string.err_msg_apt_opd_new_label));
-            return false;
+        int ret = mVolleyHelper.sendData(apt_linearLayout, "apt");
+        if (ret == 0){
+            Intent deathIntent = new Intent(AptActivity.this, MainActivity.class);
+            startActivity(deathIntent);
+            finish();
         }
-        apt_opd_new_label.setErrorEnabled(false);
-        return true;
     }
-
-    private boolean checkOPDTotalAttendance() {
-        if (apt_opd_total.getText().toString().trim().isEmpty()) {
-
-            apt_opd_total_label.setErrorEnabled(true);
-            apt_opd_total_label.setError(getString(R.string.err_msg_apt_opd_total_label));
-            return false;
-        }
-        apt_opd_total_label.setErrorEnabled(false);
-        return true;
-
-    }
-
-    private boolean checkExpectedeMTCTMothersOnAppt() {
-        if (apt_emtct_expected.getText().toString().trim().isEmpty()) {
-
-            apt_emtct_expected_label.setErrorEnabled(true);
-            apt_emtct_expected_label.setError(getString(R.string.err_msg_apt_emtct_expected_label));
-            return false;
-        }
-        apt_emtct_expected_label.setErrorEnabled(false);
-        return true;
-    }
-
-    private boolean checkeMTCTMissedAppointments() {
-        if (apt_emtct_missed.getText().toString().trim().isEmpty()) {
-
-            apt_emtct_missed_label.setErrorEnabled(true);
-            apt_emtct_missed_label.setError(getString(R.string.err_msg_apt_emtct_missed_label));
-            return false;
-        }
-        apt_emtct_missed_label.setErrorEnabled(false);
-        return true;
-
-    }
-
 }
