@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class BackgroundTask {
     Context context;
     ArrayList<History> arrayList = new ArrayList<>();
-    String json_url = "http://192.168.1.147/history.php";
+    String json_url = "http://192.168.42.152/history.php";
 
     public BackgroundTask(Context context){
         this.context = context;
@@ -55,7 +55,7 @@ public class BackgroundTask {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(context, "Error....", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Network Unavailable. Please try again later", Toast.LENGTH_SHORT).show();
                 volleyError.printStackTrace();
             }
         });
