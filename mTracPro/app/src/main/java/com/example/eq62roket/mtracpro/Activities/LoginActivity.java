@@ -1,6 +1,8 @@
 package com.example.eq62roket.mtracpro.Activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -54,9 +56,13 @@ public class LoginActivity extends AppCompatActivity {
         mOurSharedPreferences = new OurSharedPreferences(this);
         queue = Volley.newRequestQueue(this);
 
-        if (mOurSharedPreferences.getSharedPreference("loggedIn").equals("loggedIn")){
-            // start main activity
-            startMainActivity();
+        if (isConnected()){
+            if (mOurSharedPreferences.getSharedPreference("loggedIn").equals("loggedIn")){
+                // start main activity
+                startMainActivity();
+            }
+        } else{
+            Toast.makeText(LoginActivity.this, "You are not connected to the Internet", Toast.LENGTH_SHORT).show();
         }
 
         edPhoneNumber = (EditText) findViewById(R.id.edPhoneNumber);
@@ -64,7 +70,12 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                login();
+                if (isConnected()) {
+                    login();
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, "You are not connected to the Internet", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -80,44 +91,46 @@ public class LoginActivity extends AppCompatActivity {
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
-                            try {
-                                // Grab Phone number from json
-                                phoneNumber = response.get("phoneNumber").toString();
-                                name = response.get("name").toString();
-                                facility = response.get("facility").toString();
-                                facilityId = response.get("facilityId").toString();
-                                district = response.get("district").toString();
-                                lastReportingDate = response.get("lastReportingDate").toString();
-                                totalReports = response.get("totalReports").toString();
+                            if (!response.toString().equals("{}")){
+                                try {
+                                    // Grab Phone number from json
+                                    phoneNumber = response.get("phoneNumber").toString();
+                                    name = response.get("name").toString();
+                                    facility = response.get("facility").toString();
+                                    facilityId = response.get("facilityId").toString();
+                                    district = response.get("district").toString();
+                                    lastReportingDate = response.get("lastReportingDate").toString();
+                                    totalReports = response.get("totalReports").toString();
 
-                                if (edPhoneNumber.getText().toString().equals(phoneNumber)){
-                                    Log.d(TAG, "We are breathing ");
+                                    if (edPhoneNumber.getText().toString().equals(phoneNumber)){
 
-                                    /**
-                                     * add values to shared preference and set user as loggedIn
-                                     * */
-                                    mOurSharedPreferences.writeSharedPreference("phoneNumber", phoneNumber);
-                                    mOurSharedPreferences.writeSharedPreference("loggedIn", "loggedIn");
-                                    mOurSharedPreferences.writeSharedPreference("name", name);
-                                    mOurSharedPreferences.writeSharedPreference("facility", facility);
-                                    mOurSharedPreferences.writeSharedPreference("facilityId", facilityId);
-                                    mOurSharedPreferences.writeSharedPreference("district", district);
-                                    mOurSharedPreferences.writeSharedPreference("lastReportDate", lastReportingDate);
-                                    mOurSharedPreferences.writeSharedPreference("totalReports", totalReports);
+                                        /**
+                                         * add values to shared preference and set user as loggedIn
+                                         * */
+                                        mOurSharedPreferences.writeSharedPreference("phoneNumber", phoneNumber);
+                                        mOurSharedPreferences.writeSharedPreference("loggedIn", "loggedIn");
+                                        mOurSharedPreferences.writeSharedPreference("name", name);
+                                        mOurSharedPreferences.writeSharedPreference("facility", facility);
+                                        mOurSharedPreferences.writeSharedPreference("facilityId", facilityId);
+                                        mOurSharedPreferences.writeSharedPreference("district", district);
+                                        mOurSharedPreferences.writeSharedPreference("lastReportDate", lastReportingDate);
+                                        mOurSharedPreferences.writeSharedPreference("totalReports", totalReports);
 
-                                    //start Main Activity
-                                    startMainActivity();
+                                        //start Main Activity
+                                        startMainActivity();
 
-                                } else {
-                                    edPhoneNumber.setText("");
-                                    Toast.makeText(LoginActivity.this, "You are not a registered user", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
-
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                                Log.d(TAG, "Response: " + response.toString());
+                            }else {
+                                edPhoneNumber.setText("");
+                                Toast.makeText(LoginActivity.this, "You are not a registered user", Toast.LENGTH_SHORT).show();
+                                Log.d(TAG, "Response: " + response.toString());
                             }
-                            Log.d(TAG, "Response: " + response.toString());
+
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -146,6 +159,19 @@ public class LoginActivity extends AppCompatActivity {
             edPhoneNumber.setText("");
             Toast.makeText(LoginActivity.this, "Number not valid, Try again", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public boolean isConnected(){
+
+        ConnectivityManager conMgr = (ConnectivityManager) getSystemService (Context.CONNECTIVITY_SERVICE);
+        // ARE WE CONNECTED TO THE NETWORK?
+        if (conMgr.getActiveNetworkInfo() != null
+                && conMgr.getActiveNetworkInfo().isAvailable()
+                && conMgr.getActiveNetworkInfo().isConnected()) {
+
+            return true;
+        }
+        return false;
     }
 
     public void startMainActivity(){

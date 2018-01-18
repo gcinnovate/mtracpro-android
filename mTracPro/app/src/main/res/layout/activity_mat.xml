@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/SuspectedMalaria"
+                    android:hint="@string/suspected_malaria"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -49,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/RDTTested"
+                    android:hint="@string/rdt_tested"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/RDTPositive"
+                    android:hint="@string/rdt_positive"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/MicroscopyTested"
+                    android:hint="@string/microscopy_tested"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -105,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/MicroscopyPositive"
+                    android:hint="@string/microscopy_positive"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -124,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/NotTestedCasesTreated"
+                    android:hint="@string/not_tested_treated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/RDTNegativeTreated"
+                    android:hint="@string/rdt_neg_treated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -161,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/RDTPositiveTreated"
+                    android:hint="@string/rdt_pos_treated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -179,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/MicroscopyNegativeTreated"
+                    android:hint="@string/microscopy_neg_treated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -197,7 +197,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/MicroscopyPositiveTreated"
+                    android:hint="@string/microscopy_pos_treated"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
