@@ -107,9 +107,4 @@
     <string name="Tra">TRA.</string>
     <string name="Arv">ARV.</string>
 
-    <string-array name="sort_types">
-        <item>Date</item>
-        <item>Option</item>
-    </string-array>
-
 </resources>
