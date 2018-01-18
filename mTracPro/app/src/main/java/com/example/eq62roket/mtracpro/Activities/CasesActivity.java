@@ -23,7 +23,6 @@ public class CasesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cases);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mVolleyHelper = new VolleyHelper(this);
 

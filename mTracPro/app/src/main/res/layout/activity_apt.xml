@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/OPDNewAttendees"
+                    android:hint="@string/opd_new"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/OPDTotalAttendance"
+                    android:hint="@string/opd_total"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/ExpectedeMTCTMothersOnAppt"
+                    android:hint="@string/emtct_expected"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/eMTCTMissedAppointments"
+                    android:hint="@string/emtct_missed"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
