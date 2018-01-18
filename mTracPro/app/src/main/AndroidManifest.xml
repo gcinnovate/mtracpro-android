@@ -67,7 +67,9 @@
             android:name=".Activities.AboutActivity"
             android:label="About"
             android:parentActivityName=".Activities.MainActivity" />
-        <activity android:name=".Activities.MohActivity"></activity>
+        <activity android:name=".Activities.MohActivity"
+            android:parentActivityName=".Activities.MainActivity"
+            android:label="MoH Bulletin"></activity>
     </application>
 
 </manifest>
