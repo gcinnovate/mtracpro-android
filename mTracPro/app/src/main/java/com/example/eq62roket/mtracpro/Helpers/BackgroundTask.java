@@ -1,6 +1,7 @@
 package com.example.eq62roket.mtracpro.Helpers;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -21,16 +22,21 @@ import java.util.ArrayList;
 
 public class BackgroundTask {
     Context context;
+    private OurSharedPreferences sharedPrefs;
     ArrayList<History> arrayList = new ArrayList<>();
-    String json_url = "http://192.168.42.152/history.php";
+    String json_url = "http://mtracpro.gcinnovate.com/api/v1/reporterhistory/";
 
     public BackgroundTask(Context context){
+
         this.context = context;
+        sharedPrefs = new OurSharedPreferences(context);
     }
 
     //Method to connect to the api and return the jsonarray
     public ArrayList<History> getHistoryList(){
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, json_url, null,
+        String phoneNumber = sharedPrefs.getSharedPreference("phoneNumber");
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
+                json_url + phoneNumber, null,
                 new Response.Listener<JSONArray>() {
                     public static final String TAG ="BackgroundTask";
 
