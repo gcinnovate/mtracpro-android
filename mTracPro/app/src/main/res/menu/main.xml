@@ -6,10 +6,5 @@
         android:title="Search"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/spinner"
-        android:title="Sort by"
-        android:background="#ffffff"
-        app:actionViewClass="android.widget.Spinner"
-        app:showAsAction="collapseActionView" />
+
 </menu>
