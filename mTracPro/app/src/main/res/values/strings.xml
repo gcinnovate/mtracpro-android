@@ -40,58 +40,58 @@
     <string name="logout">Logout</string>
 
     <!--TextInputLayout strings for APT.-->
-    <string name="OPDNewAttendees">OPD New Attendees</string>
-    <string name="OPDTotalAttendance">OPD Total Attendance</string>
-    <string name="ExpectedeMTCTMothersOnAppt">Expected eMTCT Mothers on appt</string>
-    <string name="eMTCTMissedAppointments">eMTCT Missed appointments</string>
+    <string name="opd_new">OPD New Attendees</string>
+    <string name="opd_total">OPD Total Attendance</string>
+    <string name="emtct_expected">Expected eMTCT Mothers on appt</string>
+    <string name="emtct_missed">eMTCT Missed appointments</string>
 
     <!--TextInputLayout strings for ARV.-->
-    <string name="HIVScreeningTestKits">HIV Screening Test Kits</string>
-    <string name="ARVs">ARVs (Fixed - DC eMTCT)</string>
-    <string name="NevirapineTherapy">Nevirapine Therapy</string>
+    <string name="hiv_screening_test_kits">HIV Screening Test Kits</string>
+    <string name="emtct">ARVs (Fixed - DC eMTCT)</string>
+    <string name="nevirapine">Nevirapine Therapy</string>
 
 
     <!--TextInputLayout strings for CASES. and DEATH.-->
-    <string name="Malaria">Malaria (Total diagonised)</string>
-    <string name="Dysentery">Dysentery</string>
-    <string name="SevereAcuteRespiratoryInfection">Severe Acute Respiratory Infection (SARI)</string>
-    <string name="AcuteFlaccidParalysis">Acute Flaccid Paralysis</string>
-    <string name="AdverseEventsFollowingImmunization">Adverse EVents Following Immunization (AEFI)</string>
-    <string name="AnimalBites">Animal Bites (suspected rabies)</string>
-    <string name="BacterialMeningitis">Bacterial Meningitis</string>
-    <string name="Cholera">Cholera</string>
-    <string name="GuineaWorm">Guinea Worm</string>
-    <string name="Measles">Measles</string>
-    <string name="NeonatalTetanus">Neonatal tetanus</string>
-    <string name="OtherViralHemorrhagicFevers">Other Viral Hemorrhagic Fevers</string>
-    <string name="Plague">Plague</string>
-    <string name="TyphoidFever">Typhoid Fever</string>
-    <string name="YellowFever">Yellow Fever</string>
-    <string name="PresumptiveMultiDrugResistanceTB">PresumptiveMulti Drug Resistance (MDR) TB</string>
+    <string name="ma">Malaria (Total diagnosed)</string>
+    <string name="dy">Dysentery</string>
+    <string name="sa">Severe Acute Respiratory Infection (SARI)</string>
+    <string name="af">Acute Flaccid Paralysis</string>
+    <string name="ae">Adverse EVents Following Immunization (AEFI)</string>
+    <string name="ab">Animal Bites (suspected rabies)</string>
+    <string name="mg">Bacterial Meningitis</string>
+    <string name="ch">Cholera</string>
+    <string name="gw">Guinea Worm</string>
+    <string name="me">Measles</string>
+    <string name="nt">Neonatal tetanus</string>
+    <string name="vf">Other Viral Hemorrhagic Fevers</string>
+    <string name="pl">Plague</string>
+    <string name="tf">Typhoid Fever</string>
+    <string name="yf">Yellow Fever</string>
+    <string name="tb">PresumptiveMulti Drug Resistance (MDR) TB</string>
 
 
     <!--TextInputLayout strings for MAT.-->
-    <string name="SuspectedMalaria">Suspected malaria (fever)</string>
-    <string name="RDTTested">RDT tested</string>
-    <string name="RDTPositive">RDT Positive</string>
-    <string name="MicroscopyTested">Microscopy tested</string>
-    <string name="MicroscopyPositive">Microscopy Positive</string>
-    <string name="NotTestedCasesTreated">Not tested cases treated</string>
-    <string name="RDTNegativeTreated">RDT Negative treated</string>
-    <string name="RDTPositiveTreated">RDT Positive treated</string>
-    <string name="MicroscopyNegativeTreated">Microscopy Negative Treated</string>
-    <string name="MicroscopyPositiveTreated">Microscopy Positive Treated</string>
+    <string name="suspected_malaria">Suspected malaria (fever)</string>
+    <string name="rdt_tested">RDT tested</string>
+    <string name="rdt_positive">RDT Positive</string>
+    <string name="microscopy_tested">Microscopy tested</string>
+    <string name="microscopy_positive">Microscopy Positive</string>
+    <string name="not_tested_treated">Not tested cases treated</string>
+    <string name="rdt_neg_treated">RDT Negative treated</string>
+    <string name="rdt_pos_treated">RDT Positive treated</string>
+    <string name="microscopy_neg_treated">Microscopy Negative Treated</string>
+    <string name="microscopy_pos_treated">Microscopy Positive Treated</string>
 
 
     <!--TextInputLayout strings for TRA.-->
-    <string name="ACT">ACT (Tablets)</string>
-    <string name="ORS">ORS (Sackets)</string>
-    <string name="MeaslesVaccine">Measles Vaccine</string>
-    <string name="Amoxcilline">Amoxcilline</string>
-    <string name="DepoProvera">Depo- Provera</string>
-    <string name="IVartesunate">IV artesunate</string>
-    <string name="Fansidar">Fansidar</string>
-    <string name="RDT">RDT (Malaria)</string>
+    <string name="act_tablets">ACT (Tablets)</string>
+    <string name="ors_sackets">ORS (Sackets)</string>
+    <string name="measles_vaccine">Measles Vaccine</string>
+    <string name="amoxcilline">Amoxcilline</string>
+    <string name="depo_provera">Depo- Provera</string>
+    <string name="iv_artesunate">IV artesunate</string>
+    <string name="fansidar">Fansidar</string>
+    <string name="rdt_malaria">RDT (Malaria)</string>
 
     <string name="EnterNumberHere">Enter Number Here</string>
 

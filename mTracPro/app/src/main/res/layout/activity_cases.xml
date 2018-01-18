@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/Malaria"
+                    android:hint="@string/ma"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -49,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/Dysentery"
+                    android:hint="@string/dy"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/SevereAcuteRespiratoryInfection"
+                    android:hint="@string/sa"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/AcuteFlaccidParalysis"
+                    android:hint="@string/af"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -105,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/AdverseEventsFollowingImmunization"
+                    android:hint="@string/ae"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -124,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/AnimalBites"
+                    android:hint="@string/ab"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/BacterialMeningitis"
+                    android:hint="@string/mg"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -161,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/Cholera"
+                    android:hint="@string/ch"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -179,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/GuineaWorm"
+                    android:hint="@string/gw"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -197,7 +197,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/Measles"
+                    android:hint="@string/me"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -215,7 +215,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/NeonatalTetanus"
+                    android:hint="@string/nt"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -233,7 +233,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/OtherViralHemorrhagicFevers"
+                    android:hint="@string/vf"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -251,7 +251,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/Plague"
+                    android:hint="@string/pl"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -269,7 +269,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/TyphoidFever"
+                    android:hint="@string/tf"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -287,7 +287,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/YellowFever"
+                    android:hint="@string/yf"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -305,7 +305,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/PresumptiveMultiDrugResistanceTB"
+                    android:hint="@string/tb"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />

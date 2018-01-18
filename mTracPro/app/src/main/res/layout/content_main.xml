@@ -22,6 +22,7 @@
             android:layout_height="fill_parent">
 
             <LinearLayout
+                android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
@@ -35,6 +36,7 @@
                     android:layout_height="fill_parent">
 
                     <ImageView
+                        android:contentDescription="@string/Cases"
                         android:id="@+id/imageCases"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
@@ -46,9 +48,9 @@
                     <TextView
                         android:textColor="@color/colorBlack"
                         android:layout_gravity="center"
-                        android:text="CASES."
+                        android:text="@string/Cases"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -62,20 +64,21 @@
                     android:layout_height="fill_parent">
 
                     <ImageView
+                        android:contentDescription="@string/Death"
                         android:id="@+id/imageDeath"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/death"
+                        android:src="@drawable/grave"
                         android:layout_width="fill_parent"
                         android:layout_gravity="center" />
 
                     <TextView
                         android:textColor="@color/colorBlack"
                         android:layout_gravity="center"
-                        android:text="DEATH."
+                        android:text="@string/Death"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -83,6 +86,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:layout_weight="1"
                 android:layout_width="fill_parent"
@@ -96,6 +100,7 @@
                     android:layout_height="fill_parent">
 
                     <ImageView
+                        android:contentDescription="@string/Apt"
                         android:id="@+id/imageApt"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
@@ -106,9 +111,9 @@
                     <TextView
                         android:textColor="@color/colorBlack"
                         android:layout_gravity="center"
-                        android:text="APT."
+                        android:text="@string/Apt"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -122,6 +127,7 @@
                     android:layout_height="fill_parent">
 
                     <ImageView
+                        android:contentDescription="@string/Mat"
                         android:id="@+id/imageMat"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
@@ -133,15 +139,16 @@
                     <TextView
                         android:textColor="@color/colorBlack"
                         android:layout_gravity="center"
-                        android:text="MAT."
+                        android:text="@string/Mat"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
+                android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:layout_weight="1"
                 android:layout_width="fill_parent"
@@ -155,6 +162,7 @@
                     android:layout_height="fill_parent">
 
                     <ImageView
+                        android:contentDescription="@string/Tra"
                         android:id="@+id/imageTra"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
@@ -166,9 +174,9 @@
                     <TextView
                         android:textColor="@color/colorBlack"
                         android:layout_gravity="center"
-                        android:text="TRA."
+                        android:text="@string/Tra"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -181,6 +189,7 @@
                     android:layout_height="fill_parent">
 
                     <ImageView
+                        android:contentDescription="@string/Arv"
                         android:id="@+id/imageArv"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
@@ -192,9 +201,9 @@
                     <TextView
                         android:textColor="@color/colorBlack"
                         android:layout_gravity="center"
-                        android:text="ARV."
+                        android:text="@string/Arv"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 

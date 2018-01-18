@@ -5,90 +5,134 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#3333"
     tools:context="com.example.eq62roket.mtracpro.ProfileActivity">
 
     <LinearLayout
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/colorAccent">
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tvHealthF"
             android:textAlignment="center"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Lacor Referral Hospital"/>
+
+        <TextView
+            android:id="@+id/tvDistrict"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Gulu"/>
+
     </LinearLayout>
+
     <android.support.v7.widget.CardView
         android:background="@color/colorPrimaryDark"
-        app:cardCornerRadius="20dp"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp">
+            android:layout_margin="10dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_marginRight="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Name:"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    />
                 <TextView
                     android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorAccent"
                     android:text="Tony Otim"
-                    />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_marginRight="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Health Facility:"
-                    android:textSize="20dp"
                     android:textStyle="bold"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Lacor Referral Hospital"
-                    android:textSize="18dp"
-                    android:id="@+id/tvHealthF"
                     android:textColor="@color/colorAccent"
-                    />
+                    android:textSize="25sp"/>
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvRole"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="General Practitioner"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_marginRight="20dp"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Gulu"-->
+                    <!--android:id="@+id/tvDistrict"-->
+                    <!--android:textSize="18sp"-->
+                    <!--android:textColor="@color/colorAccent"-->
+                    <!--/>-->
+            <!--</LinearLayout>-->
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:background="@color/colorPrimaryDark"
+        app:cardCornerRadius="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,36 +140,12 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_marginRight="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="District:"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gulu"
-                    android:id="@+id/tvDistrict"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorAccent"
-                    />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
+                    android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total Reports:"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     />
                 <TextView
@@ -133,7 +153,7 @@
                     android:layout_height="wrap_content"
                     android:text="6"
                     android:id="@+id/tvTotalReports"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textColor="@color/colorAccent"
                     />
 
@@ -145,18 +165,19 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Last Reporting Date:"
                     android:textStyle="bold"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="03/04/2018"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textColor="@color/colorAccent"
                     />
 
