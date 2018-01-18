@@ -1,7 +1,9 @@
 package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -116,6 +118,7 @@ public class MainActivity extends AppCompatActivity
 //    }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -131,6 +134,16 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_history){
             Intent HistoryIntent = new Intent(MainActivity.this, HistoryActivity.class);
             startActivity(HistoryIntent);
+
+        }
+        else if (id == R.id.nav_about){
+            Intent AboutIntent = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(AboutIntent);
+
+        }
+        else if (id == R.id.nav_moh){
+            Intent mohActivity = new Intent(MainActivity.this, MohActivity.class);
+            startActivity(mohActivity);
 
         }
         else if (id == R.id.nav_logout) {
