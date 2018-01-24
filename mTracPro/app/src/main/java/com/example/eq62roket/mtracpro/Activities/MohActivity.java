@@ -37,7 +37,6 @@ public class MohActivity extends AppCompatActivity implements SearchView.OnQuery
         //To improve performance
         recyclerView.setHasFixedSize(true);
 
-        //Initialising the adapter
         BackgroundTask backgroundTask = new BackgroundTask(MohActivity.this);
         bulletinArrayList = backgroundTask.getBulletin();
         adapter = new BulletinRecyclerAdapter(bulletinArrayList);
