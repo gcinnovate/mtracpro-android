@@ -1,5 +1,6 @@
 package com.example.eq62roket.mtracpro.Activities;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.EditText;
 
 import com.example.eq62roket.mtracpro.Adapters.RecyclerAdapter;
 import com.example.eq62roket.mtracpro.Helpers.BackgroundTask;
@@ -40,20 +40,11 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         BackgroundTask backgroundTask = new BackgroundTask(HistoryActivity.this);
         arrayList = backgroundTask.getHistoryList();
         adapter = new RecyclerAdapter(arrayList);
-//        adapter = new RecyclerAdapter(historyData(), HistoryActivity.this);
         recyclerView.setAdapter(adapter);
 
 
     }
 
-//    public ArrayList<History> historyData(){
-//        ArrayList<History> history = new ArrayList<>();
-//        history.add(new History("2", "cases.ma.4.dy.5.ch.1", "You reported:\\n 4 cases of malari\\n 5 cases of dysentery and\\n 1 case of cholera.", "2018-01-11 15:10"));
-//        history.add(new History("2", "death.ab.3.tf.1", "You reported:\\n 3 deaths of animal bites\\n1 death of typhoid", "2018-01-11 13:11"));
-//        history.add(new History("2", "cases.ma.0", "You reported:\\n 0 cases of malaria", "2018-01-11 12:10"));
-//
-//        return history;
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -61,6 +52,9 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         getMenuInflater().inflate(R.menu.main, menu);
         MenuItem menuItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+        ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text)).setBackgroundColor(Color.WHITE);
+        ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text)).setTextColor(Color.BLACK);
+        ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text)).setHintTextColor(Color.GRAY);
 
         searchView.setOnQueryTextListener(this);
         return true;
@@ -76,12 +70,15 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         newText = newText.toLowerCase();
         ArrayList<History> listHistory = new ArrayList<>();
         for (History history : arrayList){
-            String details = history.getDetail().toLowerCase();
+            String period = history.getPeriod().toLowerCase();
+            String details = history.getDetails().toLowerCase();
             String rawMsg = history.getRawMsg().toLowerCase();
             String date = history.getDate().toLowerCase();
             if (details.contains(newText)) {
                 listHistory.add(history);
             }else if (rawMsg.contains(newText)){
+                listHistory.add(history);
+            }else if (period.contains(newText)){
                 listHistory.add(history);
             }
             else if (date.contains(newText)){
