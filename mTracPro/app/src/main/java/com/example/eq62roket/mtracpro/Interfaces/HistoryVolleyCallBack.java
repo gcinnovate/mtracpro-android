@@ -9,8 +9,8 @@ import java.util.ArrayList;
  * Created by probuse on 1/24/18.
  */
 
-public interface VolleyCallBack {
+public interface HistoryVolleyCallBack {
     void onStart();
-    void onSuccess(ArrayList<History> historyArrayList);
+    void onSuccess(ArrayList<History> arrayList);
     void onFailure(VolleyError volleyError);
 }

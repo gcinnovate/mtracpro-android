@@ -1,14 +1,15 @@
 package com.example.eq62roket.mtracpro.Activities;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,9 +18,11 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.example.eq62roket.mtracpro.Adapters.BulletinRecyclerAdapter;
 import com.example.eq62roket.mtracpro.Helpers.BackgroundTask;
 import com.example.eq62roket.mtracpro.Helpers.Bulletin;
+import com.example.eq62roket.mtracpro.Interfaces.MohBulletinVolleyCallBack;
 import com.example.eq62roket.mtracpro.R;
 
 import java.util.ArrayList;
@@ -43,9 +46,21 @@ public class MohActivity extends AppCompatActivity implements SearchView.OnQuery
         recyclerView.setHasFixedSize(true);
 
         BackgroundTask backgroundTask = new BackgroundTask(MohActivity.this);
-        bulletinArrayList = backgroundTask.getBulletin();
-        adapter = new BulletinRecyclerAdapter(bulletinArrayList);
-        recyclerView.setAdapter(adapter);
+        backgroundTask.getBulletin(new MohBulletinVolleyCallBack() {
+            @Override
+            public void onSuccess(ArrayList<Bulletin> cBulletinArrayList) {
+                Log.d("onSuccess: ", cBulletinArrayList.toString());
+                adapter = new BulletinRecyclerAdapter(cBulletinArrayList);
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(VolleyError volleyError) {
+                Log.d("onFailure: " , volleyError.toString());
+
+            }
+        });
+
     }
 
     @Override

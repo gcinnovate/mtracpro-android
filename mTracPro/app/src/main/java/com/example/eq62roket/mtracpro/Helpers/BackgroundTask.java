@@ -8,7 +8,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.example.eq62roket.mtracpro.Interfaces.VolleyCallBack;
+import com.example.eq62roket.mtracpro.Interfaces.HistoryVolleyCallBack;
+import com.example.eq62roket.mtracpro.Interfaces.MohBulletinVolleyCallBack;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +27,7 @@ public class BackgroundTask {
     private OurSharedPreferences sharedPrefs;
     ArrayList<History> arrayList = new ArrayList<>();
 
-    String json_url = "http://mtracpro.gcinnovate.com/api/v1/reporterhistory/256759521411/";
+    String json_url = "http://mtracpro.gcinnovate.com/api/v1/reporterhistory/";
     String bulletin_url = "http://10.150.222.126/bulletin.php";
 
     ArrayList<Bulletin> bulletinArrayList = new ArrayList<>();
@@ -37,7 +38,7 @@ public class BackgroundTask {
         sharedPrefs = new OurSharedPreferences(context);
     }
 
-    public ArrayList<History> getHistoryList(final VolleyCallBack callBack){
+    public void getHistoryList(final HistoryVolleyCallBack callBack){
         callBack.onStart();
         String phoneNumber = sharedPrefs.getSharedPreference("phoneNumber");
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
@@ -73,10 +74,9 @@ public class BackgroundTask {
         });
 
         HistorySingleton.getInstance(context).addToRequestQue(jsonArrayRequest);
-        return arrayList;
     }
 
-    public ArrayList<Bulletin> getBulletin(){
+    public void getBulletin(final MohBulletinVolleyCallBack mohBulletinVolleyCallBack){
         JsonArrayRequest BulletinJsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
                 bulletin_url, null,
                 new Response.Listener<JSONArray>() {
@@ -95,18 +95,19 @@ public class BackgroundTask {
                                 e.printStackTrace();
                             }
                         }
+                        mohBulletinVolleyCallBack.onSuccess(bulletinArrayList);
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
+                mohBulletinVolleyCallBack.onFailure(volleyError);
                 Toast.makeText(context, "Network Unavailable. Please try again later", Toast.LENGTH_SHORT).show();
                 volleyError.printStackTrace();
             }
         });
 
         HistorySingleton.getInstance(context).addToRequestQue(BulletinJsonArrayRequest);
-        return bulletinArrayList;
     }
 
 }
