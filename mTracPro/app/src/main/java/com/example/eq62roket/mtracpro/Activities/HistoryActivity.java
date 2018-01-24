@@ -6,15 +6,19 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 
+import com.android.volley.VolleyError;
 import com.example.eq62roket.mtracpro.Adapters.RecyclerAdapter;
 import com.example.eq62roket.mtracpro.Helpers.BackgroundTask;
 import com.example.eq62roket.mtracpro.Helpers.History;
+import com.example.eq62roket.mtracpro.Interfaces.VolleyCallBack;
 import com.example.eq62roket.mtracpro.R;
 import java.util.ArrayList;
 
 public class HistoryActivity extends AppCompatActivity {
+    private static final String TAG = "HistoryActivity";
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     public SearchView search;
@@ -36,7 +40,23 @@ public class HistoryActivity extends AppCompatActivity {
 
         //Initialising the adapter
         BackgroundTask backgroundTask = new BackgroundTask(HistoryActivity.this);
-        arrayList = backgroundTask.getHistoryList();
+        arrayList = backgroundTask.getHistoryList(new VolleyCallBack() {
+            @Override
+            public void onStart() {
+                Log.d(TAG, "Call back started:>>>>>>>>>> " );
+            }
+
+            @Override
+            public void onSuccess(ArrayList<History> historyArrayList) {
+                Log.d(TAG, "ArrayList in onCallback: " + historyArrayList);
+
+            }
+
+            @Override
+            public void onFailure(VolleyError volleyError) {
+                Log.d(TAG, "onFailure in Callback: " + volleyError);
+            }
+        });
         adapter = new RecyclerAdapter(arrayList, HistoryActivity.this);
         recyclerView.setAdapter(adapter);
 

@@ -8,6 +8,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.example.eq62roket.mtracpro.Interfaces.VolleyCallBack;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,27 +23,29 @@ import java.util.ArrayList;
 public class BackgroundTask {
     Context context;
     ArrayList<History> arrayList = new ArrayList<>();
-    String json_url = "http://192.168.1.147/history.php";
+    String json_url = "http://mtracpro.gcinnovate.com/api/v1/reporterhistory/256759521411/";
 
     public BackgroundTask(Context context){
         this.context = context;
     }
 
     //Method to connect to the api and return the jsonarray
-    public ArrayList<History> getHistoryList(){
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, json_url, null,
+    public ArrayList<History> getHistoryList(final VolleyCallBack callBack){
+        callBack.onStart();
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, json_url, null,
                 new Response.Listener<JSONArray>() {
                     public static final String TAG ="BackgroundTask";
 
                     @Override
                     public void onResponse(JSONArray response) {
                         int count = 0;
-                        while (count<response.length()){
+                        while (count < response.length()){
                             try {
                                 JSONObject jsonObject = response.getJSONObject(count);
                                 Log.d(TAG, "onResponse: " + jsonObject);
                                 History history = new History(jsonObject.getString("Id"),
-                                        jsonObject.getString("RawMsg"), jsonObject.getString("Detail"),
+                                        jsonObject.getString("RawMsg"),
+                                        jsonObject.getString("Detail"),
                                         jsonObject.getString("Date"));
                                 arrayList.add(history);
                                 count++;
@@ -50,11 +53,14 @@ public class BackgroundTask {
                                 e.printStackTrace();
                             }
                         }
+                        callBack.onSuccess(arrayList);
+                        Log.d(TAG, "onResponse: " + arrayList);
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
+                callBack.onFailure(volleyError);
                 Toast.makeText(context, "Error....", Toast.LENGTH_SHORT).show();
                 volleyError.printStackTrace();
             }
