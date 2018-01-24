@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/ACT"
+                    android:hint="@string/act_tablets"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/ORS"
+                    android:hint="@string/ors_sackets"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/MeaslesVaccine"
+                    android:hint="@string/measles_vaccine"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/Amoxcilline"
+                    android:hint="@string/amoxcilline"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
@@ -109,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/DepoProvera"
+                    android:hint="@string/depo_provera"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -127,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/IVartesunate"
+                    android:hint="@string/iv_artesunate"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -145,7 +145,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/Fansidar"
+                    android:hint="@string/fansidar"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
@@ -162,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/RDT"
+                    android:hint="@string/rdt_malaria"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />

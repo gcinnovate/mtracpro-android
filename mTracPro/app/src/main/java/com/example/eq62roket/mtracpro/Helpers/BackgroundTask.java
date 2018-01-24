@@ -21,21 +21,28 @@ import java.util.ArrayList;
  */
 
 public class BackgroundTask {
+    private static final String TAG = "BackgroundTask";
     Context context;
+    private OurSharedPreferences sharedPrefs;
     ArrayList<History> arrayList = new ArrayList<>();
+
     String json_url = "http://mtracpro.gcinnovate.com/api/v1/reporterhistory/256759521411/";
+    String bulletin_url = "http://10.150.222.126/bulletin.php";
+
+    ArrayList<Bulletin> bulletinArrayList = new ArrayList<>();
 
     public BackgroundTask(Context context){
+
         this.context = context;
+        sharedPrefs = new OurSharedPreferences(context);
     }
 
-    //Method to connect to the api and return the jsonarray
     public ArrayList<History> getHistoryList(final VolleyCallBack callBack){
         callBack.onStart();
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, json_url, null,
+        String phoneNumber = sharedPrefs.getSharedPreference("phoneNumber");
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
+                json_url + phoneNumber, null,
                 new Response.Listener<JSONArray>() {
-                    public static final String TAG ="BackgroundTask";
-
                     @Override
                     public void onResponse(JSONArray response) {
                         int count = 0;
@@ -43,10 +50,9 @@ public class BackgroundTask {
                             try {
                                 JSONObject jsonObject = response.getJSONObject(count);
                                 Log.d(TAG, "onResponse: " + jsonObject);
-                                History history = new History(jsonObject.getString("Id"),
-                                        jsonObject.getString("RawMsg"),
-                                        jsonObject.getString("Detail"),
-                                        jsonObject.getString("Date"));
+                                History history = new History(jsonObject.getString("period"),
+                                        jsonObject.getString("rawMsg"), jsonObject.getString("details"),
+                                        jsonObject.getString("date"), jsonObject.getString("period"));
                                 arrayList.add(history);
                                 count++;
                             } catch (JSONException e) {
@@ -61,13 +67,46 @@ public class BackgroundTask {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 callBack.onFailure(volleyError);
-                Toast.makeText(context, "Error....", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Network Unavailable. Please try again later", Toast.LENGTH_SHORT).show();
                 volleyError.printStackTrace();
             }
         });
 
         HistorySingleton.getInstance(context).addToRequestQue(jsonArrayRequest);
         return arrayList;
+    }
+
+    public ArrayList<Bulletin> getBulletin(){
+        JsonArrayRequest BulletinJsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
+                bulletin_url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        int count = 0;
+                        while (count<response.length()){
+                            try {
+                                JSONObject jsonObject = response.getJSONObject(count);
+                                Log.d(TAG, "onResponse: " + jsonObject);
+                                Bulletin bulletin = new Bulletin(jsonObject.getString("id"),
+                                        jsonObject.getString("date"), jsonObject.getString("content"));
+                                bulletinArrayList.add(bulletin);
+                                count++;
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                Toast.makeText(context, "Network Unavailable. Please try again later", Toast.LENGTH_SHORT).show();
+                volleyError.printStackTrace();
+            }
+        });
+
+        HistorySingleton.getInstance(context).addToRequestQue(BulletinJsonArrayRequest);
+        return bulletinArrayList;
     }
 
 }

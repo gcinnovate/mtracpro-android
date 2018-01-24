@@ -8,8 +8,17 @@
             android:title="Profile" />
         <item
             android:id="@+id/nav_history"
-            android:icon="@drawable/design_ic_visibility"
+            android:icon="@drawable/history"
             android:title="History" />
+        <item
+            android:id="@+id/nav_moh"
+            android:icon="@drawable/communication"
+            android:title="MoH Bulletin" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about"
+            android:title="About" />
+
     </group>
 
     <item android:title="Settings">

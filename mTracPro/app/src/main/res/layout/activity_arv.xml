@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/HIVScreeningTestKits"
+                    android:hint="@string/hiv_screening_test_kits"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/ARVs"
+                    android:hint="@string/emtct"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:textSize="22sp"
-                    android:hint="@string/NevirapineTherapy"
+                    android:hint="@string/nevirapine"
                     android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />

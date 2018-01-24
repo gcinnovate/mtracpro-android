@@ -5,45 +5,53 @@ package com.example.eq62roket.mtracpro.Helpers;
  */
 
 public class History {
-    private String Id, RawMsg, Detail, Date;
+    private String id, rawMsg, details, date, period;
 
-    public History( String Id, String RawMsg, String Detail, String Date){
-        this.setId(Id);
-        this.setRawMsg(RawMsg);
-        this.setDetail(Detail);
-        this.setDate(Date);
+    public History( String id, String rawMsg, String details, String date, String period){
+        this.setId(id);
+        this.setRawMsg(rawMsg);
+        this.setDetails(details);
+        this.setDate(date);
+        this.setPeriod(period);
     }
 
+    public String getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(String period) {
+        this.period = period;
+    }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getRawMsg() {
-        return RawMsg;
+        return rawMsg;
     }
 
     public void setRawMsg(String rawMsg) {
-        RawMsg = rawMsg;
+        this.rawMsg = rawMsg;
     }
 
-    public String getDetail() {
-        return Detail;
+    public String getDetails() {
+        return details;
     }
 
-    public void setDetail(String detail) {
-        Detail = detail;
+    public void setDetails(String details) {
+        this.details = details;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 }

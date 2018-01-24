@@ -32,7 +32,6 @@ public class MatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mat);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // setting up VolleyHelper
         mVolleyHelper = new VolleyHelper(this);
