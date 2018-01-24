@@ -3,6 +3,7 @@ package com.example.eq62roket.mtracpro.Activities;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,7 +11,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.eq62roket.mtracpro.Adapters.RecyclerAdapter;
 import com.example.eq62roket.mtracpro.Helpers.BackgroundTask;
@@ -31,7 +36,6 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
         //To improve performance
         recyclerView.setHasFixedSize(true);
@@ -41,10 +45,7 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         arrayList = backgroundTask.getHistoryList();
         adapter = new RecyclerAdapter(arrayList);
         recyclerView.setAdapter(adapter);
-
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,12 +57,35 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text)).setTextColor(Color.BLACK);
         ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text)).setHintTextColor(Color.GRAY);
 
+        //Get SearchView autocomplete object
+        final SearchView.SearchAutoComplete searchAutoComplete = (SearchView.SearchAutoComplete)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        searchAutoComplete.setDropDownBackgroundResource(android.R.color.background_light);
+
+        //New ArrayAdapter to add data to search auto complete object
+        String dataArr[] = {"Cases", "Death", "Apt", "Arv", "Mat", "Tra", "Malaria", "Dysentery", "Animal", "Cholera", "Guinew Worm", "Measles", "Tetanus"};
+        ArrayAdapter<String> bulletinAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, dataArr);
+        searchAutoComplete.setAdapter(bulletinAdapter);
+
+        //Listen to search View item on click event.
+        searchAutoComplete.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String queryString = (String)adapterView.getItemAtPosition(i);
+                searchAutoComplete.setText("" + queryString);
+//                Toast.makeText(HistoryActivity.this, "you clicked " + queryString, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
         searchView.setOnQueryTextListener(this);
         return true;
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        AlertDialog alertDialog = new AlertDialog.Builder(HistoryActivity.this).create();
+        alertDialog.setMessage("Search keyword is " + query);
+        alertDialog.show();
         return false;
     }
 
