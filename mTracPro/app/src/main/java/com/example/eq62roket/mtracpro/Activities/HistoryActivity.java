@@ -18,9 +18,9 @@ import android.widget.EditText;
 
 import com.android.volley.VolleyError;
 import com.example.eq62roket.mtracpro.Adapters.RecyclerAdapter;
-import com.example.eq62roket.mtracpro.Helpers.BackgroundTask;
-import com.example.eq62roket.mtracpro.Helpers.History;
-import com.example.eq62roket.mtracpro.Interfaces.VolleyCallBack;
+import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
+import com.example.eq62roket.mtracpro.Interfaces.HistoryVolleyCallBack;
+import com.example.eq62roket.mtracpro.Models.History;
 import com.example.eq62roket.mtracpro.R;
 
 import java.util.ArrayList;
@@ -44,8 +44,8 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         recyclerView.setHasFixedSize(true);
 
         //Initialising the adapter
-        BackgroundTask backgroundTask = new BackgroundTask(HistoryActivity.this);
-        arrayList = backgroundTask.getHistoryList(new VolleyCallBack() {
+        VolleyHelper mVolleyHelper = new VolleyHelper(HistoryActivity.this);
+        mVolleyHelper.getHistoryList(new HistoryVolleyCallBack() {
             @Override
             public void onStart() {
                 Log.d(TAG, "Call back started:>>>>>>>>>> " );
@@ -54,6 +54,8 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
             @Override
             public void onSuccess(ArrayList<History> historyArrayList) {
                 Log.d(TAG, "ArrayList in onCallback: " + historyArrayList);
+                adapter = new RecyclerAdapter(historyArrayList);
+                recyclerView.setAdapter(adapter);
 
             }
 
@@ -62,8 +64,7 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
                 Log.d(TAG, "onFailure in Callback: " + volleyError);
             }
         });
-        adapter = new RecyclerAdapter(arrayList);
-        recyclerView.setAdapter(adapter);
+
     }
 
     @Override

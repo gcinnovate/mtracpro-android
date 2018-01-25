@@ -32,7 +32,6 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     private final static String TAG = "LoginActivity";
-    // private final String url = "http://10.150.222.117:8080/api/v1/reporter";
     private final String url = "http://mtracpro.gcinnovate.com/api/v1/reporter/";
 
     private RequestQueue queue;

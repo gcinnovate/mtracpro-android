@@ -1,4 +1,4 @@
-package com.example.eq62roket.mtracpro.Helpers;
+package com.example.eq62roket.mtracpro.Models;
 
 /**
  * Created by eq62roket on 1/23/18.

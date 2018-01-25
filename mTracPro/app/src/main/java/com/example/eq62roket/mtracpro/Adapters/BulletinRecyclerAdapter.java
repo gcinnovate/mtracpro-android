@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.eq62roket.mtracpro.Helpers.Bulletin;
+import com.example.eq62roket.mtracpro.Models.Bulletin;
 import com.example.eq62roket.mtracpro.R;
 
 import java.util.ArrayList;
