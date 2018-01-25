@@ -10,6 +10,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.eq62roket.mtracpro.Interfaces.HistoryVolleyCallBack;
 import com.example.eq62roket.mtracpro.Interfaces.MohBulletinVolleyCallBack;
+import com.example.eq62roket.mtracpro.Models.Bulletin;
+import com.example.eq62roket.mtracpro.Models.History;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -73,7 +75,7 @@ public class BackgroundTask {
             }
         });
 
-        HistorySingleton.getInstance(context).addToRequestQue(jsonArrayRequest);
+        VolleySingleton.getInstance(context).addToRequestQue(jsonArrayRequest);
     }
 
     public void getBulletin(final MohBulletinVolleyCallBack mohBulletinVolleyCallBack){
@@ -107,7 +109,7 @@ public class BackgroundTask {
             }
         });
 
-        HistorySingleton.getInstance(context).addToRequestQue(BulletinJsonArrayRequest);
+        VolleySingleton.getInstance(context).addToRequestQue(BulletinJsonArrayRequest);
     }
 
 }

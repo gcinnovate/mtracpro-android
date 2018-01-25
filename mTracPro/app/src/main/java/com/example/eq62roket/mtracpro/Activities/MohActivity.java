@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.example.eq62roket.mtracpro.Adapters.BulletinRecyclerAdapter;
 import com.example.eq62roket.mtracpro.Helpers.BackgroundTask;
-import com.example.eq62roket.mtracpro.Helpers.Bulletin;
+import com.example.eq62roket.mtracpro.Models.Bulletin;
 import com.example.eq62roket.mtracpro.Interfaces.MohBulletinVolleyCallBack;
 import com.example.eq62roket.mtracpro.R;
 

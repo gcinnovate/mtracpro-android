@@ -12,12 +12,12 @@ import com.android.volley.toolbox.Volley;
  */
 
 
-public class HistorySingleton {
-    private static HistorySingleton mInstance;
+public class VolleySingleton {
+    private static VolleySingleton mInstance;
     private RequestQueue requestQueue;
     private static Context mContext;
 
-    private HistorySingleton(Context context){
+    private VolleySingleton(Context context){
         mContext = context;
         requestQueue = getRequestQue();
     }
@@ -29,14 +29,14 @@ public class HistorySingleton {
         return requestQueue;
     }
 
-    public static synchronized HistorySingleton getInstance(Context context){
+    public static synchronized VolleySingleton getInstance(Context context){
         if(mInstance == null){
-            mInstance = new HistorySingleton((context));
+            mInstance = new VolleySingleton((context));
         }
         return mInstance;
     }
 
-    //method to add each of the requests to a requestQueue
+    /** method to add each of the requests to a requestQueue */
     public<T> void addToRequestQue(Request<T> request){
         requestQueue.add(request);
     }

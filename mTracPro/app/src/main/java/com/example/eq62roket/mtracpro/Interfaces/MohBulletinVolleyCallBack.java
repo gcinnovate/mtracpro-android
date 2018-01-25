@@ -1,7 +1,7 @@
 package com.example.eq62roket.mtracpro.Interfaces;
 
 import com.android.volley.VolleyError;
-import com.example.eq62roket.mtracpro.Helpers.Bulletin;
+import com.example.eq62roket.mtracpro.Models.Bulletin;
 
 import java.util.ArrayList;
 

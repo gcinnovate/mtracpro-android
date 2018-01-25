@@ -19,7 +19,7 @@ import android.widget.EditText;
 import com.android.volley.VolleyError;
 import com.example.eq62roket.mtracpro.Adapters.RecyclerAdapter;
 import com.example.eq62roket.mtracpro.Helpers.BackgroundTask;
-import com.example.eq62roket.mtracpro.Helpers.History;
+import com.example.eq62roket.mtracpro.Models.History;
 import com.example.eq62roket.mtracpro.Interfaces.HistoryVolleyCallBack;
 import com.example.eq62roket.mtracpro.R;
 
