@@ -25,6 +25,7 @@ public class CasesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cases);
 
         mVolleyHelper = new VolleyHelper(this);
+        mVolleyHelper.setCurrentReportingWeek();
 
         casesButton = (Button) findViewById(R.id.casesButton);
         cases_linearLayout = (LinearLayout) findViewById(R.id.cases_linearLayout);

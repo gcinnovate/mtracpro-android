@@ -24,6 +24,8 @@ public class DeathActivity extends AppCompatActivity {
 
         // setting up VolleyHelper
         mVolleyHelper = new VolleyHelper(this);
+        mVolleyHelper.setCurrentReportingWeek();
+        
         death_linearLayout = (LinearLayout)findViewById(R.id.death_linearLayout);
 
 
