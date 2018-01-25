@@ -165,13 +165,22 @@ public class VolleyHelper {
         final String district = mOurSharedPreferences.getSharedPreference("district");
         final String msisdn = mOurSharedPreferences.getSharedPreference("phoneNumber");
 
+        String [] yearAndWeek = mOurSharedPreferences.getSharedPreference("period").split("W");
+
         String extra_params = "&report_type=" + form
                 + "&district=" + URLEncoder.encode(district)
                 + "&facility=" + URLEncoder.encode(facility)
                 + "&msisdn=" + URLEncoder.encode(msisdn)
                 + "&raw_msg=" + URLEncoder.encode(msg);
+        if (yearAndWeek.length == 2) {
+            extra_params += "&year=" + yearAndWeek[0] + "&week=" + yearAndWeek[1];
 
-        String [] yearAndWeek = mOurSharedPreferences.getSharedPreference("period").split("W");
+        } else {
+            Toast.makeText(mContext, "E01: Failed to submit data", Toast.LENGTH_LONG).show();
+            setCurrentReportingWeek();
+            Log.d(TAG, "Missing Params: year and week.");
+            return -1;
+        }
 
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST,
                 url + extra_params, mJSONObject[0],
@@ -216,7 +225,7 @@ public class VolleyHelper {
     }
 
     /** set current reporting week */
-    private void setCurrentReportingWeek(){
+    public void setCurrentReportingWeek(){
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET,
                 REPORTING_WEEK_URI, null,
                 new Response.Listener<JSONObject>() {
@@ -254,7 +263,7 @@ public class VolleyHelper {
 
     private JSONObject [] generateJson(LinearLayout linearLayout){
         JSONObject [] ret = new JSONObject[2];
-        setCurrentReportingWeek();
+        // setCurrentReportingWeek();
         final ArrayList<JSONObject> collection = new ArrayList<>();
         final JSONObject mJSONObject = new JSONObject();
         final JSONObject rawMsgObj = new JSONObject();

@@ -35,6 +35,7 @@ public class MatActivity extends AppCompatActivity {
 
         // setting up VolleyHelper
         mVolleyHelper = new VolleyHelper(this);
+        mVolleyHelper.setCurrentReportingWeek();
 
         mat_linearLayout = (LinearLayout) findViewById(R.id.mat_linearLayout);
 

@@ -37,6 +37,7 @@ public class TraActivity extends AppCompatActivity {
 
         // setting up VolleyHelper
         mVolleyHelper = new VolleyHelper(this);
+        mVolleyHelper.setCurrentReportingWeek();
 
         tra_linearLinear = (LinearLayout) findViewById(R.id.tra_linearLinear);
 
