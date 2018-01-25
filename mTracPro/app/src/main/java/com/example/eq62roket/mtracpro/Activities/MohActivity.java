@@ -20,9 +20,9 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.example.eq62roket.mtracpro.Adapters.BulletinRecyclerAdapter;
-import com.example.eq62roket.mtracpro.Helpers.BackgroundTask;
-import com.example.eq62roket.mtracpro.Models.Bulletin;
+import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
 import com.example.eq62roket.mtracpro.Interfaces.MohBulletinVolleyCallBack;
+import com.example.eq62roket.mtracpro.Models.Bulletin;
 import com.example.eq62roket.mtracpro.R;
 
 import java.util.ArrayList;
@@ -45,8 +45,8 @@ public class MohActivity extends AppCompatActivity implements SearchView.OnQuery
         //To improve performance
         recyclerView.setHasFixedSize(true);
 
-        BackgroundTask backgroundTask = new BackgroundTask(MohActivity.this);
-        backgroundTask.getBulletin(new MohBulletinVolleyCallBack() {
+        VolleyHelper mVolleyHelper = new VolleyHelper(MohActivity.this);
+        mVolleyHelper.getBulletin(new MohBulletinVolleyCallBack() {
             @Override
             public void onSuccess(ArrayList<Bulletin> cBulletinArrayList) {
                 Log.d("onSuccess: ", cBulletinArrayList.toString());
