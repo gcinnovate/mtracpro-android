@@ -10,11 +10,14 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+import com.example.eq62roket.mtracpro.Interfaces.HistoryVolleyCallBack;
+import com.example.eq62roket.mtracpro.Interfaces.MohBulletinVolleyCallBack;
+import com.example.eq62roket.mtracpro.Models.Bulletin;
+import com.example.eq62roket.mtracpro.Models.History;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,13 +40,15 @@ public class VolleyHelper {
 
     private static final String TAG = "VolleyHelper";
 
-    // TODO: 1/5/18 - > add week and year to url
     private static final String url = "http://dispatcher2d.gcinnovate.com/queue?username=admin&password=admin&source=mTracPro_android&destination=dhis2";
     private static final String REPORTING_WEEK_URI = "http://mtracpro.gcinnovate.com/api/v1/reportingweek";
+    private static final String json_url = "http://mtracpro.gcinnovate.com/api/v1/reporterhistory/";
+    private static final String bulletin_url = "http://10.150.222.126/bulletin.php";
+
+
 
     private Context mContext;
     private OurSharedPreferences mOurSharedPreferences;
-    private RequestQueue queue;
     private JsonHelper mJsonHelper;
 
     private Calendar calendar;
@@ -54,16 +59,91 @@ public class VolleyHelper {
         mContext = context;
         mOurSharedPreferences = new OurSharedPreferences(context);
         mJsonHelper = new JsonHelper(context);
-        queue = Volley.newRequestQueue(context);
 
         calendar = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
         formattedDate = dateFormat.format(calendar.getTime());
+    }
 
+    /** Get data from history endpoint */
+    public void getHistoryList(final HistoryVolleyCallBack callBack){
+        final ArrayList<History> arrayList = new ArrayList<>();
+        callBack.onStart();
+        String phoneNumber = mOurSharedPreferences.getSharedPreference("phoneNumber");
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
+                json_url + phoneNumber, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        int count = 0;
+                        while (count < response.length()){
+                            try {
+                                JSONObject jsonObject = response.getJSONObject(count);
+                                Log.d(TAG, "onResponse: " + jsonObject);
+                                History history = new History(jsonObject.getString("period"),
+                                        jsonObject.getString("rawMsg"), jsonObject.getString("details"),
+                                        jsonObject.getString("date"), jsonObject.getString("period"));
+                                arrayList.add(history);
+                                count++;
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        callBack.onSuccess(arrayList);
+                        Log.d(TAG, "onResponse: " + arrayList);
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                callBack.onFailure(volleyError);
+                Toast.makeText(mContext, "Network Unavailable. Please try again later", Toast.LENGTH_SHORT).show();
+                volleyError.printStackTrace();
+            }
+        });
+
+        VolleySingleton.getInstance(mContext).addToRequestQue(jsonArrayRequest);
+    }
+
+    /** get data from bulletin endpoint */
+    public void getBulletin(final MohBulletinVolleyCallBack mohBulletinVolleyCallBack){
+        final ArrayList<Bulletin> bulletinArrayList = new ArrayList<>();
+        JsonArrayRequest BulletinJsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
+                bulletin_url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        int count = 0;
+                        while (count<response.length()){
+                            try {
+                                JSONObject jsonObject = response.getJSONObject(count);
+                                Log.d(TAG, "onResponse: " + jsonObject);
+                                Bulletin bulletin = new Bulletin(jsonObject.getString("id"),
+                                        jsonObject.getString("date"), jsonObject.getString("content"));
+                                bulletinArrayList.add(bulletin);
+                                count++;
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        mohBulletinVolleyCallBack.onSuccess(bulletinArrayList);
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                mohBulletinVolleyCallBack.onFailure(volleyError);
+                Toast.makeText(mContext, "Network Unavailable. Please try again later", Toast.LENGTH_SHORT).show();
+                volleyError.printStackTrace();
+            }
+        });
+
+        VolleySingleton.getInstance(mContext).addToRequestQue(BulletinJsonArrayRequest);
     }
 
 
+    /** send form data to server */
     public int sendData(LinearLayout linearLayout, final String form){
 
         JSONObject [] mJSONObject = generateJson(linearLayout);
@@ -131,11 +211,12 @@ public class VolleyHelper {
             }
         };
 
-        queue.add(postRequest);
+        VolleySingleton.getInstance(mContext).addToRequestQue(postRequest);
 
         return 0;
     }
 
+    /** get current reporting week */
     private String getCurrentReportingWeek(){
         calendar.add( Calendar.DAY_OF_WEEK, -(calendar.get(Calendar.DAY_OF_WEEK)-1));
         String year = String.valueOf(calendar.get(Calendar.YEAR));
@@ -144,6 +225,7 @@ public class VolleyHelper {
         return year + "W" + week;
     }
 
+    /** set current reporting week */
     private void setCurrentReportingWeek(){
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET,
                 REPORTING_WEEK_URI, null,
@@ -164,7 +246,7 @@ public class VolleyHelper {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         mOurSharedPreferences.writeSharedPreference(
-                                "period", getCurrentReportingWeek()); /* fix getCurrentReportingWeek*/
+                                "period", getCurrentReportingWeek()); /* Todo fix getCurrentReportingWeek */
                         Log.i("Error getting Period", ""+ error.toString());
                     }
                 }) {
@@ -175,7 +257,7 @@ public class VolleyHelper {
                     return headers;
                 }
         };
-        queue.add(getRequest);
+        VolleySingleton.getInstance(mContext).addToRequestQue(getRequest);
     }
 
 

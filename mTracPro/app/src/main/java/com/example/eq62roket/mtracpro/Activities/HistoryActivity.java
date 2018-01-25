@@ -1,24 +1,32 @@
 package com.example.eq62roket.mtracpro.Activities;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.EditText;
 
+import com.android.volley.VolleyError;
 import com.example.eq62roket.mtracpro.Adapters.RecyclerAdapter;
-import com.example.eq62roket.mtracpro.Helpers.BackgroundTask;
-import com.example.eq62roket.mtracpro.Helpers.History;
+import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
+import com.example.eq62roket.mtracpro.Interfaces.HistoryVolleyCallBack;
+import com.example.eq62roket.mtracpro.Models.History;
 import com.example.eq62roket.mtracpro.R;
+
 import java.util.ArrayList;
 
 public class HistoryActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
+    private static final String TAG = "HistoryActivity";
 
     RecyclerView recyclerView;
     RecyclerAdapter adapter;
@@ -31,29 +39,33 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
         //To improve performance
         recyclerView.setHasFixedSize(true);
 
         //Initialising the adapter
-        BackgroundTask backgroundTask = new BackgroundTask(HistoryActivity.this);
-        arrayList = backgroundTask.getHistoryList();
-        adapter = new RecyclerAdapter(arrayList);
-//        adapter = new RecyclerAdapter(historyData(), HistoryActivity.this);
-        recyclerView.setAdapter(adapter);
+        VolleyHelper mVolleyHelper = new VolleyHelper(HistoryActivity.this);
+        mVolleyHelper.getHistoryList(new HistoryVolleyCallBack() {
+            @Override
+            public void onStart() {
+                Log.d(TAG, "Call back started:>>>>>>>>>> " );
+            }
 
+            @Override
+            public void onSuccess(ArrayList<History> historyArrayList) {
+                Log.d(TAG, "ArrayList in onCallback: " + historyArrayList);
+                adapter = new RecyclerAdapter(historyArrayList);
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onFailure(VolleyError volleyError) {
+                Log.d(TAG, "onFailure in Callback: " + volleyError);
+            }
+        });
 
     }
-
-//    public ArrayList<History> historyData(){
-//        ArrayList<History> history = new ArrayList<>();
-//        history.add(new History("2", "cases.ma.4.dy.5.ch.1", "You reported:\\n 4 cases of malari\\n 5 cases of dysentery and\\n 1 case of cholera.", "2018-01-11 15:10"));
-//        history.add(new History("2", "death.ab.3.tf.1", "You reported:\\n 3 deaths of animal bites\\n1 death of typhoid", "2018-01-11 13:11"));
-//        history.add(new History("2", "cases.ma.0", "You reported:\\n 0 cases of malaria", "2018-01-11 12:10"));
-//
-//        return history;
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -61,6 +73,29 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         getMenuInflater().inflate(R.menu.main, menu);
         MenuItem menuItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+        ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text)).setBackgroundColor(Color.WHITE);
+        ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text)).setTextColor(Color.BLACK);
+        ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text)).setHintTextColor(Color.GRAY);
+
+        //Get SearchView autocomplete object
+        final SearchView.SearchAutoComplete searchAutoComplete = (SearchView.SearchAutoComplete)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        searchAutoComplete.setDropDownBackgroundResource(android.R.color.background_light);
+
+        //New ArrayAdapter to add data to search auto complete object
+        String dataArr[] = {"Cases", "Death", "Apt", "Arv", "Mat", "Tra", "Malaria", "Dysentery", "Animal", "Cholera", "Guinew Worm", "Measles", "Tetanus"};
+        ArrayAdapter<String> bulletinAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, dataArr);
+        searchAutoComplete.setAdapter(bulletinAdapter);
+
+        //Listen to search View item on click event.
+        searchAutoComplete.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String queryString = (String)adapterView.getItemAtPosition(i);
+                searchAutoComplete.setText("" + queryString);
+//                Toast.makeText(HistoryActivity.this, "you clicked " + queryString, Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         searchView.setOnQueryTextListener(this);
         return true;
@@ -68,6 +103,9 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        AlertDialog alertDialog = new AlertDialog.Builder(HistoryActivity.this).create();
+        alertDialog.setMessage("Search keyword is " + query);
+        alertDialog.show();
         return false;
     }
 
@@ -76,12 +114,15 @@ public class HistoryActivity extends AppCompatActivity implements SearchView.OnQ
         newText = newText.toLowerCase();
         ArrayList<History> listHistory = new ArrayList<>();
         for (History history : arrayList){
-            String details = history.getDetail().toLowerCase();
+            String period = history.getPeriod().toLowerCase();
+            String details = history.getDetails().toLowerCase();
             String rawMsg = history.getRawMsg().toLowerCase();
             String date = history.getDate().toLowerCase();
             if (details.contains(newText)) {
                 listHistory.add(history);
             }else if (rawMsg.contains(newText)){
+                listHistory.add(history);
+            }else if (period.contains(newText)){
                 listHistory.add(history);
             }
             else if (date.contains(newText)){

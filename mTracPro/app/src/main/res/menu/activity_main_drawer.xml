@@ -11,14 +11,14 @@
             android:icon="@drawable/history"
             android:title="History" />
         <item
+            android:id="@+id/nav_moh"
+            android:icon="@drawable/communication"
+            android:title="MoH Bulletin" />
+        <item
             android:id="@+id/nav_about"
             android:icon="@drawable/about"
             android:title="About" />
 
-        <item
-            android:id="@+id/nav_moh"
-            android:icon="@drawable/about"
-            android:title="MoH Bulletin" />
     </group>
 
     <item android:title="Settings">
