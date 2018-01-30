@@ -16,13 +16,13 @@ public class ProfileActivity extends AppCompatActivity {
     private final String REPORTER_API_URI = "http://mtracpro.gcinnovate.com/api/v1/reporter/";
 
     private RelativeLayout cases_relative_layout;
-    private TextView tvName, tvTotalReports, tvLastReportDate, tvDistrict, tvHealthF;
+    private TextView tvName, tvTotalReports, tvLastReportDate, tvDistrict, tvHealthF, tvRole;
 
     private RequestQueue queue;
     private OurSharedPreferences mOurSharedPreferences;
 
 
-    private String name, totalReports, facility, district, lastReportingDate, facilityId;
+    private String name, totalReports, facility, district, lastReportingDate, facilityId, roles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvHealthF =(TextView) findViewById(R.id.tvHealthF);
         tvDistrict = (TextView) findViewById(R.id.tvDistrict);
         tvTotalReports = (TextView) findViewById(R.id.tvTotalReports);
+        tvRole = (TextView)findViewById(R.id.tvRole);
 
         mOurSharedPreferences = new OurSharedPreferences(this);
         queue = Volley.newRequestQueue(this);
@@ -46,7 +47,8 @@ public class ProfileActivity extends AppCompatActivity {
         tvName.setText(mOurSharedPreferences.getSharedPreference("name"));
         tvHealthF.setText(mOurSharedPreferences.getSharedPreference("facility"));
         tvDistrict.setText(mOurSharedPreferences.getSharedPreference("district"));
-        tvTotalReports.setText(mOurSharedPreferences.getSharedPreference("totalReports"));
+        tvRole.setText(mOurSharedPreferences.getSharedPreference("roles"));
+//        tvTotalReports.setText(mOurSharedPreferences.getSharedPreference("tvTotalReports"));
         //tvLastReportDate.setText(mOurSharedPreferences.getSharedPreference("lastReportDate"));
     }
 
