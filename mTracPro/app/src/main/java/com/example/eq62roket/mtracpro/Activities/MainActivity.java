@@ -4,22 +4,21 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.example.eq62roket.mtracpro.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    ImageView imageArv, imageMat, imageApt, imageCases, imageDeath, imageTra;
+    ImageView imageArv, imageMat, imageApt, imageCases, imageDeath, imageTra, imageIpt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +33,7 @@ public class MainActivity extends AppCompatActivity
         imageCases = (ImageView)findViewById(R.id.imageCases);
         imageDeath = (ImageView)findViewById(R.id.imageDeath);
         imageTra = (ImageView)findViewById(R.id.imageTra);
+        imageIpt = (ImageView)findViewById(R.id.imageIpt);
 
         imageApt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +89,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        imageIpt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent iptIntent = new Intent(MainActivity.this, IptActivity.class);
+                startActivity(iptIntent);
+
+            }
+        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -109,13 +118,6 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
 
 
     @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
