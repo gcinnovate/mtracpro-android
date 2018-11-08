@@ -19,7 +19,7 @@ import com.example.eq62roket.mtracpro.R;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     ImageView imageArv, imageMat, imageApt, imageCases, imageDeath,
-            imageTra, imageIpt, imageGp;
+            imageTra, imageIpt, imageGp, imageTb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity
         imageTra = (ImageView)findViewById(R.id.imageTra);
         imageIpt = (ImageView)findViewById(R.id.imageIpt);
         imageGp = (ImageView)findViewById(R.id.imageGp);
+        imageTb = (ImageView)findViewById(R.id.imageTb);
 
         imageApt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +106,15 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent gpIntent = new Intent(MainActivity.this, GPActivity.class);
                 startActivity(gpIntent);
+
+            }
+        });
+
+        imageTb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent tbIntent = new Intent(MainActivity.this, TBActivity.class);
+                startActivity(tbIntent);
 
             }
         });

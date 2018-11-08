@@ -273,6 +273,43 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="10dip"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:contentDescription="@string/Ipt"
+                        android:id="@+id/imageTb"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tb"
+                        android:layout_width="fill_parent"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center"
+                        android:text="@string/Tb"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
