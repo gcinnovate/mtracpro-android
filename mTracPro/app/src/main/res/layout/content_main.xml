@@ -252,18 +252,19 @@
                     android:layout_height="fill_parent">
 
                     <ImageView
-                        android:contentDescription="@string/Ipt"
+                        android:id="@+id/imageGp"
+                        android:contentDescription="@string/Gp"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/arv"
+                        android:src="@drawable/gp"
                         android:layout_width="fill_parent"
                         android:layout_gravity="center" />
 
                     <TextView
                         android:textColor="@color/colorBlack"
                         android:layout_gravity="center"
-                        android:text="@string/Ipt"
+                        android:text="@string/Gp"
                         android:textStyle="bold"
                         android:textSize="20sp"
                         android:layout_width="wrap_content"

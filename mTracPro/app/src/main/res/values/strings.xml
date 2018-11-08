@@ -7,6 +7,27 @@
     <string name="err_msg_ipt_eligible_adult_art">
         Please enter IPT eligible adult ART clients
     </string>
+    <string name="err_msg_no_of_samples_tested">
+        Please enter No. of samples tested
+    </string>
+    <string name="err_msg_samples_rejected">
+        Please enter No. of samples rejected
+    </string>
+    <string name="err_msg_total_mtb_detected">
+        Please enter Total MTB detected
+    </string>
+    <string name="err_msg_total_no_of_rif_r">
+        Please enter Total No. of Rif R
+    </string>
+    <string name="err_msg_no_of_errors_invalid_results">
+        Please enter Total No. of errors/invalid results
+    </string>
+    <string name="err_msg_no_of_genexpert_modules_working">
+        Please enter GeneXpert modules working
+    </string>
+    <string name="err_msg_no_of_cartridges_remaining">
+        Please enter No. of cartridges remaining
+    </string>
     <string name="err_msg_adult_art_client_initiated_on_ipt">
         Please enter Adult ART clients initiated on IPT
     </string>
@@ -54,6 +75,13 @@
     <!--TextInputLayout strings for APT.-->
     <string name="opd_new">OPD New Attendees</string>
     <string name="ipt_eligible_adult_art">IPT eligible adult ART clients</string>
+    <string name="samples_tested"> No. of Samples Tested</string>
+    <string name="samples_rejected">No. of Samples Rejected</string>
+    <string name="total_mtb_detected">Total MTB detected</string>
+    <string name="total_no_of_rif_r">Total No. of Rif R</string>
+    <string name="no_of_errors_invalid_results">No. of errors/invalid results</string>
+    <string name="no_of_genexpert_modules_working">No. of GeneXpert modules working</string>
+    <string name="no_of_cartridges_remaining">No. of cartridges remaining</string>
     <string name="ipt_eligible_children_adolescent_art">
         IPT eligible children/adolescent ART clients
     </string>
@@ -129,5 +157,6 @@
     <string name="Tra">TRA.</string>
     <string name="Arv">ARV.</string>
     <string name="Ipt">IPT.</string>
+    <string name="Gp">GP.</string>
 
 </resources>
