@@ -33,7 +33,6 @@ public class TraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tra);
 
-        // setting up VolleyHelper
         mVolleyHelper = new VolleyHelper(this);
 
         tra_linearLinear = (LinearLayout) findViewById(R.id.tra_linearLinear);
