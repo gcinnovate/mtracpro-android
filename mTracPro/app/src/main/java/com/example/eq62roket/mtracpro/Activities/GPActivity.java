@@ -1,6 +1,7 @@
 package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
 import com.example.eq62roket.mtracpro.R;
@@ -35,16 +35,18 @@ public class GPActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gp);
 
+        mVolleyHelper = new VolleyHelper(this);
+
         gp_linearLayout = (LinearLayout) findViewById(R.id.gp_linearLayout);
 
         gpButton = (Button) findViewById(R.id.gpButton);
-        samples_tested = (EditText)findViewById(R.id.samples_tested);
-        samples_rejected = (EditText)findViewById(R.id.samples_rejected);
-        total_mtb_detected = (EditText)findViewById(R.id.total_mtb_detected);
-        total_no_of_rif_r = (EditText)findViewById(R.id.total_no_of_rif_r);
-        no_of_errors_invalid_results = (EditText)findViewById(R.id.no_of_errors_invalid_results);
-        no_of_genexpert_modules_working = (EditText)findViewById(R.id.no_of_genexpert_modules_working);
-        no_of_cartridges_remaining = (EditText)findViewById(R.id.no_of_cartridges_remaining);
+        samples_tested = (EditText)findViewById(R.id.gp_samples_tested);
+        samples_rejected = (EditText)findViewById(R.id.gp_samples_rejected);
+        total_mtb_detected = (EditText)findViewById(R.id.gp_total_mtb_detected);
+        total_no_of_rif_r = (EditText)findViewById(R.id.gp_total_no_of_rif_r);
+        no_of_errors_invalid_results = (EditText)findViewById(R.id.gp_no_of_errors_invalid_results);
+        no_of_genexpert_modules_working = (EditText)findViewById(R.id.gp_no_of_genexpert_modules_working);
+        no_of_cartridges_remaining = (EditText)findViewById(R.id.gp_no_of_cartridges_remaining);
 
         animShake = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.shake);
         vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -137,6 +139,11 @@ public class GPActivity extends AppCompatActivity {
             return;
         }
 
-        Toast.makeText(this, "We shall submit data", Toast.LENGTH_SHORT).show();
+        int ret = mVolleyHelper.sendData(gp_linearLayout, "gp");
+        if (ret == 0){
+            Intent traIntent = new Intent(GPActivity.this, MainActivity.class);
+            startActivity(traIntent);
+            finish();
+        }
     }
 }
