@@ -330,7 +330,7 @@ public class VolleyHelper {
         Log.i("RAW MESSAGE:", rawMsg);
 
         try {
-            rawMsgObj.put("rawMsg", rawMsg); /* Lets put in the rawMsg here*/
+            rawMsgObj.put("rawMsg", rawMsg);
             ret[1] = rawMsgObj;
             mJSONObject.put("dataValues", mJSONArray);
             ret[0] = mJSONObject;

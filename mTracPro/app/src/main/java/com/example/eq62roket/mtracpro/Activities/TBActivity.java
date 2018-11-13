@@ -1,6 +1,7 @@
 package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -11,13 +12,14 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
+import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
 import com.example.eq62roket.mtracpro.R;
 
 
 public class TBActivity extends AppCompatActivity {
 
+    private VolleyHelper mVolleyHelper;
     Animation animShake;
     public Vibrator vib;
     Button tbButton;
@@ -32,20 +34,22 @@ public class TBActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tb);
 
+        mVolleyHelper = new VolleyHelper(this);
+
         tb_linearLayout = (LinearLayout) findViewById(R.id.tb_linearLayout);
 
         tbButton = (Button) findViewById(R.id.tbButton);
-        clients_screened = (EditText)findViewById(R.id.clients_screened);
-        presumptive_tb_cases_identified = (EditText)findViewById(R.id.presumptive_tb_cases_identified);
-        new_relapse_diagnosed_registered = (EditText)findViewById(R.id.new_relapse_diagnosed_registered);
+        clients_screened = (EditText)findViewById(R.id.tb_clients_screened);
+        presumptive_tb_cases_identified = (EditText)findViewById(R.id.tb_presumptive_tb_cases_identified);
+        new_relapse_diagnosed_registered = (EditText)findViewById(R.id.tb_new_relapse_diagnosed_registered);
         new_relapse_tb_cases_started_on_treatment = (EditText)findViewById(
-                R.id.new_relapse_tb_cases_started_on_treatment);
+                R.id.tb_new_relapse_tb_cases_started_on_treatment);
         bacteriologically_tb_cases_registered = (EditText)findViewById(
-                R.id.bacteriologically_tb_cases_registered);
+                R.id.tb_bacteriologically_tb_cases_registered);
         bacteriologically_confirmed_tb_cases_with_genexpert = (EditText)findViewById(
-                R.id.bacteriologically_confirmed_tb_cases_with_genexpert);
+                R.id.tb_bacteriologically_confirmed_tb_cases_with_genexpert);
         no_of_tb_contacts_traced_and_screened = (EditText)findViewById(
-                R.id.no_of_tb_contacts_traced_and_screened);
+                R.id.tb_no_of_tb_contacts_traced_and_screened);
 
         animShake = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.shake);
         vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -138,6 +142,12 @@ public class TBActivity extends AppCompatActivity {
             return;
         }
 
-        Toast.makeText(this, "We shall submit data", Toast.LENGTH_SHORT).show();
+        int ret = mVolleyHelper.sendData(tb_linearLayout, "tb");
+        if (ret == 0){
+            Intent tbIntent = new Intent(TBActivity.this, MainActivity.class);
+            startActivity(tbIntent);
+            finish();
+
+        }
     }
 }
