@@ -22,12 +22,12 @@
             android:paddingRight="20dp">
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/samples_tested_label"
+                android:id="@+id/gp_samples_tested_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/samples_tested"
+                    android:id="@+id/gp_samples_tested"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:layout_width="match_parent"
@@ -43,12 +43,12 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/samples_rejected_label"
+                android:id="@+id/gp_samples_rejected_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/samples_rejected"
+                    android:id="@+id/gp_samples_rejected"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -61,12 +61,12 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/total_mtb_detected_label"
+                android:id="@+id/gp_total_mtb_detected_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/total_mtb_detected"
+                    android:id="@+id/gp_total_mtb_detected"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -79,13 +79,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/total_no_of_rif_r_label"
+                android:id="@+id/gp_total_no_of_rif_r_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/total_no_of_rif_r"
+                    android:id="@+id/gp_total_no_of_rif_r"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -99,13 +99,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/no_of_errors_invalid_results_label"
+                android:id="@+id/gp_no_of_errors_invalid_results_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/no_of_errors_invalid_results"
+                    android:id="@+id/gp_no_of_errors_invalid_results"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -119,13 +119,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/no_of_genexpert_modules_working_label"
+                android:id="@+id/gp_no_of_genexpert_modules_working_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/no_of_genexpert_modules_working"
+                    android:id="@+id/gp_no_of_genexpert_modules_working"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -139,13 +139,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/no_of_cartridges_remaining_label"
+                android:id="@+id/gp_no_of_cartridges_remaining_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/no_of_cartridges_remaining"
+                    android:id="@+id/gp_no_of_cartridges_remaining"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
