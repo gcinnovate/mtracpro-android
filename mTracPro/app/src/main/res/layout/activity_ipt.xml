@@ -63,10 +63,10 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/adult_art_client_initiated_on_ipt_label"
+                android:id="@+id/ipt_adult_art_client_initiated_on_ipt_label"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/adult_art_client_initiated_on_ipt"
+                    android:id="@+id/ipt_adult_art_client_initiated_on_ipt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -81,11 +81,11 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/children_adolescents_art_clients_initiated_on_ipt_label"
+                android:id="@+id/ipt_children_adolescents_art_clients_initiated_on_ipt_label"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/children_adolescents_art_clients_initiated_on_ipt"
+                    android:id="@+id/ipt_children_adolescents_art_clients_initiated_on_ipt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"

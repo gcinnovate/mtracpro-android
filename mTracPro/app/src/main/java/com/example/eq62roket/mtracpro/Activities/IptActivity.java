@@ -1,6 +1,7 @@
 package com.example.eq62roket.mtracpro.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.eq62roket.mtracpro.Helpers.VolleyHelper;
 import com.example.eq62roket.mtracpro.R;
@@ -43,9 +43,9 @@ public class IptActivity extends AppCompatActivity {
         ipt_eligible_children_adolescent_art = (EditText)findViewById(
                 R.id.ipt_eligible_children_adolescent_art);
         adult_art_client_initiated_on_ipt = (EditText)findViewById(
-                R.id.adult_art_client_initiated_on_ipt);
+                R.id.ipt_adult_art_client_initiated_on_ipt);
         children_adolescents_art_clients_initiated_on_ipt = (EditText)findViewById(
-                R.id.children_adolescents_art_clients_initiated_on_ipt);
+                R.id.ipt_children_adolescents_art_clients_initiated_on_ipt);
 
         animShake = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.shake);
         vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -105,6 +105,11 @@ public class IptActivity extends AppCompatActivity {
             return;
         }
 
-        Toast.makeText(this, "We shall submit data", Toast.LENGTH_SHORT).show();
+        int ret = mVolleyHelper.sendData(ipt_linearLayout, "ipt");
+        if (ret == 0){
+            Intent traIntent = new Intent(IptActivity.this, MainActivity.class);
+            startActivity(traIntent);
+            finish();
+        }
     }
 }
