@@ -23,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -143,7 +144,7 @@ public class VolleyHelper {
 
     /** send form data to server */
     public int sendData(LinearLayout linearLayout, final String form){
-
+        int result;
         JSONObject [] mJSONObject = generateJson(linearLayout);
         String msg = "";
         try {
@@ -157,49 +158,61 @@ public class VolleyHelper {
             e.printStackTrace();
         }
 
-        /*addGetParamsToUrl */
+        /* build url to submit */
         final String facility = mOurSharedPreferences.getSharedPreference("facilityId");
         final String district = mOurSharedPreferences.getSharedPreference("district");
         final String msisdn = mOurSharedPreferences.getSharedPreference("phoneNumber");
 
         String [] yearAndWeek = mOurSharedPreferences.getSharedPreference("period").split("W");
 
-        String extra_params = "&report_type=" + form + "&district=" + district
-                + "&facility=" + facility + "&msisdn=" + msisdn
-                + "&raw_msg=" + msg + "&year=" + yearAndWeek[0] +"&week=" + yearAndWeek[1];
+        String extra_params = "&report_type=" + form
+                + "&district=" + URLEncoder.encode(district)
+                + "&facility=" + URLEncoder.encode(facility )
+                + "&msisdn=" + URLEncoder.encode(msisdn)
+                + "&raw_msg=" + URLEncoder.encode(msg )
+                + "&is_qparams=" + URLEncoder.encode("f")
+                + "&extras=" + URLEncoder.encode("{}");
 
+        if (yearAndWeek.length == 2) {
+            extra_params += "&year=" + yearAndWeek[0] +"&week=" + yearAndWeek[1];
 
-        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST,
-                url + extra_params, mJSONObject[0],
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
+            JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST,
+                    url + extra_params, mJSONObject[0],
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
 
-                        Toast.makeText(mContext, "Report submitted successfully.", Toast.LENGTH_LONG).show();
-                        Log.d(TAG, "onResponse: " + response);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(mContext, "Failed to submit data", Toast.LENGTH_LONG).show();
-                Log.d(TAG, "onErrorResponse: " + error.toString());
-            }
-        }){
+                            Toast.makeText(mContext, "Report submitted successfully.", Toast.LENGTH_LONG).show();
+                            Log.d(TAG, "onResponse: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(mContext, "Failed to submit data", Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "onErrorResponse: " + error.toString());
+                }
+            }){
 
-            /**
-             * Passing some request headers
-             * */
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Content-Type", "application/json; charset=utf-8");
-                return headers;
-            }
-        };
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Content-Type", "application/json; charset=utf-8");
+                    return headers;
+                }
+            };
 
-        VolleySingleton.getInstance(mContext).addToRequestQue(postRequest);
+            VolleySingleton.getInstance(mContext).addToRequestQue(postRequest);
 
-        return 0;
+            result = 0;
+        } else {
+            Toast.makeText(mContext, "E01: Failed to submit data", Toast.LENGTH_LONG).show();
+            result = -1;
+        }
+
+        return result;
     }
 
     /** get current reporting week */
