@@ -434,7 +434,7 @@
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
-                    android:src="@drawable/arv"
+                    android:src="@drawable/epc"
                     app:civ_border_width="2dp"
                     app:civ_border_color="#FF000000"/>
 
@@ -572,7 +572,7 @@
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
-                    android:src="@drawable/arv"
+                    android:src="@drawable/gp"
                     app:civ_border_width="2dp"
                     app:civ_border_color="#FF000000"/>
 
@@ -641,7 +641,7 @@
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
-                    android:src="@drawable/arv"
+                    android:src="@drawable/ipt"
                     app:civ_border_width="2dp"
                     app:civ_border_color="#FF000000"/>
 
@@ -710,7 +710,7 @@
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
-                    android:src="@drawable/arv"
+                    android:src="@drawable/tb"
                     app:civ_border_width="2dp"
                     app:civ_border_color="#FF000000"/>
 
