@@ -69,11 +69,12 @@
             android:name=".Activities.MohActivity"
             android:label="MoH Bulletin"
             android:parentActivityName=".Activities.MainActivity" />
-        <activity android:name=".Activities.EpdActivity"
-            android:label="IDSR DEATH."
+        <activity
+            android:name=".Activities.EpdActivity"
+            android:label="EPD."
             android:parentActivityName=".Activities.MainActivity"/>
         <activity android:name=".Activities.EpcActivity"
-            android:label="IDSR CASES."
+            android:label="EPC."
             android:parentActivityName=".Activities.MainActivity"></activity>
     </application>
 

@@ -28,7 +28,7 @@ public class EpdActivity extends AppCompatActivity {
 
         epdLinearLayout = (LinearLayout)findViewById(R.id.epd_linearLayout);
 
-        epdButton = (Button) findViewById(R.id.epcButton);
+        epdButton = (Button) findViewById(R.id.epdButton);
 
         epdButton.setOnClickListener(new View.OnClickListener() {
             @Override

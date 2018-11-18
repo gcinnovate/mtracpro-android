@@ -40,18 +40,16 @@ public class MainActivity extends AppCompatActivity
         imageEpd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent idsrDeathIntent = new Intent(MainActivity.this, EpdActivity.class);
-                startActivity(idsrDeathIntent);
-                finish();
+                Intent epdIntent = new Intent(MainActivity.this, EpdActivity.class);
+                startActivity(epdIntent);
             }
         });
 
         imageEpc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent idsrCasesIntent = new Intent(MainActivity.this, EpcActivity.class);
-                startActivity(idsrCasesIntent);
-                finish();
+                Intent idcIntent = new Intent(MainActivity.this, EpcActivity.class);
+                startActivity(idcIntent);
             }
         });
 
