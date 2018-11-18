@@ -69,6 +69,32 @@
     <string name="yf">Yellow Fever</string>
     <string name="tb">PresumptiveMulti Drug Resistance (MDR) TB</string>
 
+    <!--TextInputLayout strings for IDSR CASES. and IDSR DEATH.-->
+    <string name="cg">Chikungunya</string>
+    <string name="dg">Dengue</string>
+    <string name="il">Influenza-like illness</string>
+    <string name="ax">Anthrax (human)</string>
+    <string name="hp">Acute viral hepatitis</string>
+    <string name="dc">Dracunculiasis</string>
+    <string name="lp">Leprosy</string>
+    <string name="oc">Onchocerciasis</string>
+    <string name="bu">Buruli ulcer</string>
+    <string name="gw1">Lymphatic Filariasis</string>
+    <string name="no">Noma</string>
+    <string name="hn">Human influenza due to a new subtype</string>
+    <string name="ss">Severe Acute Respiratory Syndrome (SARS)</string>
+    <string name="sp">Smallpox</string>
+    <string name="dd">Diarrhoea with dehydration</string>
+    <string name="pn">Severe pnuemonia</string>
+    <string name="tx">Human African Trypanosomiasis</string>
+    <string name="tr">Trachoma</string>
+    <string name="sc">Schistosomiasis</string>
+    <string name="dp">Diphteria</string>
+    <string name="wc">Pertussis (Whooping cough)</string>
+    <string name="bc">Brucellosis</string>
+    <string name="ka">Kala azar</string>
+    <string name="ns">Nodding Syndrome</string>
+    <string name="ar">Adverse Drug Reactions (ADR)</string>
 
     <!--TextInputLayout strings for MAT.-->
     <string name="suspected_malaria">Suspected malaria (fever)</string>

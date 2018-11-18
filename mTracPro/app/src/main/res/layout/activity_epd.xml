@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.eq62roket.mtracpro.Activities.EpdActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:id="@+id/epd_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_cg_label"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/epc_ma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:hint="@string/cg"
+                    android:textSize="22sp"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="48dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_dg_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_dg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:hint="@string/dg"
+                    android:textSize="22sp"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="124dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_il_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_il"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:hint="@string/il"
+                    android:textSize="22sp"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_ax_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_ax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/ax"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_hp_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_hp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/hp"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="48dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_dc_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_dc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/dc"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="124dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_lp_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_lp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/lp"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_oc_label"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/epc_oc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/oc"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_bu_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_bu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/bu"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_gw_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_gw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/gw1"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_no_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/no"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_hn_label"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/death_hn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/hn"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_ss_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_ss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/ss"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_sp_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/sp"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_dd_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_dd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/dd"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_pn_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_pn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/pn"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_tx_label"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/death_tx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/tx"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_tr_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_tr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/tr"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_sc_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_sc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/sc"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_dp_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/dp"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_wc_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_wc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/wc"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_bc_label"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/death_bc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/bc"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_ka_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_ka"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/ka"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_ns_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_ns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/ns"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epc_ar_label"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/epc_ar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/ar"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="213dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
+                android:id="@+id/epdButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/submit"
+                android:layout_marginBottom="25dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</ScrollView>

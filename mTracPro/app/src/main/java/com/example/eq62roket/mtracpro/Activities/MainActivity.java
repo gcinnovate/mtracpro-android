@@ -11,15 +11,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.eq62roket.mtracpro.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    ImageView imageArv, imageMat, imageApt, imageCases, imageDeath, imageTra;
+    LinearLayout imageArv, imageMat, imageApt, imageCases, imageDeath, imageTra, imageEpc,
+            imageEpd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +28,32 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        imageApt = (ImageView)findViewById(R.id.imageApt);
-        imageArv = (ImageView)findViewById(R.id.imageArv);
-        imageMat = (ImageView)findViewById(R.id.imageMat);
-        imageCases = (ImageView)findViewById(R.id.imageCases);
-        imageDeath = (ImageView)findViewById(R.id.imageDeath);
-        imageTra = (ImageView)findViewById(R.id.imageTra);
+        imageApt = (LinearLayout) findViewById(R.id.imageApt);
+        imageArv = (LinearLayout)findViewById(R.id.imageArv);
+        imageMat = (LinearLayout)findViewById(R.id.imageMat);
+        imageCases = (LinearLayout)findViewById(R.id.imageCases);
+        imageDeath = (LinearLayout)findViewById(R.id.imageDeath);
+        imageTra = (LinearLayout)findViewById(R.id.imageTra);
+        imageEpc = (LinearLayout)findViewById(R.id.imageEpc);
+        imageEpd = (LinearLayout)findViewById(R.id.imageEpd);
+
+        imageEpd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent idsrDeathIntent = new Intent(MainActivity.this, EpdActivity.class);
+                startActivity(idsrDeathIntent);
+                finish();
+            }
+        });
+
+        imageEpc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent idsrCasesIntent = new Intent(MainActivity.this, EpcActivity.class);
+                startActivity(idsrCasesIntent);
+                finish();
+            }
+        });
 
         imageApt.setOnClickListener(new View.OnClickListener() {
             @Override
