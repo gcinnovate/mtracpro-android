@@ -46,6 +46,18 @@
             android:label="Profile"
             android:parentActivityName=".Activities.MainActivity" />
         <activity
+            android:name=".Activities.IptActivity"
+            android:label="IPT."
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity
+            android:name=".Activities.GPActivity"
+            android:label="GP."
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity
+            android:name=".Activities.TBActivity"
+            android:label="TB."
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity
             android:name=".Activities.LogoutActivity"
             android:label="Logout" />
         <activity

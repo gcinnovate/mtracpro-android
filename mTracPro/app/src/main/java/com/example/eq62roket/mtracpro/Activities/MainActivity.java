@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.example.eq62roket.mtracpro.R;
@@ -19,7 +19,7 @@ import com.example.eq62roket.mtracpro.R;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     LinearLayout imageArv, imageMat, imageApt, imageCases, imageDeath, imageTra, imageEpc,
-            imageEpd;
+            imageEpd, imageIpt, imageGp, imageTb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity
         imageTra = (LinearLayout)findViewById(R.id.imageTra);
         imageEpc = (LinearLayout)findViewById(R.id.imageEpc);
         imageEpd = (LinearLayout)findViewById(R.id.imageEpd);
+        imageIpt = (LinearLayout)findViewById(R.id.imageIpt);
+        imageGp = (LinearLayout)findViewById(R.id.imageGp);
+        imageTb = (LinearLayout)findViewById(R.id.imageTb);
 
         imageEpd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +110,33 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        imageIpt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent iptIntent = new Intent(MainActivity.this, IptActivity.class);
+                startActivity(iptIntent);
+
+            }
+        });
+
+        imageGp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gpIntent = new Intent(MainActivity.this, GPActivity.class);
+                startActivity(gpIntent);
+
+            }
+        });
+
+        imageTb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent tbIntent = new Intent(MainActivity.this, TBActivity.class);
+                startActivity(tbIntent);
+
+            }
+        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -127,13 +157,6 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
 
 
     @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)

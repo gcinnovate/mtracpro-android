@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.eq62roket.mtracpro.Activities.TraActivity">
+    tools:context="com.example.eq62roket.mtracpro.Activities.GPActivity">
 
     <ScrollView
-        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:id="@+id/scrollView2">
 
         <LinearLayout
-            android:id="@+id/tra_linearLinear"
+            android:id="@+id/gp_linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -21,172 +22,151 @@
             android:paddingRight="20dp">
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tra_act_tablets_label"
+                android:id="@+id/gp_samples_tested_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
-
                 <EditText
-                    android:id="@+id/tra_act_tablets"
+                    android:id="@+id/gp_samples_tested"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/act_tablets"
-                    android:inputType="number"
                     android:maxLength="4"
                     android:textSize="22sp"
+                    android:hint="@string/samples_tested"
+                    android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="48dp" />
-            </android.support.design.widget.TextInputLayout>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tra_ors_sackets_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-                <EditText
-                    android:id="@+id/tra_ors_sackets"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/ors_sackets"
-                    android:inputType="number"
-                    android:maxLength="4"
-                    android:textSize="22sp"
-                    tools:layout_editor_absoluteX="84dp"
-                    tools:layout_editor_absoluteY="124dp" />
 
             </android.support.design.widget.TextInputLayout>
 
-
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tra_measles_vaccine_label"
+                android:id="@+id/gp_samples_rejected_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
-
                 <EditText
-                    android:id="@+id/tra_measles_vaccine"
+                    android:id="@+id/gp_samples_rejected"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/measles_vaccine"
-                    android:inputType="number"
                     android:maxLength="4"
                     android:textSize="22sp"
-                    tools:layout_editor_absoluteX="84dp"
-                    tools:layout_editor_absoluteY="213dp" />
-            </android.support.design.widget.TextInputLayout>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tra_amoxcilline_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-                <EditText
-                    android:id="@+id/tra_amoxcilline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/amoxcilline"
+                    android:hint="@string/samples_rejected"
                     android:inputType="number"
-                    android:maxLength="4"
-                    android:textSize="22sp"
-                    tools:layout_editor_absoluteX="84dp"
-                    tools:layout_editor_absoluteY="303dp" />
-            </android.support.design.widget.TextInputLayout>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tra_depo_provera_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-                <EditText
-                    android:id="@+id/tra_depo_provera"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/depo_provera"
-                    android:inputType="number"
-                    android:maxLength="4"
-                    android:textSize="22sp"
-                    tools:layout_editor_absoluteX="84dp"
-                    tools:layout_editor_absoluteY="48dp" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tra_iv_artesunate_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-                <EditText
-                    android:id="@+id/tra_iv_artesunate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/iv_artesunate"
-                    android:inputType="number"
-                    android:maxLength="4"
-                    android:textSize="22sp"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="124dp" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tra_fansidar_label"
+                android:id="@+id/gp_total_mtb_detected_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
-
                 <EditText
-                    android:id="@+id/tra_fansidar"
+                    android:id="@+id/gp_total_mtb_detected"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/fansidar"
-                    android:inputType="number"
                     android:maxLength="4"
                     android:textSize="22sp"
+                    android:hint="@string/total_mtb_detected"
+                    android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="213dp" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tra_rdt_malaria_label"
+                android:id="@+id/gp_total_no_of_rif_r_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/tra_rdt_malaria"
+                    android:id="@+id/gp_total_no_of_rif_r"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/rdt_malaria"
-                    android:inputType="number"
                     android:maxLength="4"
                     android:textSize="22sp"
+                    android:hint="@string/total_no_of_rif_r"
+                    android:inputType="number"
                     tools:layout_editor_absoluteX="84dp"
                     tools:layout_editor_absoluteY="303dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/gp_no_of_errors_invalid_results_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/gp_no_of_errors_invalid_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/no_of_errors_invalid_results"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/gp_no_of_genexpert_modules_working_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/gp_no_of_genexpert_modules_working"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/no_of_genexpert_modules_working"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/gp_no_of_cartridges_remaining_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/gp_no_of_cartridges_remaining"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="4"
+                    android:textSize="22sp"
+                    android:hint="@string/no_of_cartridges_remaining"
+                    android:inputType="number"
+                    tools:layout_editor_absoluteX="84dp"
+                    tools:layout_editor_absoluteY="303dp" />
+
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/traButton"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
+                android:id="@+id/gpButton"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:background="@color/colorAccent"
-                android:text="@string/submit"
-                android:textColor="@color/white" />
-
+                android:text="@string/submit" />
         </LinearLayout>
     </ScrollView>
+
 
 </ScrollView>

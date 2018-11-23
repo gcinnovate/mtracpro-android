@@ -562,7 +562,7 @@
                 android:background="@color/colorGray"/>
 
             <LinearLayout
-                android:id="@+id/ipLayout"
+                android:id="@+id/imageGp"
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -631,7 +631,7 @@
                 android:background="@color/colorGray"/>
 
             <LinearLayout
-                android:id="@+id/iptLayout"
+                android:id="@+id/imageIpt"
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -700,7 +700,7 @@
                 android:background="@color/colorGray"/>
 
             <LinearLayout
-                android:id="@+id/tbLayout"
+                android:id="@+id/imageTb"
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,6 +1,60 @@
 <resources>
     <string name="app_name">mTracApp</string>
     <string name="err_msg_apt_opd_new_label">Please enter OPD New Attendees</string>
+    <string name="err_msg_ipt_eligible_children_adolescent_art">
+        Please enter IPT eligible children/adolescent ART clients
+    </string>
+    <string name="err_msg_ipt_eligible_adult_art">
+        Please enter IPT eligible adult ART clients
+    </string>
+    <string name="err_msg_no_of_samples_tested">
+        Please enter No. of samples tested
+    </string>
+    <string name="err_msg_clients_screened">
+        Please enter clients Screened
+    </string>
+    <string name="err_msg_presumptive_tb_cases_identified">
+        Please enter Presumptive TB cases identified
+    </string>
+    <string name="err_msg_new_relapse_diagnosed_registered">
+        Please enter New and Relapse diagnosed and registered
+    </string>
+    <string name="err_msg_new_relapse_tb_cases_started_on_treatment">
+        Please enter New and Relapse cases started on treatment
+    </string>
+    <string name="err_msg_bacteriologically_tb_cases_registered">
+        Please enter Bacteriologically TB cases registered
+    </string>
+    <string name="err_msg_bacteriologically_confirmed_tb_cases_with_genexpert">
+        Please enter Bacteriologically TB cases tested with Genexpert
+    </string>
+    <string name="err_msg_no_of_tb_contacts_traced_and_screened">
+        Please enter No. of TB contacts traced and screened
+    </string>
+    <string name="err_msg_samples_rejected">
+        Please enter No. of samples rejected
+    </string>
+    <string name="err_msg_total_mtb_detected">
+        Please enter Total MTB detected
+    </string>
+    <string name="err_msg_total_no_of_rif_r">
+        Please enter Total No. of Rif R
+    </string>
+    <string name="err_msg_no_of_errors_invalid_results">
+        Please enter Total No. of errors/invalid results
+    </string>
+    <string name="err_msg_no_of_genexpert_modules_working">
+        Please enter GeneXpert modules working
+    </string>
+    <string name="err_msg_no_of_cartridges_remaining">
+        Please enter No. of cartridges remaining
+    </string>
+    <string name="err_msg_adult_art_client_initiated_on_ipt">
+        Please enter Adult ART clients initiated on IPT
+    </string>
+    <string name="err_msg_children_adolescents_art_clients_initiated_on_ipt">
+        Please enter Children and adolescents on ART who started IPT
+    </string>
     <string name="err_msg_apt_opd_total_label">Please enter OPD Total Attendance</string>
     <string name="err_msg_apt_emtct_expected_label">Please enter Expected eMTCT Mothers on appt</string>
     <string name="err_msg_apt_emtct_missed_label">Please enter eMTCT Missed appointments</string>
@@ -41,6 +95,40 @@
 
     <!--TextInputLayout strings for APT.-->
     <string name="opd_new">OPD New Attendees</string>
+    <string name="ipt_eligible_adult_art">IPT eligible adult ART clients</string>
+    <string name="samples_tested"> No. of Samples Tested</string>
+    <string name="clients_screened"> No. of clients screened</string>
+    <string name="presumptive_tb_cases_identified"> Presumptive TB cases identified</string>
+    <string name="new_relapse_diagnosed_registered">
+        New and Relapse diagnosed and registered
+    </string>
+    <string name="new_relapse_tb_cases_started_on_treatment">
+        New and Relapse TB cases started on treatment
+    </string>
+    <string name="bacteriologically_tb_cases_registered">
+        Bacteriologically TB cases registered
+    </string>
+    <string name="bacteriologically_confirmed_tb_cases_with_genexpert">
+        Bacteriologically TB cases tested with Genexpert
+    </string>
+    <string name="no_of_tb_contacts_traced_and_screened">
+        No. of TB contacts traced and screened
+    </string>
+    <string name="samples_rejected">No. of Samples Rejected</string>
+    <string name="total_mtb_detected">Total MTB detected</string>
+    <string name="total_no_of_rif_r">Total No. of Rif R</string>
+    <string name="no_of_errors_invalid_results">No. of errors/invalid results</string>
+    <string name="no_of_genexpert_modules_working">No. of GeneXpert modules working</string>
+    <string name="no_of_cartridges_remaining">No. of cartridges remaining</string>
+    <string name="ipt_eligible_children_adolescent_art">
+        IPT eligible children/adolescent ART clients
+    </string>
+    <string name="adult_art_client_initiated_on_ipt">
+        Adult ART clients initiated on IPT
+    </string>
+    <string name="children_adolescents_art_clients_initiated_on_ipt">
+        Children and adolescents on ART who started IPT
+    </string>
     <string name="opd_total">OPD Total Attendance</string>
     <string name="emtct_expected">Expected eMTCT Mothers on appt</string>
     <string name="emtct_missed">eMTCT Missed appointments</string>
@@ -132,5 +220,8 @@
     <string name="Mat">MAT.</string>
     <string name="Tra">TRA.</string>
     <string name="Arv">ARV.</string>
+    <string name="Ipt">IPT.</string>
+    <string name="Gp">GP.</string>
+    <string name="Tb">TB.</string>
 
 </resources>
