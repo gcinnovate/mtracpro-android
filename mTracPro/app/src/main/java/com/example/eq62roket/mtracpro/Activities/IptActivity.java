@@ -24,8 +24,8 @@ public class IptActivity extends AppCompatActivity {
     Animation animShake;
     public Vibrator vib;
     Button iptButton;
-    EditText ipt_eligible_adult_art, ipt_eligible_children_adolescent_art,
-            adult_art_client_initiated_on_ipt, children_adolescents_art_clients_initiated_on_ipt;
+    EditText ipt_eligible_adults, ipt_children_and_adolo, ipt_adult_initiated,
+            ipt_child_adolo_init;
 
     private LinearLayout ipt_linearLayout;
 
@@ -39,13 +39,10 @@ public class IptActivity extends AppCompatActivity {
         ipt_linearLayout = (LinearLayout) findViewById(R.id.ipt_linearLayout);
 
         iptButton = (Button) findViewById(R.id.iptButton);
-        ipt_eligible_adult_art = (EditText)findViewById(R.id.ipt_eligible_adult_art);
-        ipt_eligible_children_adolescent_art = (EditText)findViewById(
-                R.id.ipt_eligible_children_adolescent_art);
-        adult_art_client_initiated_on_ipt = (EditText)findViewById(
-                R.id.ipt_adult_art_client_initiated_on_ipt);
-        children_adolescents_art_clients_initiated_on_ipt = (EditText)findViewById(
-                R.id.ipt_children_adolescents_art_clients_initiated_on_ipt);
+        ipt_eligible_adults = (EditText)findViewById(R.id.ipt_eligible_adults);
+        ipt_children_and_adolo = (EditText)findViewById(R.id.ipt_children_and_adolo);
+        ipt_adult_initiated = (EditText)findViewById(R.id.ipt_adult_initiated);
+        ipt_child_adolo_init = (EditText)findViewById(R.id.ipt_child_adolo_init);
 
         animShake = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.shake);
         vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -60,47 +57,47 @@ public class IptActivity extends AppCompatActivity {
 
     }
     private void submitForm() {
-        final String ipt_adult_art = ipt_eligible_adult_art.getText().toString().trim();
-        final String ipt_children_adolescent_art = ipt_eligible_children_adolescent_art.getText().toString().trim();
-        final String adult_art_client_on_ipt = adult_art_client_initiated_on_ipt.getText().toString().trim();
-        final String children_adolescents_art_clients_on_ipt = children_adolescents_art_clients_initiated_on_ipt.getText().toString().trim();
+        final String ipt_adult_art = ipt_eligible_adults.getText().toString().trim();
+        final String ipt_children_adolescent_art = ipt_children_and_adolo.getText().toString().trim();
+        final String adult_art_client_on_ipt = ipt_adult_initiated.getText().toString().trim();
+        final String children_adolescents_art_clients_on_ipt = ipt_child_adolo_init.getText().toString().trim();
 
 
         if (TextUtils.isEmpty(ipt_adult_art)){
-            ipt_eligible_adult_art.setError(getString(R.string.err_msg_ipt_eligible_adult_art));
-            ipt_eligible_adult_art.requestFocus();
-            ipt_eligible_adult_art.setAnimation(animShake);
-            ipt_eligible_adult_art.startAnimation(animShake);
+            ipt_eligible_adults.setError(getString(R.string.err_msg_ipt_eligible_adult_art));
+            ipt_eligible_adults.requestFocus();
+            ipt_eligible_adults.setAnimation(animShake);
+            ipt_eligible_adults.startAnimation(animShake);
             vib.vibrate(120);
             return;
         }
 
         if (TextUtils.isEmpty(ipt_children_adolescent_art)){
-            ipt_eligible_children_adolescent_art.setError(getString(
+            ipt_children_and_adolo.setError(getString(
                     R.string.err_msg_ipt_eligible_children_adolescent_art));
-            ipt_eligible_children_adolescent_art.requestFocus();
-            ipt_eligible_children_adolescent_art.setAnimation(animShake);
-            ipt_eligible_children_adolescent_art.startAnimation(animShake);
+            ipt_children_and_adolo.requestFocus();
+            ipt_children_and_adolo.setAnimation(animShake);
+            ipt_children_and_adolo.startAnimation(animShake);
             vib.vibrate(120);
             return;
         }
 
         if (TextUtils.isEmpty(adult_art_client_on_ipt)){
-            adult_art_client_initiated_on_ipt.setError(getString(
+            ipt_adult_initiated.setError(getString(
                     R.string.err_msg_adult_art_client_initiated_on_ipt));
-            adult_art_client_initiated_on_ipt.requestFocus();
-            adult_art_client_initiated_on_ipt.setAnimation(animShake);
-            adult_art_client_initiated_on_ipt.startAnimation(animShake);
+            ipt_adult_initiated.requestFocus();
+            ipt_adult_initiated.setAnimation(animShake);
+            ipt_adult_initiated.startAnimation(animShake);
             vib.vibrate(120);
             return;
         }
 
         if (TextUtils.isEmpty(children_adolescents_art_clients_on_ipt)){
-            children_adolescents_art_clients_initiated_on_ipt.setError(getString(
+            ipt_child_adolo_init.setError(getString(
                     R.string.err_msg_children_adolescents_art_clients_initiated_on_ipt));
-            children_adolescents_art_clients_initiated_on_ipt.requestFocus();
-            children_adolescents_art_clients_initiated_on_ipt.setAnimation(animShake);
-            children_adolescents_art_clients_initiated_on_ipt.startAnimation(animShake);
+            ipt_child_adolo_init.requestFocus();
+            ipt_child_adolo_init.setAnimation(animShake);
+            ipt_child_adolo_init.startAnimation(animShake);
             vib.vibrate(120);
             return;
         }

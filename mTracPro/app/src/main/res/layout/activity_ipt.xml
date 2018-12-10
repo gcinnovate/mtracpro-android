@@ -24,10 +24,10 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ipt_eligible_adult_art_label"
+                android:id="@+id/ipt_eligible_adults_label"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/ipt_eligible_adult_art"
+                    android:id="@+id/ipt_eligible_adults"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:layout_width="match_parent"
@@ -45,10 +45,10 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ipt_eligible_children_adolescent_art_label"
+                android:id="@+id/ipt_children_and_adolo_label"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/ipt_eligible_children_adolescent_art"
+                    android:id="@+id/ipt_children_and_adolo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -63,10 +63,10 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ipt_adult_art_client_initiated_on_ipt_label"
+                android:id="@+id/ipt_adult_initiated_label"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/ipt_adult_art_client_initiated_on_ipt"
+                    android:id="@+id/ipt_adult_initiated"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -81,11 +81,11 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ipt_children_adolescents_art_clients_initiated_on_ipt_label"
+                android:id="@+id/ipt_child_adolo_init_label"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/ipt_children_adolescents_art_clients_initiated_on_ipt"
+                    android:id="@+id/ipt_child_adolo_init"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"

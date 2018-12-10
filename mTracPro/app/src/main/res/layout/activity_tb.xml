@@ -22,12 +22,12 @@
             android:paddingRight="20dp">
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tb_clients_screened_label"
+                android:id="@+id/tb_screened_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/tb_clients_screened"
+                    android:id="@+id/tb_screened"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:layout_width="match_parent"
@@ -43,12 +43,12 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tb_presumptive_tb_cases_identified_label"
+                android:id="@+id/tb_presumptive_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/tb_presumptive_tb_cases_identified"
+                    android:id="@+id/tb_presumptive"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -61,12 +61,12 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tb_new_relapse_diagnosed_registered_label"
+                android:id="@+id/tb_new_relapse_registered_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/tb_new_relapse_diagnosed_registered"
+                    android:id="@+id/tb_new_relapse_registered"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -79,13 +79,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tb_new_relapse_tb_cases_started_on_treatment_label"
+                android:id="@+id/tb_new_relapse_on_treatment_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/tb_new_relapse_tb_cases_started_on_treatment"
+                    android:id="@+id/tb_new_relapse_on_treatment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -99,13 +99,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tb_bacteriologically_tb_cases_registered_label"
+                android:id="@+id/tb_bacter_registered_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/tb_bacteriologically_tb_cases_registered"
+                    android:id="@+id/tb_bacter_registered"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -119,13 +119,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tb_bacteriologically_confirmed_tb_cases_with_genexpert_label"
+                android:id="@+id/tb_genexpert_confirmed_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/tb_bacteriologically_confirmed_tb_cases_with_genexpert"
+                    android:id="@+id/tb_genexpert_confirmed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -139,13 +139,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tb_no_of_tb_contacts_traced_and_screened_label"
+                android:id="@+id/tb_contacts_traced_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/tb_no_of_tb_contacts_traced_and_screened"
+                    android:id="@+id/tb_contacts_traced"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
