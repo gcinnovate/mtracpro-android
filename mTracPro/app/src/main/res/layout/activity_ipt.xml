@@ -66,7 +66,7 @@
                 android:id="@+id/ipt_adult_initiated_label"
                 android:layout_marginTop="10dp">
                 <EditText
-                    android:id="@+id/ipt_adult_initiated"
+                    android:id="@+id/ipt_adults_initiated"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"

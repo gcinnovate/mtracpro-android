@@ -41,7 +41,7 @@ public class IptActivity extends AppCompatActivity {
         iptButton = (Button) findViewById(R.id.iptButton);
         ipt_eligible_adults = (EditText)findViewById(R.id.ipt_eligible_adults);
         ipt_children_and_adolo = (EditText)findViewById(R.id.ipt_children_and_adolo);
-        ipt_adult_initiated = (EditText)findViewById(R.id.ipt_adult_initiated);
+        ipt_adult_initiated = (EditText)findViewById(R.id.ipt_adults_initiated);
         ipt_child_adolo_init = (EditText)findViewById(R.id.ipt_child_adolo_init);
 
         animShake = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.shake);

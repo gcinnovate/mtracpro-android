@@ -43,7 +43,7 @@ public class VolleyHelper {
     private static final String url = "http://dispatcher2d.gcinnovate.com/queue?username=admin&password=admin&source=mTracPro_android&destination=dhis2";
     private static final String REPORTING_WEEK_URI = "http://mtracpro.gcinnovate.com/api/v1/reportingweek";
     private static final String json_url = "http://mtracpro.gcinnovate.com/api/v1/reporterhistory/";
-    private static final String bulletin_url = "http://10.150.222.126/bulletin.php";
+    private static final String bulletin_url = "http://mtracpro.gcinnovate.com/api/v1/bulletin";
 
 
 
